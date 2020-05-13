@@ -1,0 +1,161 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+
+<header class="header text-white" style="background-image: url(/assets/img/control-loop-hero.jpg);" data-overlay="6">
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+
+        <h1>Embracing Failure: Lessons learned from 50 post-mortems</h1>
+        <p class="lead-2 opacity-90 mt-6"> Published <time class="post-date" datetime="2020-02-10T09:39:23+02:00">Feb
+            10, 2020</time> by Moshe Immerman,
+          Reading time: 4min </span><br></p>
+
+      </div>
+    </div>
+
+  </div>
+</header><!-- /.header -->
+
+
+<main class="main-content">
+
+  <section class="section">
+    <div class="container blog">
+
+
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+
+          <p>
+            Henning Jacob of Zalando fame has started compiling an awesome list of failure stories at
+            <a href="https://k8s.af/">k8s.af</a> (And yes failure stories are Awesome!)
+
+            <br>
+            With 42 incidents and counting it is starting to provide a good dataset for identifying common contributing
+            factors to outages.
+
+            <div class="alert alert-secondary" role="alert">
+              Note that we use contributing factors and not root cause. Decades of resilience engineering research has
+              <a href="https://github.com/lorin/resilience-engineering/blob/master/intro.md">found</a> that linear
+              causality in complex adaptive systems is a widely held fallacy.
+            </div>
+
+
+          </p>
+
+          <h3> Contributing Factors</h3>
+
+          <iframe width="836.5" height="517.2358333333333" seamless frameborder="0" scrolling="no"
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQqObsJbMZjn6wWRoo95gis2t7LDAzOnBFwBqMPO7NLxJAny1dDSk31yowkaJNqxe1ayng6f0xs7jdB/pubchart?oid=332587566&amp;format=image"></iframe>
+          <br>
+
+          <p>
+            Raw <a href="https://docs.google.com/spreadsheets/d/1zCqaQWHu21zDCniuIb3GW8KJTvgPdCbzH2imxnXFuyw">data</a>
+            (skewed slighty by the large number of Zalando outages reported)
+          </p>
+
+          <h3> Resource Exhaustion </h3>
+          <p class="lead">
+            Resources are the most contributing factor in bringing down kubernetes clusters.
+
+            <li>Increase the number of fault-domains to limit the amount of over-provisioning that is required </li>
+            <li>Use nodeAffinity and/or tainting to ensure your node pool's have enough capacity</li>
+            <li>Enforce Resource Quotas to restrict both the total CPU/Memory and the number of Pods, LoadBalancers that
+              each namespace can create. </li>
+            <li>Monitor CronJobs and/or isolate them into their own namespaces. If not configured correctly they can
+              quickly
+              runaway and consume all available POD resources. </li>
+            <li>When running in the cloud be wary of API Rate Limiting on dependencies such as IAM and Container
+              Registries</li>
+          </p>
+          <h3> Overprovisioning Nodes </h3>
+          <p>
+            If you don't specify any requests than Kubernetes will schedule potentially more PODs than it has
+            resources
+            for, triggering OutOfMemory errors and/or CPU exhaustion. When this happens, the kubelet will also
+            potentially
+            start reporting unhealthy, triggering kubernetes to evict all pods and reschedule on different nodes,
+            causing
+            a cascading failure than can bring down the entire cluster. <br>
+
+            <li>Always use CPU / Memory requests </li>
+            <li>Don't over-provision memory </li>
+            <li>Consider skipping CPU limits as they come with an overhead due to kernel based throttling </li>
+
+            <blockquote class="twitter-tweet" data-conversation="none">
+              <p lang="en" dir="ltr">This is why I always advise:<br><br>1) Always set memory limit == request<br>2)
+                Never
+                set CPU limit<br><br>(for locally adjusted values of &quot;always&quot; and &quot;never&quot;)</p>
+              &mdash;
+              Tim Hockin (@thockin) <a
+                href="https://twitter.com/thockin/status/1134193838841401345?ref_src=twsrc%5Etfw">May 30, 2019</a>
+            </blockquote>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </p>
+          <h3>DNS </h3>
+          <p>
+            As the central component used in service discovery, DNS issues can affect the entire cluster
+
+            <li>Be wary of the <a
+                href="https://github.com/zalando-incubator/kubernetes-on-aws/blob/dev/docs/postmortems/jan-2019-dns-outage.md">ndots:5</a>
+              issue - it is easy to DDoS yourself </li>
+            <li> Random 2 - 5s latencies are often DNS related </li>
+            <li> Give CoreDNS extra CPU and Memory, and increase the number of replicas as needed </li>
+            <li> Consider <a href="https://kubernetes.io/docs/tasks/administer-cluster/nodelocaldns/">Node Local DNS</a>
+              for
+              DNS
+              caching
+              and reducing conntrack usage </li>
+          </p>
+          <h3> Upgrades </h3>
+          <p>
+            Outages that occur during or after upgrades feature regularly - In particular to note
+            <a
+              href="https://community.monzo.com/t/resolved-current-account-payments-may-fail-major-outage-27-10-2017/26296/95">time-bombs</a>
+            can be introduced during an upgrade that only present them at the worst possible moment (restarting your
+            infrastructure in an attempt to mitigate a partial outage, triggering a full outage)
+
+            <li>Be wary of long running pods and services, consider implementing a policy of terminating pods after a
+              set
+              period </li>
+            <li>Test both new deployments and upgrades from previous versions </li>
+
+            <h3> Networking / Ingress </h3>
+
+            <li>Understand <a
+                href="https://www.youtube.com/watch?v=0o5C12kzEDI&list=PL90QotVRoDrhRnSwLYJDrR-Ptqjh2a4xR&index=109">zero-down
+                time deployments</a> (
+              it is not as easy as you may think) </li>
+            <li>Monitor your network control plane, especially for resource exhaustion and capacity limits </li>
+          </p>
+          <h3> Application </h3>
+          <p>
+            Incorrectly configured applications can quickly lead to issues that cascade into cluster-wide failure.
+
+            <ul>
+
+              <li>Use policies to limit developer defined configuration to sensible values (See
+                [OPA](https://github.com/lorin/resilience-engineering/blob/master/intro.md)) </li>
+              <li>Enforce the use of liveness and readiness probes</li>
+              <li>Restrict replicas, and constrain deployment strategies budgets for </li>
+              <li>Ensure CronJob's are correctly configured </li>
+              <li>Avoid custom scheduling using node taints </li>
+              <li>Apply default podAntiAffinity's </li>
+
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% set contactColor = "gray" %}
+  {% include 'contact.html' %}
+</main>
+
+{% endblock %}
