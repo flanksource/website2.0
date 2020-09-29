@@ -2,4 +2,4 @@
 force = true # COMMENT: ensure that we always redirect
 from = "/kubernetes-is-not-a-container-orchestrator" 
 status = 301 
-to = "/kubernetes-is-not-a-container-orchestrator"
+to = "/blog/kubernetes-is-not-a-container-orchestrator"
