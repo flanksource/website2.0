@@ -32,3 +32,8 @@ body {
   margin-bottom: 5px;
   margin-right: 10px;
 }
+
+
+.blockquote p::before, .blockquote p::after {
+  font-size: 1.5rem;
+}
