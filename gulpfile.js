@@ -3,7 +3,6 @@
 const gulp = require('gulp');
 const webpack = require('webpack-stream');
 const webpackUglifyJs = require('uglifyjs-webpack-plugin')
-const sass = require('gulp-sass');
 const tildeImporter = require('node-sass-tilde-importer');
 const browserSync = require('browser-sync');
 const sourcemaps = require('gulp-sourcemaps');
@@ -18,6 +17,7 @@ const sequence = require('run-sequence');
 const pkg = require('./package.json')
 var nunjucksRender = require('gulp-nunjucks-render');
 
+var sass = require('gulp-sass')(require('sass'));
 var production = false;
 
 const file = {

@@ -1,0 +1,336 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<header class="header text-center text-white"
+  style="background-image: url(../assets/img/lighthouse_milkyway.jpg); padding-bottom: 0px; padding-top: 0px;"
+  data-overlay="7">
+  <canvas class="constellation" data-radius="0"></canvas>
+</header>
+
+<main class="main-content">
+
+
+  <section class="section overflow-hidden">
+    <div class="container">
+      <div class="row gap-y align-items-center">
+
+
+        <div class="col-lg-8">
+          <h1>Kubernetes @ Full Speed.</h1>
+          <p class="lead mt-5 mb-8">We help teams build and operationalise Kubernetes based platforms enabling faster,
+            more resilient value delivery to customers at <i><u>lower</u></i> cost.</p>
+          <p class="gap-xy">
+            <a class="btn btn-round btn-primary mw-150" href="/contact.html">Get in touch</a>
+          </p>
+        </div>
+        <div class="col-lg-1">
+        </div>
+
+        <div class="col-lg-3 align-self-center">
+          <img src="../assets/img/logos/kcsp.png" alt="...">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="section overflow-hidden bg-gray">
+    <div class="container">
+      <div class="row gap-y align-items-center">
+
+        <div class="col-lg-8 mx-auto" id="platform-operations">
+          <h2>How we work</h2>
+          <p class="lead mb-3">The flanksource model works by extending your team with a mix of principal and Senior
+            Site Reliability engineers who are all CKA certified, with both development and production operations
+            experience.</p>
+
+
+          <div class="row">
+            <div class="col-md-12">
+              <p>
+                <i class="ti-check text-success mr-2"></i> <b>Chat First</b> - We join your chat-rooms (Slack or MS
+                Teams) <br>
+                <i class="ti-check text-success mr-2"></i> <b>Joint Standups</b> - We join your standups to keep
+                up-to-date about your environment<br>
+
+                <i class="ti-check text-success mr-2"></i> <b>Your Issue Tracking</b> - Assign tasks directly to your
+                extending team directly in the issue tracker of your choice (Jira, ClickUp, etc)<br>
+                <i class="ti-check text-success mr-2"></i> <b>Two-Tier Oncall</b> - You get a dedicated email address
+                linked to our OpsGenie on-call rotation, enabling rapid reponse. Optionally we join your on-call system.
+
+              </p>
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+        <div class="col-lg-4 align-self-center order-md-first ">
+          <img src="../assets/img/platform-operations.svg" alt="...">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!--
+
+  <img style="height: 32px" src='../assets/img/logos/full/elastic.png'></img>
+
+
+  <img style="height: 32px" src='../assets/img/logos/full/kafka-logo-wide.png'></img>
+
+
+
+
+
+
+  <img style="height: 32px" src='../assets/img/logos/full/snow.png'></img> -->
+
+
+
+
+  <section class="section overflow-hidden">
+
+    <div class="container support">
+      <div class="row">
+        <header class="section-header col-md-12">
+          <h2>Capabilities</h2>
+          <hr>
+          <!-- <p class="lead">flanksource does not support specific, rather we augment your team with enhanced capabilities.
+          </p> -->
+        </header>
+      </div>
+
+
+      <div class="row">
+
+
+        <div class="col-md-5 ">
+          <h5><a href="#">Apps</a></h5>
+          <p class="medium opacity-75">Diving deep into your application code </p>
+        </div>
+
+        <div class="col-md-7">
+          <img style="height: 32px" src='../assets/img/logos/full/go.png'></img>
+          <img style="height: 32px" src='../assets/img/logos/full/python.png'></img>
+          <img style="height: 48px" src='../assets/img/logos/full/java.png'></img>
+          <img style="height: 48px" src='../assets/img/logos/full/spring-boot.png'></img>
+
+          <img style="height: 48px" src='../assets/img/logos/full/node.svg'></img>
+          <br><br>
+        </div>
+
+        <div class="col-md-5">
+          <h5><a href="#">Platforms</a></h5>
+          <p class="medium opacity-75">Raising the waterline for developers and reducing toil</p>
+        </div>
+
+        <div class="col-md-7">
+          <img style="height: 28px" src='../assets/img/logos/full/git-operator.svg'></img>
+          <img style="height: 28px" src='../assets/img/logos/full/template-operator.svg'></img>
+          <img style="height: 32px" src='../assets/img/logos/full/backstage.png'></img>
+          <img style="height: 32px" src='../assets/img/logos/full/vra.png'></img>
+          <br><br>
+        </div>
+
+        <div class="col-md-5">
+          <h5><a href="#">CI/CD</a></h5>
+          <p class="medium opacity-75">Enabling pipelines and automation</p>
+        </div>
+
+        <div class="col-md-7">
+
+          <img style="height: 32px" src='../assets/img/logos/full/flux.svg'></img>
+          <img style="height: 32px" src='../assets/img/logos/full/keptn.png'></img>
+          <img style="height: 32px" src='../assets/img/logos/full/argo.svg'></img>
+          <img style="height: 32px" src='../assets/img/logos/full/tekton.png'></img>
+          <img style="height: 32px" src='../assets/img/logos/full/github.png'></img>
+          <img style="height: 32px" src='../assets/img/logos/full/gitlab.png'></img>
+          <img style="height: 32px" src='../assets/img/logos/full/jenkins.svg'></img>
+          <img style="height: 32px" src='../assets/img/logos/full/sonarqube.svg'></img>
+          <img style="height: 24px" src='../assets/img/logos/full/sonatype.png'></img>
+          <img style="height: 24px" src='../assets/img/logos/full/nexus.png'></img>
+          <br><br>
+        </div>
+
+        <div class="col-md-5">
+          <h5><a href="#">Data</a></h5>
+          <p class="medium opacity-75">Commoditising data platforms using Kubernetes Operators</p>
+        </div>
+
+        <div class="col-md-7">
+          <img style="height: 32px" src='../assets/img/logos/full/cassandra.png'></img>
+
+          <img style="height: 32px" src='../assets/img/logos/full/kafka.png'></img>
+
+          <img style="height: 32px" src='../assets/img/logos/full/elastic.png'></img>
+          <img style="height: 48px" src='../assets/img/logos/full/zookeeper.png'></img>
+          <!-- <img style="height: 48px" src='../assets/img/logos/full/memcached.png'></img> -->
+          <img style="height: 32px" src='../assets/img/logos/full/mongodb.png'></img>
+
+          <img style="height: 32px" src='../assets/img/logos/full/redis.png'></img>
+          <img style="height: 24px" src='../assets/img/logos/full/rabbitmq.png'></img>
+          <img style="height: 32px" src='../assets/img/logos/full/mysql.png'></img>
+          <img style="height: 32px" src='../assets/img/logos/full/postgres.png'></img>
+          <img style="height: 48px" src='../assets/img/logos/full/sqlserver.png'></img>
+          <br><br>
+        </div>
+        <div class="col-md-5">
+          <h5><a href="#">Observability</a></h5>
+          <p class="medium opacity-75">Pro-active multi-dimensional visibility</p>
+        </div>
+
+        <div class="col-md-7">
+
+          <img style="height: 28px" src='../assets/img/logos/full/canary-checker.svg'></img>
+          <img style="height: 32px" src='../assets/img/logos/full/prometheus.png'></img>
+          <img style="height: 32px" src='../assets/img/logos/full/thanos.png'></img>
+          <img style="height: 32px" src='../assets/img/logos/full/grafana.png'></img>
+          <img style="height: 48px" src='../assets/img/logos/full/kibana.svg'></img>
+          <img style="height: 32px" src='../assets/img/logos/full/dynatrace.png'></img>
+          <br><br>
+        </div>
+
+        <div class="col-md-5">
+          <h5><a href="#">Production Runtimes</a></h5>
+          <p class="medium opacity-75">Batteries includes or BYO</p>
+        </div>
+
+        <div class="col-md-7">
+          <img style="height: 32px" src='../assets/img/logos/full/karina.png'></img>
+          <img style="height: 32px" src='../assets/img/logos/full/kube-vip.png'></img>
+          <img style="height: 32px" src='../assets/img/logos/full/linkerd.png'></img>
+          <img style="height: 32px" src='../assets/img/logos/full/istio.png'></img>
+          <img style="height: 24px" src='../assets/img/logos/full/nginx.png'></img>
+          <img style="height: 32px" src='../assets/img/logos/full/harbor.png'></img>
+          <img style="height: 32px" src='../assets/img/logos/full/nsx.png'></img>
+          <img style="height: 32px" src='../assets/img/logos/full/calico.svg'></img>
+          <img style="height: 32px" src='../assets/img/logos/full/cilium.png'></img>
+          <img style="height: 32px" src='../assets/img/logos/full/consul.png'></img>
+          <img style="height: 32px" src='../assets/img/logos/full/dex.png'></img>
+          <img style="height: 32px" src='../assets/img/logos/full/vault.svg'></img>
+          <img style="height: 48px" src='../assets/img/logos/full/opa.png'></img>
+          <br><br>
+        </div>
+
+        <div class="col-md-5">
+          <h5><a href="#">Kubernetes Distributions</a></h5>
+          <p class="medium opacity-75">Vendor agnostic </p>
+        </div>
+
+        <div class="col-md-7">
+
+          <img style="height: 48px" src='../assets/img/logos/full/kubeadm.png'></img>
+          <img style="height: 48px" src='../assets/img/logos/full/eks.png'></img>
+          <img style="height: 48px" src='../assets/img/logos/full/aks.png'></img>
+          <img style="height: 48px" src='../assets/img/logos/full/capi.png'></img>
+          <img style="height: 28px" src='../assets/img/logos/full/openshift.png'></img>
+          <img style="height: 40px" src='../assets/img/logos/full/tanzu.png'></img>
+          <img style="height: 32px" src='../assets/img/logos/full/rancher.png'></img>
+
+          <br><br>
+        </div>
+
+        <div class="col-md-5">
+          <h5><a href="#">Infrastructure</a></h5>
+          <p class="medium opacity-75">Using a GitOps based Infrastructure as Code pipeline</p>
+        </div>
+
+        <div class="col-md-7">
+          <img style="height: 32px" src='../assets/img/logos/full/aws.svg'></img>
+          <img style="height: 32px" src='../assets/img/logos/full/azure.svg'></img>
+          <img style="height: 32px" src='../assets/img/logos/full/gcp.png'></img>
+          <img style="height: 24px" src='../assets/img/logos/full/vmware.svg'></img>
+          <img style="height: 32px" src='../assets/img/logos/full/terraform.png'></img>
+          <br><br>
+        </div>
+
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section overflow-hidden">
+    <header class="section-header">
+      <h2>Subscriptions</h2>
+      <hr>
+      <!-- <p class="lead">Join thousands of satisfied customers using our template globally.</p> -->
+    </header>
+
+    <div class="container">
+      <div class="row gap-y align-items-center">
+
+
+        <div class="col-lg-4">
+          <div class="pricing-3">
+            <h4>Startup</h4>
+            <ul>
+              <li>2d response time SLA</li>
+              <li>8x10</li>
+              <li>&nbsp;</li>
+              <li>&nbsp;</li>
+              <li>&nbsp;</li>
+            </ul>
+            <br>
+            <a class="btn btn-round btn-outline-primary w-200" href="#">Get started</a>
+          </div>
+        </div>
+
+
+        <div class="col-lg-4">
+          <div class="pricing-3 bg-gray ">
+            <h4>Business</h4>
+
+            <ul>
+              <li>2h response time SLA</li>
+              <li>24x7x365</li>
+              <li>Hotfixes for Kubernetes Operators</li>
+              <li>&nbsp;</li>
+              <li>&nbsp;</li>
+            </ul>
+            <br>
+            <a class="btn btn-round btn-primary w-200" href="#">Get started</a>
+          </div>
+        </div>
+
+
+        <div class="col-lg-4">
+          <div class="pricing-3">
+            <h4>Mission Critical</h4>
+            <ul>
+              <li>1h response time SLA</li>
+              <li>24x7x365</li>
+              <li>
+                <p>2h Mitigation Target (SLO)<sup>1</sup></p>
+              </li>
+              <li>Hotfixes for Kubernetes and CNCF components</li>
+            </ul>
+            <br>
+            <a class="btn btn-round btn-outline-primary w-200" href="#">Get started</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+  </section>
+
+
+
+
+  {% set contactColor = "gray" %}
+  {% include 'contact.html' %}
+</main>
+
+
+{% endblock %}
