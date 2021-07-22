@@ -12,6 +12,10 @@
   "author": "TheThemeio",
   "homepage": "http://thetheme.io/thesaas",
   "license": "ISC",
+  "scripts": {
+    "lint:markdown": "markdownlint '**/*.md' --ignore 'node_modules' -c .markdownlint.json",
+    "fix:markdown": "markdownlint '**/*.md' --fix --ignore 'node_modules' -c .markdownlint.json"
+  },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.12.0",
     "ajv": "^6.10.2",
@@ -46,6 +50,7 @@
     "jquery-countdown": "^2.2.0",
     "jquery.photoswipe": "^1.1.1",
     "lity": "^2.4.0",
+    "markdownlint-cli": "^0.27.1",
     "node-sass-tilde-importer": "^1.0.2",
     "objectFitPolyfill": "^2.3.0",
     "popper.js": "^1.16.0",

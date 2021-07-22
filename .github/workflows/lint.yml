@@ -1,0 +1,22 @@
+name: Lint
+on:
+  push:
+    branches:
+      - master
+      - main
+  pull_request:
+    paths:
+      - 'Makefile'
+      - '**.md'
+      - '**/.markdownlint.*'
+      - '**/github/workflows/lint.yml'
+      - '**/package.json'
+jobs:
+  markdown:
+    runs-on: ubuntu-latest
+    container:
+      image: node:15.14-alpine
+    steps:
+      - uses: actions/checkout@master
+      - run: npm ci
+      - run: npm run lint:markdown
