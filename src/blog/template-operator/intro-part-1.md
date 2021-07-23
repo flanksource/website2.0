@@ -64,7 +64,7 @@ template-operator    template-operator-controller-manager-6bd8c5ff58-sz8q6   2/2
 
 ### Following the logs
 
-To follow the manager logs, open a new terminal and, changing what needs to be changed, run :
+To follow the manager logs, open a new terminal and, changing what needs to be changed, run:
 
 ```bash
 kubectl logs -f --since 10m -n template-operator \
