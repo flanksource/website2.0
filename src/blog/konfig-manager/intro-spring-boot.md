@@ -28,7 +28,7 @@ To test the deployment in browser, set up ingress to your cluster – see, for e
 ### Install
 
 ```bash
-export VERSION=0.10.0
+export VERSION=0.10.1
 # For the latest release version: https://github.com/flanksource/konfig-manager/releases
 
 # Apply the operator
@@ -55,80 +55,23 @@ The Konfig Manager makes it easy to convert a set of `ConfigMaps` and `Secrets` 
 
 The `Konfig` type allows developers to specify a `hierarchy` (defining merge inclusion and precedence) and an `output` field (defining output structure).
 
-### Step 1: Apply a konfig
+### Step 1: Apply configmaps, namespace and secrets
+
+Before you apply the `Konfig`, ensure that there are config objects in place (for the `hierarchy`, see [Step 2](#Step-2-Apply-a-konfig)):
 
 ```yaml
-cat <<EOF | kubectl apply -f -
+cat <<'EOF' | kubectl apply -f -
 kind: Namespace
 apiVersion: v1
 metadata:
   name: konfig-manager-tutorial
 ---
-apiVersion: konfigmanager.flanksource.com/v1
-kind: Konfig
-metadata:
-  name: konfig-manager-tutorial
-  namespace: konfig-manager-tutorial
-  labels:
-    app: konfig-manager-tutorial
-spec:
-  # Items with matching names, namespaces and kinds will be scraped.
-  # Values discovered in objects at the top of the hierarchy will be overwritten 
-  # by values found lower down, but will be preserved otherwise.
-  hierarchy:
-      # The name of the object to be scraped
-    - name: global
-      # The kind of the object to be scraped
-      kind: ConfigMap
-      # The namespace of the object to be scraped
-      namespace: konfig-manager-tutorial
-    - name: global
-      kind: Secret
-      namespace: konfig-manager-tutorial
-    - name: environment
-      kind: ConfigMap
-      namespace: konfig-manager-tutorial
-    - name: environment
-      kind: Secret
-      namespace: konfig-manager-tutorial
-    - name: konfig-manager-tutorial
-      kind: Secret
-      namespace: konfig-manager-tutorial
-    - name: konfig-manager-tutorial
-      kind: ConfigMap
-      namespace: konfig-manager-tutorial
-      # Causes value at the key to be treated as the data to recover.
-      key: application.properties
-      # Set parsing for value recovered from "key" to $KEY=$VALUE
-      type: properties
-  output:
-    # Name of output object  
-    name: konfig-manager-tutorial-application-properties 
-    # Namespace of output object
-    namespace: konfig-manager-tutorial 
-    # Secret or ConfigMap
-    kind: ConfigMap 
-    # Adds values as multiline text. Must be present for "key" value to be set.
-    type: file 
-    # Sets output format to $KEY=$VALUE
-    filetype: env 
-    # Adds multiline text to a key with this value.
-    key: application.properties 
-EOF
-```
-
-### Step 2: Apply configmaps and secrets
-
-So the Konfig Manager has something to scrape, apply the following, noting that the names match those in the hierarchy:
-
-```yaml
-cat <<'EOF' | kubectl apply -f -
 apiVersion: v1
 kind: ConfigMap
 metadata:
   namespace: konfig-manager-tutorial
   # The Konfig Manager will scrape values sets by name and
-  # merge them by the precedence in the hierarchy.
+  # merge them by the precedence in the hierarchy (see in section below).
   # When a variable appears multiple times, the last declared
   # value of the variable wins.
   name: global
@@ -195,6 +138,63 @@ data:
 EOF
 ```
 
+### Step 2: Apply a konfig
+
+```yaml
+cat <<EOF | kubectl apply -f -
+apiVersion: konfigmanager.flanksource.com/v1
+kind: Konfig
+metadata:
+  name: konfig-manager-tutorial
+  namespace: konfig-manager-tutorial
+  labels:
+    app: konfig-manager-tutorial
+spec:
+  # Items with matching names, namespaces and kinds will be scraped.
+  # Values discovered in objects at the top of the hierarchy will be overwritten 
+  # by values found lower down, but will be preserved otherwise.
+  hierarchy:
+      # The name of the object to be scraped
+    - name: global
+      # The kind of the object to be scraped
+      kind: ConfigMap
+      # The namespace of the object to be scraped
+      namespace: konfig-manager-tutorial
+    - name: global
+      kind: Secret
+      namespace: konfig-manager-tutorial
+    - name: environment
+      kind: ConfigMap
+      namespace: konfig-manager-tutorial
+    - name: environment
+      kind: Secret
+      namespace: konfig-manager-tutorial
+    - name: konfig-manager-tutorial
+      kind: Secret
+      namespace: konfig-manager-tutorial
+    - name: konfig-manager-tutorial
+      kind: ConfigMap
+      namespace: konfig-manager-tutorial
+      # Causes value at the key to be treated as the data to recover.
+      key: application.properties
+      # Set parsing for value recovered from "key" to $KEY=$VALUE
+      type: properties
+  output:
+    # Name of output object  
+    name: konfig-manager-tutorial-application-properties 
+    # Namespace of output object
+    namespace: konfig-manager-tutorial 
+    # Secret or ConfigMap
+    kind: ConfigMap 
+    # Adds values as multiline text. Must be present for "key" value to be set.
+    type: file 
+    # Sets output format to $KEY=$VALUE
+    filetype: env 
+    # Adds multiline text to a key with this value.
+    key: application.properties 
+EOF
+```
+
 ### Step 3: Examining the output
 
 After the Konfig Manager reconciles (see [following the logs](#Following-the-logs)), run:
@@ -212,10 +212,28 @@ metadata:
   name: konfig-manager-tutorial-application-properties
   namespace: konfig-manager-tutorial
 data:
-  application.properties: "#\n# ConfigMap/global\n#\nvariableTwo=${variableOne}-globalValueTwo\n#\n#
-    Secret/global\n#\nUSER_NAME=admin\n#\n# ConfigMap/environment\n#\nvariableOne=environmentValueOne\nvariableThree=${variableTwo}-environmentValueThree\n#\n#
-    Secret/konfig-manager-tutorial\n#\nPASSWORD=thisisapassword\n#\n# ConfigMap/konfig-manager-tutorial[application.properties]\n#\nvariableFour=${variableThree}-applicationValueFour
-    \n"
+  application.properties: |-
+    #
+    # ConfigMap/global
+    #
+    variableTwo=${variableOne}-globalValueTwo
+    #
+    # Secret/global
+    #
+    USER_NAME=admin
+    #
+    # ConfigMap/environment
+    #
+    variableOne=environmentValueOne
+    variableThree=${variableTwo}-environmentValueThree
+    #
+    # Secret/konfig-manager-tutorial
+    #
+    PASSWORD=thisisapassword
+    #
+    # ConfigMap/konfig-manager-tutorial[application.properties]
+    #
+    variableFour=${variableThree}-applicationValueFour
 ```
 
 Notice in each case that the last declared variable is preserved and that each variable group is accompanied by the name of the object which provided it.
