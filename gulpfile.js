@@ -192,5 +192,6 @@ function setDevMode(done) {
 exports.dev = gulp.series(copyFonts, scss, js);
 exports.dist = gulp.series(setProductionMode, distClean, copyFonts, scss, nunjucks, jsProductionMinified, jsProductionExpanded, distCopy, setDevMode);
 exports.watch = gulp.series(distCopy, nunjucks, serve)
+exports.buildandwatch = gulp.series(exports.dist, exports.watch)
 exports.default = exports.watch
 exports.nunjucks = nunjucks
