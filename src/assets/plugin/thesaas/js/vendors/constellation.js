@@ -164,9 +164,10 @@
       context.clearRect(0, 0, canvas.width, canvas.height);
 
       for (i = 0; i < length; i++) {
-        config.stars.push(new Star());
+        if (config.stars.length <= length) {
+          config.stars.push(new Star());
+        }
         star = config.stars[i];
-
         star.create();
       }
 
