@@ -1,3 +1,5 @@
+;`use strict`
+
 const gulp = require('gulp')
 const webpack = require('webpack-stream')
 const sass = require('gulp-sass')
@@ -8,6 +10,9 @@ const autoprefixer = require('gulp-autoprefixer')
 const rename = require('gulp-rename')
 const imagemin = require('gulp-imagemin')
 const del = require('del')
+const postcss = require('gulp-postcss')
+const tailwindcss = require('tailwindcss')
+const atimport = require('postcss-import')
 const nunjucksRender = require('gulp-nunjucks-render')
 
 let production = false
@@ -91,11 +96,7 @@ function scss() {
   return stream
 }
 
-function tailwindcss() {
-  const postcss = require('gulp-postcss')
-  const tailwindcss = require('tailwindcss')
-  const atimport = require('postcss-import')
-
+function tailwind() {
   return gulp
     .src(file.tailwind)
     .pipe(postcss([atimport(), tailwindcss('./tailwind.config.js')]))
@@ -221,7 +222,7 @@ exports.dist = gulp.series(
   setProductionMode,
   distClean,
   copyFonts,
-  tailwindcss,
+  tailwind,
   scss,
   nunjucks,
   jsProductionMinified,
