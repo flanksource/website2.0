@@ -24,6 +24,7 @@ const file = {
   html: 'src/**/*.html',
   scss: 'src/assets/scss/**/*.scss',
   js: 'src/assets/js/src/**/*.js',
+  tailwind: "src/assets/tailwind/tailwind.css"
 }
 
 const page = {
@@ -88,6 +89,22 @@ function scss() {
   }
   return stream;
 };
+
+function tailwindcss() {
+  const postcss = require("gulp-postcss");
+  const tailwindcss = require("tailwindcss");
+  const atimport = require("postcss-import");
+
+
+  return gulp.src(file.tailwind)
+    .pipe(
+      postcss([
+        atimport(),
+        tailwindcss('./tailwind.config.js')
+      ])
+    )
+    .pipe(gulp.dest(dir.css))
+}
 
 function js() {
   return gulp.src(page.js)
@@ -190,7 +207,7 @@ function setDevMode(done) {
 
 
 exports.dev = gulp.series(copyFonts, scss, js);
-exports.dist = gulp.series(setProductionMode, distClean, copyFonts, scss, nunjucks, jsProductionMinified, jsProductionExpanded, distCopy, setDevMode);
+exports.dist = gulp.series(setProductionMode, distClean, copyFonts, tailwindcss, scss, nunjucks, jsProductionMinified, jsProductionExpanded, distCopy, setDevMode);
 exports.watch = gulp.series(distCopy, nunjucks, serve)
 exports.buildandwatch = gulp.series(exports.dist, exports.watch)
 exports.default = exports.watch
