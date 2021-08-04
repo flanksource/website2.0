@@ -31,7 +31,7 @@
             md:justify-start md:space-x-10
           "
         >
-          <div class="flex justify-start flex-shrink-0 lg:w-0 lg:flex-1">
+          <div class="flex justify-start flex-shrink-0">
             <a href="/">
               <span class="sr-only">Workflow</span>
               <img class="h-8 w-auto sm:h-10" src="/assets/img/logo-dark.png""
@@ -76,7 +76,15 @@
               </svg>
             </button>
           </div>
-          <nav class="hidden md:flex space-x-10">
+          <nav
+            class="
+              hidden
+              md:flex md:justify-end
+              lg:justify-center
+              space-x-10
+              w-full
+            "
+          >
             <a
               class="
                 text-base
@@ -143,7 +151,7 @@
               Blog
             </a>
           </nav>
-          <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+          <div class="hidden lg:flex items-center justify-end">
             <a
               class="text-base font-medium text-gray-500 hover:text-gray-900"
               href="mailto:hi@flanksource.com"
@@ -484,17 +492,18 @@
         </div>
       </div>
     </footer>
+    <script src="/assets/js/tailwind.min.js"></script>
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=UA-157742796-1"
     ></script>
     <script>
-      window.dataLayer = window.dataLayer || []
+      window.dataLayer = window.dataLayer || [];
       function gtag() {
-        dataLayer.push(arguments)
+        dataLayer.push(arguments);
       }
-      gtag('js', new Date())
-      gtag('config', 'UA-157742796-1')
+      gtag("js", new Date());
+      gtag("config", "UA-157742796-1");
     </script>
   </body>
 </html>
