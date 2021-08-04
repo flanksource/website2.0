@@ -492,7 +492,15 @@
         </div>
       </div>
     </footer>
-    <script src="/assets/js/tailwind.min.js"></script>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    {% block scripts %}{% endblock %}
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=UA-157742796-1"
