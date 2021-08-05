@@ -12,4 +12,8 @@ src/assets/fonts/
 src/assets/js/page*
 dist/
 
+# build folder for v2 react site
 v2/build/
+
+# compiled v2 react html entry point
+src/v2/index.html
