@@ -2,7 +2,7 @@ import TestPage1 from "./pages/TestPage1";
 import TestPage2 from "./pages/TestPage2";
 import Home from "./pages/Home";
 
-const prefix = "/v2";
+const prefix = process.env.NODE_ENV === "production" ? "/v2" : "";
 
 export const routes = {
   home: {

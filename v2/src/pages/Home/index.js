@@ -1,13 +1,17 @@
 import React from "react";
 import { useHistory } from "react-router";
+import DefaultLayout from "../../layout/DefaultLayout";
 import { routes } from "../../routes";
 
 export default function Home() {
   const history = useHistory();
 
+  const env = process.env.NODE_ENV;
+
   return (
-    <div>
+    <DefaultLayout>
       Home!
+      <div>env: {env}</div>
       <div>
         <button
           onClick={() => {
@@ -18,6 +22,6 @@ export default function Home() {
           go to page 2
         </button>
       </div>
-    </div>
+    </DefaultLayout>
   );
 }
