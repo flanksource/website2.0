@@ -147,10 +147,10 @@ export default function SiteHeader() {
                 </div>
                 <div className="py-6 px-5 space-y-6">
                   <a
-                    href="mailto:hi@flanksource.com"
+                    href={routes.contact.path}
                     className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700"
                   >
-                    Write us an Email
+                    Contact Us
                   </a>
                 </div>
               </div>
