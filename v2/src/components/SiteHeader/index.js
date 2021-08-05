@@ -1,4 +1,3 @@
-/* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import {
@@ -11,43 +10,42 @@ import {
   AnnotationIcon
 } from "@heroicons/react/outline";
 import { routes } from "../../routes";
-
 import flanksourceLogo from "../../assets/images/flanksource.svg";
 
-const navbarItems = [
-  {
-    name: "About",
-    description: "About Flanksource",
-    href: "/about", // replace with path from routes.js
-    icon: UserIcon
-  },
-  {
-    name: "Services",
-    description: "Services we offer",
-    href: "/services", // replace with path from routes.js
-    icon: ViewGridIcon
-  },
-  {
-    name: "Open Source",
-    description: "Services we offer",
-    href: "/open-source", // replace with path from routes.js
-    icon: LightBulbIcon
-  },
-  {
-    name: "Careers",
-    description: "Services we offer",
-    href: "/careers", // replace with path from routes.js
-    icon: BriefcaseIcon
-  },
-  {
-    name: "Blog",
-    description: "Services we offer",
-    href: "/blog", // replace with path from routes.js
-    icon: AnnotationIcon
-  }
-];
-
 export default function SiteHeader() {
+  const navbarItems = [
+    {
+      name: "About",
+      description: "About Flanksource",
+      href: routes.about.path,
+      icon: UserIcon
+    },
+    {
+      name: "Services",
+      description: "Services we offer",
+      href: routes.services.path,
+      icon: ViewGridIcon
+    },
+    {
+      name: "Open Source",
+      description: "Services we offer",
+      href: routes.openSource.path,
+      icon: LightBulbIcon
+    },
+    {
+      name: "Careers",
+      description: "Services we offer",
+      href: routes.careers.path,
+      icon: BriefcaseIcon
+    },
+    {
+      name: "Blog",
+      description: "Services we offer",
+      href: routes.blog.path,
+      icon: AnnotationIcon
+    }
+  ];
+
   return (
     <Popover className="relative bg-white">
       {({ open }) => (
