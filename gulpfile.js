@@ -10,9 +10,6 @@ const autoprefixer = require("gulp-autoprefixer");
 const rename = require("gulp-rename");
 const imagemin = require("gulp-imagemin");
 const del = require("del");
-const postcss = require("gulp-postcss");
-const tailwindcss = require("tailwindcss");
-const atimport = require("postcss-import");
 const nunjucksRender = require("gulp-nunjucks-render");
 
 let production = false;
@@ -68,13 +65,6 @@ function nunjucks() {
       // output files in app folder
       .pipe(gulp.dest("dist"))
   );
-}
-
-function tailwindStyles() {
-  return gulp
-    .src(file.tailwind)
-    .pipe(postcss([atimport(), tailwindcss("./tailwind.config.js")]))
-    .pipe(gulp.dest(dir.css));
 }
 
 // copy contents of create-react-app build folder to ./dist/ (except for index.html)
@@ -242,7 +232,6 @@ exports.dist = gulp.series(
   exports.react,
   theSaasScss,
   nunjucks,
-  tailwindStyles,
   theSaasJsProductionMinified,
   theSaasJsProductionExpanded,
   distCopy,
