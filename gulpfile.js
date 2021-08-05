@@ -14,8 +14,6 @@ const postcss = require("gulp-postcss");
 const tailwindcss = require("tailwindcss");
 const atimport = require("postcss-import");
 const nunjucksRender = require("gulp-nunjucks-render");
-const babel = require("gulp-babel");
-const plumber = require("gulp-plumber");
 
 let production = false;
 
@@ -51,8 +49,8 @@ function serve(done) {
 
   gulp.watch(file.scss, theSaasScss); // watch changes to theSaas-related scss files
   gulp.watch(file.js, gulp.series(theSaasJs, reload)); // watch changes to theSaas-related js files
+  gulp.watch("v2/build/**/*", gulp.series(reactApp, reactEntryPoint, reload)); // watch react build folder
   gulp.watch(file.html, gulp.series(nunjucks, reload)); // watch changes to html files
-  gulp.watch(file.components, gulp.series(reactComponents, reload)); // watch changes to React components
   done();
 }
 
@@ -79,30 +77,16 @@ function tailwindStyles() {
     .pipe(gulp.dest(dir.css));
 }
 
-// Transpile React components with Babel
-function reactComponents() {
-  return (
-    gulp
-      .src(file.components)
-      // Stop the process if an error is thrown.
-      .pipe(plumber())
-      .pipe(
-        babel({
-          presets: ["@babel/preset-env", "@babel/preset-react"],
-          plugins: [
-            "@babel/plugin-transform-runtime",
-            {
-              corejs: 2,
-              helpers: true,
-              regenerator: true,
-              useESModules: true
-            }
-          ]
-        })
-      )
-      // Save each component as a separate file in dist.
-      .pipe(gulp.dest(dir.components))
-  );
+// copy contents of create-react-app build folder to ./dist/ (except for index.html)
+function reactApp() {
+  return gulp
+    .src(["v2/build/**/*", "!v2/build/index.html"])
+    .pipe(gulp.dest("dist/"));
+}
+
+// copy the built index.html from create-react-app to src/v2/ folder
+function reactEntryPoint() {
+  return gulp.src("v2/build/index.html").pipe(gulp.dest("src/v2/"));
 }
 
 function theSaasScss() {
@@ -203,7 +187,7 @@ function distCopy() {
     .src([
       "src/**/*",
       "!src/assets/{js/src,plugin/thesaas,scss}{,/**}",
-      "!src/components/**/*",
+      "!src/v2/**/*",
       "!src/**/*.html"
     ])
     .pipe(gulp.dest("dist/"));
@@ -249,15 +233,16 @@ function setDevMode(done) {
   done();
 }
 
+exports.react = gulp.series(reactApp, reactEntryPoint);
 exports.dev = gulp.series(copyFonts, theSaasScss, theSaasJs);
 exports.dist = gulp.series(
   setProductionMode,
   distClean,
   copyFonts,
+  exports.react,
   theSaasScss,
   nunjucks,
   tailwindStyles,
-  reactComponents,
   theSaasJsProductionMinified,
   theSaasJsProductionExpanded,
   distCopy,
