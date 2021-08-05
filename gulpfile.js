@@ -79,7 +79,7 @@ function tailwindStyles() {
     .pipe(gulp.dest(dir.css));
 }
 
-// Transpile React components with Babel's react preset
+// Transpile React components with Babel
 function reactComponents() {
   return (
     gulp
@@ -88,7 +88,16 @@ function reactComponents() {
       .pipe(plumber())
       .pipe(
         babel({
-          presets: ["@babel/preset-react"]
+          presets: ["@babel/preset-env", "@babel/preset-react"],
+          plugins: [
+            "@babel/plugin-transform-runtime",
+            {
+              corejs: 2,
+              helpers: true,
+              regenerator: true,
+              useESModules: true
+            }
+          ]
         })
       )
       // Save each component as a separate file in dist.
