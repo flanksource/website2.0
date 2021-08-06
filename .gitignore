@@ -12,6 +12,8 @@ src/assets/fonts/
 src/assets/js/page*
 dist/
 
+.vscode
+
 # build folder for v2 react site
 v2/build/
 
