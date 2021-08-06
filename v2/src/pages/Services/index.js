@@ -1,7 +1,6 @@
 import React from "react";
 import DefaultLayout from "../../layout/DefaultLayout";
 import HeaderWithBackground from "../../components/HeaderWithBackground";
-import Container from "../../components/Container";
 import LogoCloud from "../../components/LogoCloud";
 import LinkButton from "../../components/LinkButton";
 import FeatureListSection from "../../components/FeatureListSection";
@@ -10,7 +9,7 @@ import FeatureSectionGrid from "../../components/FeatureSectionGrid";
 import { InboxIcon, TrashIcon, UsersIcon } from "@heroicons/react/outline";
 
 export default function Services() {
-  const env = process.env.NODE_ENV;
+  // const env = process.env.NODE_ENV;
 
   return (
     <DefaultLayout>

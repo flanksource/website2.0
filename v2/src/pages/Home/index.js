@@ -1,10 +1,10 @@
 import React from "react";
 import DefaultLayout from "../../layout/DefaultLayout";
 import HeroSimpleCentered from "../../components/HeroSimpleCentered";
-import Container from "../../components/Container";
+// import Container from "../../components/Container";
 
 export default function Home() {
-  const env = process.env.NODE_ENV;
+  // const env = process.env.NODE_ENV;
 
   return (
     <DefaultLayout>
