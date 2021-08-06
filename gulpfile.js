@@ -72,7 +72,7 @@ function nunjucks() {
 }
 
 function buildReact() {
-  return gulp.src("/").pipe(exec(() => `cd v2 && npm i && npm run build`));
+  return gulp.src("/").pipe(exec(() => `cd v2 && npm ci && npm run build`));
 }
 
 // copy contents of create-react-app build folder to ./dist/ (except for index.html)

@@ -4,6 +4,7 @@ module.exports = {
     commonjs: true,
     es2020: true
   },
+  root: true,
   extends: ["eslint:recommended", "prettier"],
   plugins: ["prettier"],
   parserOptions: {

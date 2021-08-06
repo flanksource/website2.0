@@ -5,7 +5,6 @@ node_modules
 *.min.css.map
 *.map
 .DS_Store
-package-lock.json
 src/assets/fonts/
 src/assets/css/
 src/assets/fonts/
@@ -19,3 +18,4 @@ v2/build/
 
 # compiled v2 react html entry point
 src/v2/index.html
+
