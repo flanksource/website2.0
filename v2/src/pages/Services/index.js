@@ -2,6 +2,7 @@ import React from "react";
 import DefaultLayout from "../../layout/DefaultLayout";
 import HeaderWithBackground from "../../components/HeaderWithBackground";
 import Container from "../../components/Container";
+import LogoCloud from "../../components/LogoCloud";
 import LinkButton from "../../components/LinkButton";
 
 export default function Services() {
@@ -31,7 +32,33 @@ export default function Services() {
         }
       />
 
-      <Container>lol</Container>
+      <Container>
+        <LogoCloud
+          title="Happy Teams"
+          srcList={[
+            {
+              src: "https://tailwindui.com/img/logos/tuple-logo-gray-400.svg",
+              alt: "Tuple"
+            },
+            {
+              src: "https://tailwindui.com/img/logos/statickit-logo-gray-400.svg",
+              alt: "StaticKit"
+            },
+            {
+              src: "https://tailwindui.com/img/logos/transistor-logo-gray-400.svg",
+              alt: "Transistor"
+            },
+            {
+              src: "https://tailwindui.com/img/logos/workcation-logo-gray-400.svg",
+              alt: "Workcation"
+            },
+            {
+              src: "https://tailwindui.com/img/logos/mirage-logo-gray-400.svg",
+              alt: "Mirage"
+            }
+          ]}
+        />
+      </Container>
     </DefaultLayout>
   );
 }
