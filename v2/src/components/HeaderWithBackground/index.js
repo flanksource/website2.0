@@ -4,10 +4,14 @@ export default function HeaderWithBackground({
   title,
   subtitle,
   actions,
+  bgColor,
   ...props
 }) {
   return (
-    <div className="relative bg-blue-800">
+    <div
+      className={`relative ${bgColor ? "" : "bg-blue-800"}`}
+      style={{ backgroundColor: bgColor ? bgColor : "" }}
+    >
       <div className="absolute inset-0">
         <img
           className="w-full h-full object-cover"
@@ -15,7 +19,10 @@ export default function HeaderWithBackground({
           alt=""
         />
         <div
-          className="absolute inset-0 bg-blue-800 mix-blend-multiply"
+          className={`absolute inset-0 mix-blend-multiply ${
+            bgColor ? "" : "bg-blue-800"
+          }`}
+          style={{ backgroundColor: bgColor ? bgColor : "" }}
           aria-hidden="true"
         />
       </div>
