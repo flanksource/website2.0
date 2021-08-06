@@ -1,6 +1,7 @@
 `use strict`;
 
 const gulp = require("gulp");
+const exec = require("gulp-exec");
 const webpack = require("webpack-stream");
 const sass = require("gulp-sass");
 const tildeImporter = require("node-sass-tilde-importer");
@@ -46,7 +47,10 @@ function serve(done) {
 
   gulp.watch(file.scss, theSaasScss); // watch changes to theSaas-related scss files
   gulp.watch(file.js, gulp.series(theSaasJs, reload)); // watch changes to theSaas-related js files
-  gulp.watch("v2/build/**/*", gulp.series(reactApp, reactEntryPoint, reload)); // watch react build folder
+  gulp.watch(
+    "v2/build/**/*",
+    gulp.series(copyReactFiles, copyReactEntryPoint, reload)
+  ); // watch react build folder
   gulp.watch(file.html, gulp.series(nunjucks, reload)); // watch changes to html files
   done();
 }
@@ -67,15 +71,19 @@ function nunjucks() {
   );
 }
 
+function buildReact() {
+  return gulp.src("/").pipe(exec(() => `cd v2 && npm i && npm run build`));
+}
+
 // copy contents of create-react-app build folder to ./dist/ (except for index.html)
-function reactApp() {
+function copyReactFiles() {
   return gulp
     .src(["v2/build/**/*", "!v2/build/index.html"])
     .pipe(gulp.dest("dist/"));
 }
 
 // copy the built index.html from create-react-app to src/v2/ folder
-function reactEntryPoint() {
+function copyReactEntryPoint() {
   return gulp.src("v2/build/index.html").pipe(gulp.dest("src/v2/"));
 }
 
@@ -223,7 +231,7 @@ function setDevMode(done) {
   done();
 }
 
-exports.react = gulp.series(reactApp, reactEntryPoint);
+exports.react = gulp.series(buildReact, copyReactFiles, copyReactEntryPoint);
 exports.dev = gulp.series(copyFonts, theSaasScss, theSaasJs);
 exports.dist = gulp.series(
   setProductionMode,
