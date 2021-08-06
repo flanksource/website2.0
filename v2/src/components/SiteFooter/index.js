@@ -1,4 +1,5 @@
 import { routes } from "../../routes";
+import flanksourceLogo from "../../assets/images/flanksource.svg";
 
 export default function SiteFooter() {
   const navigation = {
@@ -47,10 +48,16 @@ export default function SiteFooter() {
   };
 
   return (
-    <footer className="bg-white">
-      <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+    <footer className="bg-white border-t border-gray-100">
+      <div className="max-w-6xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+        <div className="flex justify-center space-x-6">
+          <a href={routes.home.path}>
+            <span className="sr-only">Flanksource Logo</span>
+            <img className="h-10 w-auto sm:h-12" src={flanksourceLogo} alt="" />
+          </a>
+        </div>
         <nav
-          className="-mx-5 -my-2 flex flex-wrap justify-center"
+          className="-mx-5 mt-4 flex flex-wrap justify-center"
           aria-label="Footer"
         >
           {navigation.main.map((item) => (
@@ -64,7 +71,7 @@ export default function SiteFooter() {
             </div>
           ))}
         </nav>
-        <div className="mt-8 flex justify-center space-x-6">
+        <div className="mt-6 flex justify-center space-x-6">
           {navigation.social.map((item) => (
             <a
               key={item.name}

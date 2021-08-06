@@ -1,5 +1,6 @@
 import TestPage1 from "./pages/TestPage";
 import Home from "./pages/Home";
+import Services from "./pages/Services";
 
 const prefix = process.env.NODE_ENV === "production" ? "/v2" : "";
 
@@ -19,7 +20,7 @@ export const routes = {
     name: "Services",
     exact: true,
     path: `${prefix}/services`,
-    component: <TestPage1 />
+    component: <Services />
   },
   openSource: {
     name: "Open Source",
