@@ -10,6 +10,8 @@ import {
   AnnotationIcon
 } from "@heroicons/react/outline";
 import { routes } from "../../routes";
+import { Link } from "react-router-dom";
+
 import flanksourceLogo from "../../assets/images/flanksource.svg";
 
 export default function SiteHeader() {
@@ -53,14 +55,14 @@ export default function SiteHeader() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="flex justify-between items-center py-4 md:space-x-10">
               <div className="flex justify-start">
-                <a href={routes.home.path}>
+                <Link to={routes.home.path}>
                   <span className="sr-only">Flanksource Logo</span>
                   <img
                     className="h-10 w-auto sm:h-12"
                     src={flanksourceLogo}
                     alt=""
                   />
-                </a>
+                </Link>
               </div>
 
               <div className="-mr-2 -my-2 md:hidden">
@@ -73,12 +75,12 @@ export default function SiteHeader() {
               <Popover.Group as="nav" className="hidden md:flex space-x-10">
                 {navbarItems.map((item) => {
                   return (
-                    <a
-                      href={item.href}
+                    <Link
+                      to={item.href}
                       className="text-base font-medium text-gray-500 hover:text-gray-900"
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   );
                 })}
               </Popover.Group>
@@ -128,9 +130,9 @@ export default function SiteHeader() {
                   <div className="mt-6">
                     <nav className="grid gap-y-8">
                       {navbarItems.map((item) => (
-                        <a
+                        <Link
                           key={item.name}
-                          href={item.href}
+                          to={item.href}
                           className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                         >
                           <item.icon
@@ -140,18 +142,18 @@ export default function SiteHeader() {
                           <span className="ml-3 text-base font-medium text-gray-900">
                             {item.name}
                           </span>
-                        </a>
+                        </Link>
                       ))}
                     </nav>
                   </div>
                 </div>
                 <div className="py-6 px-5 space-y-6">
-                  <a
-                    href={routes.contact.path}
+                  <Link
+                    to={routes.contact.path}
                     className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700"
                   >
                     Contact Us
-                  </a>
+                  </Link>
                 </div>
               </div>
             </Popover.Panel>

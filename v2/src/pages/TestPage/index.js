@@ -1,13 +1,18 @@
 import React from "react";
 import DefaultLayout from "../../layout/DefaultLayout";
+import Container from "../../components/Container";
 
 export default function TestPage() {
   const env = process.env.NODE_ENV;
 
   return (
     <DefaultLayout>
-      Test Page!
-      <div>env: {env}</div>
+      <Container>
+        <div className="mt-12">
+          <div class="text-3xl font-extrabold text-gray-900">Test Page</div>
+          <div>env: {env}</div>
+        </div>
+      </Container>
     </DefaultLayout>
   );
 }

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function LinkButton({ href, size, theme, shadow, children }) {
   // @TODO: implement size prop
 
@@ -24,12 +26,12 @@ export default function LinkButton({ href, size, theme, shadow, children }) {
 
   return (
     <div className={`${shadow ? "shadow" : ""}rounded-md`}>
-      <a
-        href={href}
+      <Link
+        to={href}
         className={`${themeClass} w-full flex whitespace-nowrap items-center justify-center px-3 py-3 border border-transparent text-base font-medium rounded-md  md:py-4 md:text-lg md:px-10`}
       >
         {children}
-      </a>
+      </Link>
     </div>
   );
 }

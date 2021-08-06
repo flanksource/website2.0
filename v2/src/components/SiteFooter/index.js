@@ -1,4 +1,5 @@
 import { routes } from "../../routes";
+import { Link } from "react-router-dom";
 import flanksourceLogo from "../../assets/images/flanksource.svg";
 
 export default function SiteFooter() {
@@ -51,10 +52,10 @@ export default function SiteFooter() {
     <footer className="bg-white border-t border-gray-100">
       <div className="max-w-6xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
         <div className="flex justify-center space-x-6">
-          <a href={routes.home.path}>
+          <Link to={routes.home.path}>
             <span className="sr-only">Flanksource Logo</span>
             <img className="h-10 w-auto sm:h-12" src={flanksourceLogo} alt="" />
-          </a>
+          </Link>
         </div>
         <nav
           className="-mx-5 mt-4 flex flex-wrap justify-center"

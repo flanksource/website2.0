@@ -7,6 +7,7 @@ import FeatureListSection from "../../components/FeatureListSection";
 import FeatureSectionGrid from "../../components/FeatureSectionGrid";
 
 import { InboxIcon, TrashIcon, UsersIcon } from "@heroicons/react/outline";
+import { routes } from "../../routes";
 
 export default function Services() {
   // const env = process.env.NODE_ENV;
@@ -24,10 +25,10 @@ export default function Services() {
         actions={
           <>
             <div className="rounded-md shadow flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
-              <LinkButton href="/contact" theme="light">
+              <LinkButton href="#" theme="light">
                 Read the case study
               </LinkButton>
-              <LinkButton href="/contact" theme="dark">
+              <LinkButton href={routes.contact.path} theme="dark">
                 Get started
               </LinkButton>
             </div>
