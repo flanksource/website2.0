@@ -26,34 +26,61 @@ export default function FeatureSectionGrid({
   title,
   subtitle,
   className,
+  dark,
   ...props
 }) {
   return (
-    <div className={`${className}`}>
-      <div className="max-w-4xl mx-auto px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:max-w-6xl lg:pt-24 lg:px-8">
-        <h2 className="text-3xl font-extrabold text-white tracking-tight">
+    <div className={className} {...props}>
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:max-w-6xl lg:px-8">
+        <h2
+          className={`text-3xl font-extrabold tracking-tight flex justify-center text-center ${
+            dark ? "text-white" : "text-gray-900"
+          }`}
+        >
           {title}
         </h2>
-        <p className="mt-4 max-w-3xl text-lg text-indigo-200">{subtitle}</p>
-        <div className="mt-2 lg:mt-4 flex flex-wrap justify-between">
+        <p
+          className={`mt-4 text-lg text-center ${
+            dark ? "text-indigo-200 " : "text-gray-500"
+          }`}
+        >
+          {subtitle}
+        </p>
+        <div className="mt-4 lg:mt-8 flex flex-wrap justify-center">
           {features.map((feature) => (
             <div
               key={feature.name}
-              className="w-full max-w-none lg:max-w-md xl:max-w-sm pr-4 pt-8"
+              className="w-full max-w-xs mr-4 pr-4 pt-8 md:mb-6"
             >
-              <div>
-                <span className="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-10">
-                  <feature.icon
-                    className="h-6 w-6 text-white"
+              <div className="flex justify-center">
+                <span
+                  className={`flex items-center justify-center h-12 w-12 rounded-md bg-opacity-10 ${
+                    dark ? "bg-white" : "bg-gray-900"
+                  }`}
+                >
+                  <div
+                    className={`h-6 w-6 ${
+                      dark ? "text-white" : "text-gray-900"
+                    }`}
                     aria-hidden="true"
-                  />
+                  >
+                    {feature.icon}
+                  </div>
                 </span>
               </div>
-              <div className="mt-6">
-                <h3 className="text-lg font-medium text-white">
+              <div className="mt-4 text-center">
+                <h3
+                  className={`text-lg font-medium ${
+                    dark ? "text-white" : "text-gray-900"
+                  }`}
+                >
                   {feature.name}
                 </h3>
-                <p className="mt-2 text-base text-indigo-200">
+                <p
+                  className={`mt-1 text-base ${
+                    dark ? "text-indigo-200" : "text-gray-900"
+                  }`}
+                >
                   {feature.description}
                 </p>
               </div>

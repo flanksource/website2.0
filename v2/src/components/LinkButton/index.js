@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
 
-export default function LinkButton({ href, size, theme, shadow, children }) {
+export default function LinkButton({
+  href,
+  size,
+  theme,
+  shadow,
+  children,
+  className
+}) {
   // @TODO: implement size prop
 
   // @TODO: expand on primary, secondary classes
@@ -25,7 +32,7 @@ export default function LinkButton({ href, size, theme, shadow, children }) {
   }
 
   return (
-    <div className={`${shadow ? "shadow" : ""}rounded-md`}>
+    <div className={`rounded-md ${shadow ? "shadow" : ""} ${className}`}>
       <Link
         to={href}
         className={`${themeClass} w-full flex whitespace-nowrap items-center justify-center px-3 py-3 border border-transparent text-base font-medium rounded-md  md:py-4 md:text-lg md:px-10`}

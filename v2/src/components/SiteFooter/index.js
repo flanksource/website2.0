@@ -63,12 +63,12 @@ export default function SiteFooter() {
         >
           {navigation.main.map((item) => (
             <div key={item.name} className="px-5 py-2">
-              <a
-                href={item.href}
+              <Link
+                to={item.href}
                 className="text-base text-gray-500 hover:text-gray-900"
               >
                 {item.name}
-              </a>
+              </Link>
             </div>
           ))}
         </nav>

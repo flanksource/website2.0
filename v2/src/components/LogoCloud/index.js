@@ -8,9 +8,9 @@
 //   ...
 // ];
 
-export default function LogoCloud({ srcList, title, ...props }) {
+export default function LogoCloud({ srcList, title, className, ...props }) {
   return (
-    <div className="bg-white py-16 lg:py-24" {...props}>
+    <div className={className} {...props}>
       <div className="flex justify-center mb-6">
         <h2 className="text-3xl font-extrabold text-gray-900">{title}</h2>
       </div>
