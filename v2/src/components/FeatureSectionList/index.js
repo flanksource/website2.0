@@ -63,7 +63,7 @@ export default function FeatureSectionList({
           </p>
         </div>
         <div className="mt-12 lg:mt-2 lg:col-span-2">
-          <div className="flex flex-col space-y-8">
+          <div className="flex flex-col space-y-6">
             {features.map((feature) => (
               <div key={feature.name} className="relative ml-0 lg:ml-16">
                 <dt>

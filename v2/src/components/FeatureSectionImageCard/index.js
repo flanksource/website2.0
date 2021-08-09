@@ -14,21 +14,21 @@ export default function FeatureSectionImageCard({
   return (
     <div className={`relative overflow-hidden ${className}`}>
       <div className="relative">
-        <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
+        <div className="lg:mx-auto lg:max-w-6xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
           <div
             className={`mt-12 mb-16 lg:mb-0 sm:mt-16 lg:mt-0 ${
               flipped ? "col-start-2" : ""
             } ${noOverflow ? "flex justify-center lg:block" : ""}`}
           >
             <div
-              className={`lg:px-0 lg:m-0 lg:relative lg:h-full ${
+              className={`lg:px-0 lg:m-0 lg:relative lg:h-full flex flex-col justify-center ${
                 noOverflow
                   ? "px-4 sm:px-8 max-w-xl lg:max-w-none w-full"
                   : "pl-4 sm:pl-6 -mr-48  md:-mr-16"
               }`}
             >
               <img
-                className={`w-full  lg:absolute lg:h-full lg:w-auto lg:max-w-none ${
+                className={`w-full lg:absolute ${
                   flipped ? "lg:right-0" : "lg:left-0"
                 } ${
                   noBorder

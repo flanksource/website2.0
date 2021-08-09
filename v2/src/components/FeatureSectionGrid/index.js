@@ -50,7 +50,7 @@ export default function FeatureSectionGrid({
           {features.map((feature) => (
             <div
               key={feature.name}
-              className="w-full max-w-xs mr-4 pr-4 pt-8 md:mb-6"
+              className="w-full max-w-xs pt-8 pb-4 md:mb-6 md:pr-6 "
             >
               <div className="flex justify-center">
                 <span

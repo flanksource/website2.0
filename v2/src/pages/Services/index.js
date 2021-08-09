@@ -17,6 +17,14 @@ import {
   ShieldCheckIcon,
   LightningBoltIcon
 } from "@heroicons/react/outline";
+
+import quickstartImage from "../../assets/images/illustrations/quickstart.svg";
+import internalPlatformsImage from "../../assets/images/illustrations/internal-platforms.svg";
+import platformOperationsImage from "../../assets/images/illustrations/platform-operations.svg";
+import cloudDevopsImage from "../../assets/images/illustrations/cloud-devops-acceleration.svg";
+import costValueImage from "../../assets/images/illustrations/cost-value.svg";
+import resilienceReviewImage from "../../assets/images/illustrations/resilience-review.svg";
+
 import { routes } from "../../routes";
 import HeaderSimpleCentered from "../../components/HeaderSimpleCentered";
 
@@ -72,7 +80,7 @@ export default function Services() {
             alt: "Mirage"
           }
         ]}
-        className={"py-28"}
+        className={"py-20 bg-gray-50"}
       />
 
       <FeatureSectionGrid
@@ -101,7 +109,7 @@ export default function Services() {
             icon: <LightningBoltIcon />
           }
         ]}
-        className="pt-8 pb-28"
+        className="pt-20 lg:pt-28 pb-28"
       />
 
       <FeatureSectionImage
@@ -139,6 +147,7 @@ export default function Services() {
           }
         ]}
         imageSrc="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
+        className="bg-gray-50 pb-8"
       />
 
       <FeatureSectionList
@@ -175,10 +184,25 @@ export default function Services() {
             title: "Self-service, secure DevOps pipeline setup "
           }
         ]}
-        className="pt-20 pb-12"
+        className="pt-8 pb-12"
       />
 
-      <CardSection />
+      <CardSection
+        caption="Customer Story:"
+        title="From slowed deployment to a secure on-premise platform"
+        description="See how flanksource streamlined and improved the Kubernetes
+      infrastructure for a leading insurance and financial services
+      company."
+        actions={
+          <Link
+            to="/" // @TODO: Change to a correct link
+            className="mt-8 bg-white border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-blue-600 hover:bg-indigo-50"
+          >
+            Read the case study
+          </Link>
+        }
+        className="pb-24"
+      />
 
       <HeaderSimpleCentered
         title="Unlimited scaling to fit your exact needs"
@@ -189,7 +213,7 @@ export default function Services() {
             needs. Zero license fees or service contracts to get started.
           </>
         }
-        className="py-20 pt-32 lg:pt-40 lg:py-24"
+        className="pt-8 lg:pt-20"
       />
 
       <FeatureSectionImageCard
@@ -198,139 +222,117 @@ export default function Services() {
           <>
             Be production ready in 60 days. GitOps managed clusters on-premise
             or in the cloud and delivered via the IaC tooling of your choice.
+            <ul className="mt-4 list-disc list-outside ml-6 space-y-2">
+              <li>Production-grade with built-in security and monitoring</li>
+              <li>
+                Operational playbooks for day-to-day operations and disaster
+                recovery
+              </li>
+              <li>
+                Accelerated, guardrail-driven onboarding of new applications and
+                teams
+              </li>
+            </ul>
           </>
         }
-        imageSrc={
-          "https://d33wubrfki0l68.cloudfront.net/f419aba6979c68bf503e2c13505ab3a28202b11b/173b8/assets/img/resilience-review.svg"
-        }
+        imageSrc={quickstartImage}
         actions={
-          <>
+          <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 space-y-0 md:space-x-4">
             <Link
               to="/" // @TODO: Change to a correct link
-              className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
+              className="inline-flex self-start whitespace-nowrap px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
             >
               Get Started
             </Link>
-          </>
+            <Link
+              to="/" // @TODO: Change to a correct link
+              className="inline-flex self-start whitespace-nowrap px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm border-gray-400"
+            >
+              Meet Karina, our flagship toolkit
+            </Link>
+          </div>
         }
-        className="py-12 lg:py-20"
+        className="py-12 lg:py-16"
         noBorder
         noOverflow
         flipped
       />
       <FeatureSectionImageCard
-        title="Kubernetes Quickstart"
+        title="Internal Platform Development"
         description={
           <>
-            Be production ready in 60 days. GitOps managed clusters on-premise
-            or in the cloud and delivered via the IaC tooling of your choice.
+            Internal Platform development and operations raises the watermark,
+            freeing developers from the need to become experts in CI/CD and
+            infrastructure, letting them focus on delivering better business
+            value.
           </>
         }
-        imageSrc={
-          "https://d33wubrfki0l68.cloudfront.net/f419aba6979c68bf503e2c13505ab3a28202b11b/173b8/assets/img/resilience-review.svg"
-        }
+        imageSrc={internalPlatformsImage}
         actions={
           <>
             <Link
               to="/" // @TODO: Change to a correct link
               className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
             >
-              Get Started
+              Browse our template library
             </Link>
           </>
         }
-        className="py-12 lg:py-20"
+        className="py-12 lg:py-16"
         noBorder
         noOverflow
       />
       <FeatureSectionImageCard
-        title="Kubernetes Quickstart"
+        title="Managed Services"
         description={
           <>
-            Be production ready in 60 days. GitOps managed clusters on-premise
-            or in the cloud and delivered via the IaC tooling of your choice.
+            For teams without the capability or capacity for production
+            operations, get end-to-end service based on an SRE mindset and
+            principles.
+            <ul className="py-6 list-disc space-y-2 list-inside">
+              <li>
+                <b>24/7/365 availability</b>
+              </li>
+              <li>
+                <b>Two-Tier Oncall</b>
+              </li>
+            </ul>
+            You get a dedicated email address linked to our OpsGenie on-call
+            rotation, enabling rapid response. Optionally, we join your on-call
+            system.
           </>
         }
-        imageSrc={
-          "https://d33wubrfki0l68.cloudfront.net/f419aba6979c68bf503e2c13505ab3a28202b11b/173b8/assets/img/resilience-review.svg"
-        }
+        imageSrc={platformOperationsImage}
         actions={
-          <>
+          <div className="space-x-4">
             <Link
               to="/" // @TODO: Change to a correct link
               className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
             >
               Get Started
             </Link>
-          </>
-        }
-        className="py-12 lg:py-20"
-        noBorder
-        noOverflow
-        flipped
-      />
-      <FeatureSectionImageCard
-        title="Kubernetes Quickstart"
-        description={
-          <>
-            Be production ready in 60 days. GitOps managed clusters on-premise
-            or in the cloud and delivered via the IaC tooling of your choice.
-          </>
-        }
-        imageSrc={
-          "https://d33wubrfki0l68.cloudfront.net/f419aba6979c68bf503e2c13505ab3a28202b11b/173b8/assets/img/resilience-review.svg"
-        }
-        actions={
-          <>
             <Link
               to="/" // @TODO: Change to a correct link
-              className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
+              className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm border-gray-400"
             >
-              Get Started
+              Explore Canary Checker
             </Link>
-          </>
+          </div>
         }
-        className="py-12 lg:py-20"
-        noBorder
-        noOverflow
-      />
-      <FeatureSectionImageCard
-        title="Kubernetes Quickstart"
-        description={
-          <>
-            Be production ready in 60 days. GitOps managed clusters on-premise
-            or in the cloud and delivered via the IaC tooling of your choice.
-          </>
-        }
-        imageSrc={
-          "https://d33wubrfki0l68.cloudfront.net/f419aba6979c68bf503e2c13505ab3a28202b11b/173b8/assets/img/resilience-review.svg"
-        }
-        actions={
-          <>
-            <Link
-              to="/" // @TODO: Change to a correct link
-              className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
-            >
-              Get Started
-            </Link>
-          </>
-        }
-        className="py-12 lg:py-20"
+        className="py-12 lg:py-16"
         noBorder
         noOverflow
         flipped
       />
       <FeatureSectionImageCard
-        title="Kubernetes Quickstart"
+        title="Kubernetes Migrations"
         description={
           <>
-            Be production ready in 60 days. GitOps managed clusters on-premise
-            or in the cloud and delivered via the IaC tooling of your choice.
+            Migrating from on-premise, another cloud, or a less mature cloud
+            environment.
           </>
         }
-        imageSrc={
-          "https://d33wubrfki0l68.cloudfront.net/f419aba6979c68bf503e2c13505ab3a28202b11b/173b8/assets/img/resilience-review.svg"
-        }
+        imageSrc={cloudDevopsImage}
         actions={
           <>
             <Link
@@ -341,7 +343,62 @@ export default function Services() {
             </Link>
           </>
         }
-        className="py-12 lg:py-20"
+        className="py-12 lg:py-16"
+        noBorder
+        noOverflow
+      />
+      <FeatureSectionImageCard
+        title="Cloud & Dev-Ops Strategy Development"
+        description={
+          <>
+            Get the most out of your Kubernetes with actionable cloud and
+            vendor-agnostic recommendations for short, medium and long-term
+            value optimization.
+          </>
+        }
+        imageSrc={costValueImage}
+        actions={
+          <>
+            <Link
+              to="/" // @TODO: Change to a correct link
+              className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
+            >
+              Get Started
+            </Link>
+          </>
+        }
+        className="py-12 lg:py-16"
+        noBorder
+        noOverflow
+        flipped
+      />
+      <FeatureSectionImageCard
+        title="Resilience & operational assessments"
+        description={
+          <>
+            Address resilience from multiple angles. Fully customized
+            operational readiness checklist, resilience reviews & built-in
+            safety assessments.
+          </>
+        }
+        imageSrc={resilienceReviewImage}
+        actions={
+          <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 space-y-0 md:space-x-4">
+            <Link
+              to="/" // @TODO: Change to a correct link
+              className="inline-flex self-start whitespace-nowrap px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
+            >
+              Get Started
+            </Link>
+            <Link
+              to="/" // @TODO: Change to a correct link
+              className="inline-flex self-start whitespace-nowrap px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm border-gray-400"
+            >
+              Learn about the science behind resilience
+            </Link>
+          </div>
+        }
+        className="py-12 lg:py-16"
         noBorder
         noOverflow
       />
@@ -411,7 +468,7 @@ export default function Services() {
             alt: "Mirage"
           }
         ]}
-        className={"py-20"}
+        className="bg-gray-50 py-20"
       />
     </DefaultLayout>
   );

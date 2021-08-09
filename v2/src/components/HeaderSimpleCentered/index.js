@@ -16,7 +16,7 @@ export default function HeaderSimpleCentered({
           <p className="mt-1 text-3xl font-extrabold text-gray-900 sm:text-4xl sm:tracking-tight lg:text-5xl">
             {title}
           </p>
-          <p className="max-w-xl mt-5 mx-auto text-xl text-gray-500">
+          <p className="max-w-3xl mt-5 mx-auto text-xl text-gray-500">
             {description}
           </p>
         </div>
