@@ -1,6 +1,3 @@
-import { Link } from "react-router-dom";
-import { InboxIcon, SparklesIcon } from "@heroicons/react/outline";
-
 export default function FeatureSectionImageCard({
   icon,
   title,

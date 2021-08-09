@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function CardSection({ bgColorClass, ...props }) {
   return (
     <div className="bg-white">
@@ -22,12 +24,12 @@ export default function CardSection({ bgColorClass, ...props }) {
                 infrastructure for a leading insurance and financial services
                 company.
               </p>
-              <a
-                href="#"
+              <Link
+                to="/" // @TODO: Change to a correct link
                 className="mt-8 bg-white border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-blue-600 hover:bg-indigo-50"
               >
                 Read the case study
-              </a>
+              </Link>
             </div>
           </div>
         </div>

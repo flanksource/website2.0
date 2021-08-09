@@ -11,16 +11,11 @@ import FeatureSectionImageCard from "../../components/FeatureSectionImageCard";
 import { Link } from "react-router-dom";
 
 import {
-  CollectionIcon,
-  ChatIcon,
-  UsersIcon,
   CurrencyDollarIcon,
-  BadgeCheckIcon,
   TrendingUpIcon,
   LightBulbIcon,
   ShieldCheckIcon,
-  LightningBoltIcon,
-  CameraIcon
+  LightningBoltIcon
 } from "@heroicons/react/outline";
 import { routes } from "../../routes";
 import HeaderSimpleCentered from "../../components/HeaderSimpleCentered";
