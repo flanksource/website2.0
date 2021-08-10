@@ -27,7 +27,23 @@ export default function LinkButton({
       themeClass = "text-blue-900 bg-gray-100 hover:bg-blue-100";
       break;
     default:
-      themeClass = "text-white bg-blue-700 hover:bg-blue-800";
+      themeClass = "text-white bg-blue-700 hover:bg-blue-800"; // primary
+      break;
+  }
+
+  let sizeClass = "";
+  switch (size) {
+    case "small":
+      sizeClass = "text-sm font-medium px-1 py-1 md:py-1 md:text-sm md:px-3";
+      break;
+    case "medium":
+      sizeClass = "font-medium px-2 py-2 md:py-2 md:text-md md:px-4";
+      break;
+    case "large":
+      sizeClass = "font-medium px-3 py-3 md:py-4 md:text-lg md:px-8";
+      break;
+    default:
+      sizeClass = "font-medium px-2 py-2 md:py-2 md:text-md md:px-4"; // medium
       break;
   }
 
@@ -35,7 +51,7 @@ export default function LinkButton({
     <div className={`rounded-md ${shadow ? "shadow" : ""} ${className}`}>
       <Link
         to={href}
-        className={`${themeClass} w-full flex whitespace-nowrap items-center justify-center px-3 py-3 border border-transparent text-base font-medium rounded-md  md:py-4 md:text-lg md:px-10`}
+        className={`${themeClass} ${sizeClass} w-full flex whitespace-nowrap items-center justify-center border border-transparent rounded-md`}
       >
         {children}
       </Link>

@@ -1,6 +1,7 @@
 import React from "react";
 import DefaultLayout from "../../layout/DefaultLayout";
 import HeaderWithBackground from "../../components/HeaderWithBackground";
+import HeaderWithMedia from "../../components/HeaderWithMedia";
 import LogoCloud from "../../components/LogoCloud";
 import LinkButton from "../../components/LinkButton";
 import FeatureSectionList from "../../components/FeatureSectionList";
@@ -33,7 +34,36 @@ export default function Services() {
 
   return (
     <DefaultLayout>
-      <HeaderWithBackground
+      <HeaderWithMedia
+        title={
+          <>
+            <span className="md:block">Flexible, Personalized</span>
+            <span className="text-indigo-400 md:block">
+              Kubernetes services
+            </span>
+          </>
+        }
+        subtitle={
+          <>
+            <b>flank</b>source makes it easy to build, manage, and operate a
+            secure, open-source Kubernetes-based platform.
+          </>
+        }
+        actions={
+          <>
+            <div className="rounded-md shadow flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
+              <LinkButton href="#" theme="light">
+                Read the case study
+              </LinkButton>
+              <LinkButton href={routes.contact.path} theme="dark">
+                Get started
+              </LinkButton>
+            </div>
+          </>
+        }
+        media={<>test</>}
+      />
+      {/* <HeaderWithBackground
         title="Flexible, personalized Kubernetes services"
         subtitle={
           <>
@@ -54,7 +84,7 @@ export default function Services() {
           </>
         }
         bgColor="#263c6d"
-      />
+      /> */}
 
       <LogoCloud
         title="Happy Teams"
