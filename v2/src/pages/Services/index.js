@@ -1,6 +1,5 @@
 import React from "react";
 import DefaultLayout from "../../layout/DefaultLayout";
-import HeaderWithBackground from "../../components/HeaderWithBackground";
 import HeaderWithMedia from "../../components/HeaderWithMedia";
 import LogoCloud from "../../components/LogoCloud";
 import LinkButton from "../../components/LinkButton";
@@ -28,19 +27,17 @@ import resilienceReviewImage from "../../assets/images/illustrations/resilience-
 
 import { routes } from "../../routes";
 import HeaderSimpleCentered from "../../components/HeaderSimpleCentered";
+import KubernetesLogo from "../../assets/images/illustrations/kubernetes.svg";
+import backgroundImageSrc from "../../assets/images/backgrounds/stars_unsplash_compressed.jpg";
 
 export default function Services() {
-  // const env = process.env.NODE_ENV;
-
   return (
     <DefaultLayout>
       <HeaderWithMedia
         title={
           <>
-            <span className="md:block">Flexible, Personalized</span>
-            <span className="text-indigo-400 md:block">
-              Kubernetes services
-            </span>
+            <span className="md:block">Flexible, Personalized</span>{" "}
+            <span className="text-blue-400 md:block">Kubernetes services</span>
           </>
         }
         subtitle={
@@ -51,7 +48,7 @@ export default function Services() {
         }
         actions={
           <>
-            <div className="rounded-md shadow flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
+            <div className="rounded-md shadow flex flex-col sm:flex-row sm:justify-center lg:justify-start sm:space-x-4 space-y-4 sm:space-y-0">
               <LinkButton href="#" theme="light">
                 Read the case study
               </LinkButton>
@@ -61,30 +58,26 @@ export default function Services() {
             </div>
           </>
         }
-        media={<>test</>}
+        media={
+          <div
+            className="h-full flex justify-center align-middle"
+            style={{ animation: "10s infinite floatY" }}
+          >
+            <img
+              className="w-1/4 lg:w-1/3 object-contain"
+              style={{ animation: "15s infinite slightSpin" }}
+              src={KubernetesLogo}
+              alt="kube"
+            />
+          </div>
+        }
+        style={{
+          backgroundImage: `url('${backgroundImageSrc}')`,
+          backgroundSize: "cover",
+          backgroundBlendMode: "hard-light",
+          animation: "7s ease-in-out infinite blueBgPulse"
+        }}
       />
-      {/* <HeaderWithBackground
-        title="Flexible, personalized Kubernetes services"
-        subtitle={
-          <>
-            <b>flank</b>source makes it easy to build, manage, and operate a
-            secure, open-source Kubernetes-based platform.
-          </>
-        }
-        actions={
-          <>
-            <div className="rounded-md shadow flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
-              <LinkButton href="#" theme="light">
-                Read the case study
-              </LinkButton>
-              <LinkButton href={routes.contact.path} theme="dark">
-                Get started
-              </LinkButton>
-            </div>
-          </>
-        }
-        bgColor="#263c6d"
-      /> */}
 
       <LogoCloud
         title="Happy Teams"
