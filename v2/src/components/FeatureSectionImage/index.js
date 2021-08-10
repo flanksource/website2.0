@@ -46,10 +46,19 @@ export default function FeatureSectionImage({
             <div className="-mx-8 -mt-8 flex flex-wrap flex-col">
               {features.map((item) => {
                 return (
-                  <div key={item.name} className="flex flex-col px-8 pt-8">
-                    <div className="order-1 text-lg font-bold">{item.name}</div>
-                    <div className="order-2 text-base font-medium text-gray-500">
-                      {item.description}
+                  <div key={item.name} className="flex flex-row px-8 pt-8">
+                    {item.icon ? (
+                      <div className="mr-4 mt-1 flex flex-shrink-0 items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                        <div className="h-6 w-6">{item.icon}</div>
+                      </div>
+                    ) : null}
+                    <div>
+                      <div className="order-1 text-lg font-bold">
+                        {item.name}
+                      </div>
+                      <div className="order-2 text-base font-medium text-gray-500">
+                        {item.description}
+                      </div>
                     </div>
                   </div>
                 );

@@ -15,7 +15,10 @@ import {
   TrendingUpIcon,
   LightBulbIcon,
   ShieldCheckIcon,
-  LightningBoltIcon
+  LightningBoltIcon,
+  ChatIcon,
+  UsersIcon,
+  CollectionIcon
 } from "@heroicons/react/outline";
 
 import quickstartImage from "../../assets/images/illustrations/quickstart.svg";
@@ -152,12 +155,15 @@ export default function Services() {
               <>
                 We’re available in your chat-rooms<div>(Slack or MS Teams)</div>
               </>
-            )
+            ),
+            icon: <ChatIcon />
           },
           {
             name: "Joint Standups",
             description:
-              "We join your standups to keep up-to-date about your environment"
+              "We join your standups to keep up-to-date about your environment",
+
+            icon: <UsersIcon />
           },
           {
             name: "Issue Tracking",
@@ -166,7 +172,8 @@ export default function Services() {
                 Assign tasks directly to your extended team directly in the
                 issue tracker of your choice. (Jira, ClickUp, etc)
               </>
-            )
+            ),
+            icon: <CollectionIcon />
           }
         ]}
         imageSrc="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
