@@ -39,7 +39,8 @@ import { ReactComponent as SecureIcon } from "../../assets/icons/icons8-secure.s
 import { routes } from "../../routes";
 import HeaderSimpleCentered from "../../components/HeaderSimpleCentered";
 import KubernetesLogo from "../../assets/images/illustrations/kubernetes.svg";
-import backgroundImageSrc from "../../assets/images/backgrounds/lighthouse_milkyway_whitebalanced_cropped.jpg";
+import KCSPLogo from "../../assets/images/logos/kcsp.png";
+import backgroundImageSrc from "../../assets/images/backgrounds/lighthouse_milkyway_cropped_readjusted.jpg";
 
 export default function Services() {
   return (
@@ -66,12 +67,6 @@ export default function Services() {
               <LinkButton href={routes.contact.path} theme="dark">
                 Get started
               </LinkButton>
-              <img
-                className="w-12 hidden lg:block object-contain"
-                style={{ animation: "15s infinite slightSpin" }}
-                src={KubernetesLogo}
-                alt="kube"
-              />
             </div>
           </>
         }
@@ -81,9 +76,9 @@ export default function Services() {
             style={{ animation: "10s infinite floatY" }}
           >
             <img
-              className="w-1/4 lg:w-1/3 object-contain lg:opacity-0"
+              className="w-1/5 lg:w-1/3 object-contain"
               style={{ animation: "15s infinite slightSpin" }}
-              src={KubernetesLogo}
+              src={KCSPLogo}
               alt="kube"
             />
           </div>

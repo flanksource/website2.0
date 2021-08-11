@@ -34,7 +34,7 @@ export default function LinkButton({
   let sizeClass = "";
   switch (size) {
     case "small":
-      sizeClass = "text-sm font-medium px-1 py-1 md:py-1 md:text-sm md:px-3";
+      sizeClass = "text-sm font-medium px-2 py-1 md:py-2 md:text-sm md:px-3";
       break;
     case "medium":
       sizeClass = "font-medium px-2 py-2 md:py-2 md:text-md md:px-4";
