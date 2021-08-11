@@ -145,7 +145,7 @@ export default function Services() {
             icon: <LightningBoltIcon />
           }
         ]}
-        className="py-32"
+        className="py-32 lg:py-44"
       />
 
       <FeatureSectionImage
@@ -228,7 +228,7 @@ export default function Services() {
             icon: <SecureIcon className="w-full h-full p-3" />
           }
         ]}
-        className="pt-24 pb-16"
+        className="pt-28 pb-20"
       />
 
       <FullWidthSection

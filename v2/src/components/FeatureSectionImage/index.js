@@ -36,7 +36,7 @@ export default function FeatureSectionImage({
           alt="Support team"
         />
       </div>
-      <div className="relative max-w-7xl mx-auto px-4 py-6 sm:py-10 sm:px-8 md:py-16">
+      <div className="relative max-w-6xl mx-auto px-4 py-6 sm:py-10 sm:px-8 md:py-20">
         <div className="max-w-2xl mx-auto md:max-w-none md:mr-0 md:ml-auto md:w-1/2 md:pl-10">
           <h2 className="mt-6 md:mt-0  text-3xl font-bold text-gray-900 tracking-tight">
             {title}

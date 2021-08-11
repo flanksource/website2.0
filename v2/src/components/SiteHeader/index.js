@@ -12,7 +12,7 @@ import {
 import { routes } from "../../routes";
 import { Link } from "react-router-dom";
 
-import flanksourceLogo from "../../assets/images/logo-dark.png";
+import flanksourceLogo from "../../assets/images/flanksource-new.svg";
 
 export default function SiteHeader() {
   const navbarItems = [
