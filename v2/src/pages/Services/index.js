@@ -202,31 +202,31 @@ export default function Services() {
         features={[
           {
             name: "GitOps-based Setup and configuration of Kubernetes platforms across the cloud, bare metal, and on-premises",
-            icon: <AutomationIcon className="w-full h-full p-2" />
+            icon: <AutomationIcon className="w-full h-full p-3" />
           },
           {
             name: "Hover tooltips on platforms",
-            icon: <CursorIcon className="w-full h-full p-2" />
+            icon: <CursorIcon className="w-full h-full p-3" />
           },
           {
             name: "Extended production-grade support for all Kubernetes distributions and select Open Source software",
-            icon: <OnlineSupportIcon className="w-full h-full p-2" />
+            icon: <OnlineSupportIcon className="w-full h-full p-3" />
           },
           {
             name: "Kubernetes Operator Development & Support",
-            icon: <FloatIcon className="w-full h-full p-2" />
+            icon: <FloatIcon className="w-full h-full p-3" />
           },
           {
             name: "Migrations from on-premise to Cloud, Cloud to Cloud and Cloud to On Premise.",
-            icon: <CloudConnectionIcon className="w-full h-full p-2" />
+            icon: <CloudConnectionIcon className="w-full h-full p-3" />
           },
           {
             name: "Production Readiness & Resilience Assessments",
-            icon: <ApprovalIcon className="w-full h-full p-2" />
+            icon: <ApprovalIcon className="w-full h-full p-3" />
           },
           {
             name: "Self-service, secure DevOps pipeline setup ",
-            icon: <SecureIcon className="w-full h-full p-2" />
+            icon: <SecureIcon className="w-full h-full p-3" />
           }
         ]}
         className="pt-24 pb-16"
