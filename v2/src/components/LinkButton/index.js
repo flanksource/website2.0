@@ -34,16 +34,16 @@ export default function LinkButton({
   let sizeClass = "";
   switch (size) {
     case "small":
-      sizeClass = "text-sm font-medium px-2 py-1 md:py-2 md:text-sm md:px-3";
+      sizeClass = "text-sm font-medium px-3 py-1 md:py-2 md:text-sm";
       break;
     case "medium":
-      sizeClass = "font-medium px-2 py-2 md:py-2 md:text-md md:px-4";
+      sizeClass = "font-medium px-3 py-2 md:py-2 md:text-md md:px-4";
       break;
     case "large":
       sizeClass = "font-medium px-3 py-3 md:py-4 md:text-lg md:px-8";
       break;
     default:
-      sizeClass = "font-medium px-2 py-2 md:py-2 md:text-md md:px-4"; // medium
+      sizeClass = "font-medium px-3 py-2 md:py-2 md:text-md md:px-4"; // medium
       break;
   }
 

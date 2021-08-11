@@ -51,23 +51,29 @@ export default function Services() {
             <span className="text-blue-400 md:block">Kubernetes services</span>
           </>
         }
-        subtitle={
-          <>
-            <b>flank</b>source makes it easy to build, manage, and operate a
-            secure, open-source Kubernetes-based platform.
-          </>
-        }
-        actions={
-          <>
-            <div className="rounded-md shadow flex flex-col items-center sm:flex-row sm:justify-center lg:justify-start sm:space-x-4 space-y-4 sm:space-y-0">
-              <LinkButton href="#" theme="light">
-                Read the case study
-              </LinkButton>
-              <LinkButton href={routes.contact.path} theme="dark">
-                Get started
-              </LinkButton>
+        content={
+          <div className="flex flex-row">
+            <div>
+              <div className="text-base text-gray-300 sm:text-xl lg:text-lg xl:text-xl ">
+                <b>flank</b>source makes it easy to build, manage, and operate a
+                secure, open-source Kubernetes-based platform.
+              </div>
+              <div className="mt-8 rounded-md shadow flex flex-col items-center sm:flex-row sm:justify-center lg:justify-start sm:space-x-4 space-y-4 sm:space-y-0">
+                <LinkButton href="#" theme="light">
+                  Read the case study
+                </LinkButton>
+                <LinkButton href={routes.contact.path} theme="dark">
+                  Get started
+                </LinkButton>
+              </div>
             </div>
-          </>
+            <img
+              className="m-3 w-36 object-contain max-w-2xl hidden lg:block"
+              style={{ animation: "15s infinite slightSpin" }}
+              src={KCSPLogo}
+              alt="kube"
+            />
+          </div>
         }
         media={
           <div
@@ -75,7 +81,7 @@ export default function Services() {
             style={{ animation: "10s infinite floatY" }}
           >
             <img
-              className="w-1/3 sm:w-1/4 lg:w-1/3 object-contain max-w-2xl"
+              className="w-1/3 sm:w-1/4 lg:w-1/3 object-contain max-w-2xl lg:opacity-0"
               style={{ animation: "15s infinite slightSpin" }}
               src={KCSPLogo}
               alt="kube"

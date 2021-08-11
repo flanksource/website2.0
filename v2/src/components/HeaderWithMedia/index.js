@@ -17,7 +17,7 @@
 
 export default function HeaderWithMedia({
   title,
-  subtitle,
+  content,
   actions,
   media,
   style,
@@ -36,10 +36,7 @@ export default function HeaderWithMedia({
                 <h1 className="text-4xl tracking-tight font-extrabold text-white sm:leading-none lg:text-5xl xl:text-6xl">
                   {title}
                 </h1>
-                <p className="mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                  {subtitle}
-                </p>
-                <div className="mt-8">{actions}</div>
+                <div className="mt-3 sm:mt-5">{content}</div>
               </div>
             </div>
             <div className="mb-8 lg:mb-0">{media}</div>
