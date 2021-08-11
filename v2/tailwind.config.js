@@ -5,9 +5,9 @@ module.exports = {
     extend: {
       keyframes: {
         blueBgPulse: {
-          "0%, 100%": { backgroundColor: `#314352` },
+          "0%, 100%": { backgroundColor: `#283948` },
 
-          "50%": { backgroundColor: `#4e6577` }
+          "50%": { backgroundColor: `#3a5061` }
         },
         slightSpin: {
           "0%, 100%": { transform: `rotate(-5deg)` },

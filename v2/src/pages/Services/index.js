@@ -38,7 +38,6 @@ import { ReactComponent as SecureIcon } from "../../assets/icons/icons8-secure.s
 
 import { routes } from "../../routes";
 import HeaderSimpleCentered from "../../components/HeaderSimpleCentered";
-import KubernetesLogo from "../../assets/images/illustrations/kubernetes.svg";
 import KCSPLogo from "../../assets/images/logos/kcsp.png";
 import backgroundImageSrc from "../../assets/images/backgrounds/lighthouse_milkyway_cropped_readjusted.jpg";
 
