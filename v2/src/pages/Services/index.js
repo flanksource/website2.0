@@ -76,7 +76,7 @@ export default function Services() {
             style={{ animation: "10s infinite floatY" }}
           >
             <img
-              className="w-1/5 lg:w-1/3 object-contain"
+              className="w-1/3 sm:w-1/4 lg:w-1/3 object-contain max-w-2xl"
               style={{ animation: "15s infinite slightSpin" }}
               src={KCSPLogo}
               alt="kube"
