@@ -36,7 +36,7 @@ export default function FeatureSectionList({
 }) {
   return (
     <div className={className} {...props}>
-      <div className="max-w-6xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8 lg:grid lg:grid-cols-3 lg:gap-x-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 lg:grid lg:grid-cols-3 lg:gap-x-8">
         <div>
           {caption && (
             <h2

@@ -6,7 +6,7 @@ import LinkButton from "../../components/LinkButton";
 import FeatureSectionList from "../../components/FeatureSectionList";
 import FeatureSectionGrid from "../../components/FeatureSectionGrid";
 import FeatureSectionImage from "../../components/FeatureSectionImage";
-import CardSection from "../../components/CardSection";
+import FullWidthSection from "../../components/FullWidthSection";
 import FeatureSectionImageCard from "../../components/FeatureSectionImageCard";
 import { Link } from "react-router-dom";
 
@@ -28,10 +28,18 @@ import cloudDevopsImage from "../../assets/images/illustrations/cloud-devops-acc
 import costValueImage from "../../assets/images/illustrations/cost-value.svg";
 import resilienceReviewImage from "../../assets/images/illustrations/resilience-review.svg";
 
+import { ReactComponent as AutomationIcon } from "../../assets/icons/icons8-automation.svg";
+import { ReactComponent as CursorIcon } from "../../assets/icons/icons8-cursor-in-window.svg";
+import { ReactComponent as OnlineSupportIcon } from "../../assets/icons/icons8-online-support.svg";
+import { ReactComponent as ApprovalIcon } from "../../assets/icons/icons8-approval.svg";
+import { ReactComponent as CloudConnectionIcon } from "../../assets/icons/icons8-cloud-connection.svg";
+import { ReactComponent as FloatIcon } from "../../assets/icons/icons8-float.svg";
+import { ReactComponent as SecureIcon } from "../../assets/icons/icons8-secure.svg";
+
 import { routes } from "../../routes";
 import HeaderSimpleCentered from "../../components/HeaderSimpleCentered";
 import KubernetesLogo from "../../assets/images/illustrations/kubernetes.svg";
-import backgroundImageSrc from "../../assets/images/backgrounds/stars_unsplash_compressed.jpg";
+import backgroundImageSrc from "../../assets/images/backgrounds/lighthouse_milkyway_whitebalanced_cropped.jpg";
 
 export default function Services() {
   return (
@@ -51,13 +59,19 @@ export default function Services() {
         }
         actions={
           <>
-            <div className="rounded-md shadow flex flex-col sm:flex-row sm:justify-center lg:justify-start sm:space-x-4 space-y-4 sm:space-y-0">
+            <div className="rounded-md shadow flex flex-col items-center sm:flex-row sm:justify-center lg:justify-start sm:space-x-4 space-y-4 sm:space-y-0">
               <LinkButton href="#" theme="light">
                 Read the case study
               </LinkButton>
               <LinkButton href={routes.contact.path} theme="dark">
                 Get started
               </LinkButton>
+              <img
+                className="w-12 hidden lg:block object-contain"
+                style={{ animation: "15s infinite slightSpin" }}
+                src={KubernetesLogo}
+                alt="kube"
+              />
             </div>
           </>
         }
@@ -67,7 +81,7 @@ export default function Services() {
             style={{ animation: "10s infinite floatY" }}
           >
             <img
-              className="w-1/4 lg:w-1/3 object-contain"
+              className="w-1/4 lg:w-1/3 object-contain lg:opacity-0"
               style={{ animation: "15s infinite slightSpin" }}
               src={KubernetesLogo}
               alt="kube"
@@ -78,6 +92,7 @@ export default function Services() {
           backgroundImage: `url('${backgroundImageSrc}')`,
           backgroundSize: "cover",
           backgroundBlendMode: "hard-light",
+          backgroundPosition: "center",
           animation: "7s ease-in-out infinite blueBgPulse"
         }}
       />
@@ -109,33 +124,34 @@ export default function Services() {
         className={"py-20 bg-gray-50"}
       />
 
-      <FeatureSectionGrid
+      <FeatureSectionList
         title="Resilient Kubernetes. On your terms"
         subtitle="We use SRE and GitOps principles to optimise pipelines and deliver safe and tested clusters."
         features={[
           {
-            name: "Reduce your Kubernetes total cost of ownership",
+            title: "Reduce your Kubernetes total cost of ownership",
             icon: <CurrencyDollarIcon />
           },
           {
-            name: "Increase your resilience against production failures",
+            title: "Increase your resilience against production failures",
             icon: <ShieldCheckIcon />
           },
           {
-            name: "Accelerate your delivery",
+            title: "Accelerate your delivery",
             icon: <TrendingUpIcon />
           },
           {
-            name: "Improve your team’s knowledge & skills",
+            title: "Improve your team’s knowledge & skills",
             icon: <LightBulbIcon />
           },
 
           {
-            name: "Access baked-in tools & best practices with known good configuration",
+            title:
+              "Access baked-in tools & best practices with known good configuration",
             icon: <LightningBoltIcon />
           }
         ]}
-        className="pt-20 lg:pt-28 pb-28"
+        className="py-32"
       />
 
       <FeatureSectionImage
@@ -180,7 +196,7 @@ export default function Services() {
         className="bg-gray-50 pb-8"
       />
 
-      <FeatureSectionList
+      <FeatureSectionGrid
         title="Kubernetes, Simplified"
         subtitle={
           <>
@@ -190,34 +206,38 @@ export default function Services() {
         }
         features={[
           {
-            title:
-              "GitOps-based Setup and configuration of Kubernetes platforms across the cloud, bare metal, and on-premises"
+            name: "GitOps-based Setup and configuration of Kubernetes platforms across the cloud, bare metal, and on-premises",
+            icon: <AutomationIcon className="w-full h-full p-2" />
           },
           {
-            title: "Hover tooltips on platforms"
+            name: "Hover tooltips on platforms",
+            icon: <CursorIcon className="w-full h-full p-2" />
           },
           {
-            title:
-              "Extended production-grade support for all  Kubernetes distributions and select Open Source software"
+            name: "Extended production-grade support for all Kubernetes distributions and select Open Source software",
+            icon: <OnlineSupportIcon className="w-full h-full p-2" />
           },
           {
-            title: "Kubernetes Operator Development & Support"
+            name: "Kubernetes Operator Development & Support",
+            icon: <FloatIcon className="w-full h-full p-2" />
           },
           {
-            title:
-              "Migrations from on-premise to Cloud, Cloud to Cloud and Cloud to On Premise."
+            name: "Migrations from on-premise to Cloud, Cloud to Cloud and Cloud to On Premise.",
+            icon: <CloudConnectionIcon className="w-full h-full p-2" />
           },
           {
-            title: "Production Readiness & Resilience Assessments"
+            name: "Production Readiness & Resilience Assessments",
+            icon: <ApprovalIcon className="w-full h-full p-2" />
           },
           {
-            title: "Self-service, secure DevOps pipeline setup "
+            name: "Self-service, secure DevOps pipeline setup ",
+            icon: <SecureIcon className="w-full h-full p-2" />
           }
         ]}
-        className="pt-8 pb-12"
+        className="pt-24 pb-16"
       />
 
-      <CardSection
+      <FullWidthSection
         caption="Customer Story:"
         title="From slowed deployment to a secure on-premise platform"
         description="See how flanksource streamlined and improved the Kubernetes
@@ -231,7 +251,7 @@ export default function Services() {
             Read the case study
           </Link>
         }
-        className="pb-24"
+        className="mb-16 py-4"
       />
 
       <HeaderSimpleCentered

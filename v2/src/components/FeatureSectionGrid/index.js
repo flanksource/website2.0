@@ -54,18 +54,11 @@ export default function FeatureSectionGrid({
             >
               <div className="flex justify-center">
                 <span
-                  className={`flex items-center justify-center h-12 w-12 rounded-md bg-opacity-10 ${
-                    dark ? "bg-white" : "bg-gray-900"
+                  className={`flex items-center justify-center h-14 w-14 rounded-md bg-opacity-10 ${
+                    dark ? "bg-white" : "bg-gray-500"
                   }`}
                 >
-                  <div
-                    className={`h-6 w-6 ${
-                      dark ? "text-white" : "text-gray-900"
-                    }`}
-                    aria-hidden="true"
-                  >
-                    {feature.icon}
-                  </div>
+                  {feature.icon}
                 </span>
               </div>
               <div className="mt-4 text-center">

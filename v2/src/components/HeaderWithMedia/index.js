@@ -25,11 +25,11 @@ export default function HeaderWithMedia({
 }) {
   return (
     <div className="relative bg-blue-800 overflow-hidden" style={style}>
-      <div className="relative pt-6 pb-16 sm:pb-24">
+      <div className="relative pt-12 pb-24 sm:pb-32">
         <main className="mt-8 sm:mt-16">
           <div className="mx-auto max-w-6xl">
             <div className="flex flex-col-reverse lg:flex-row">
-              <div className="px-4 sm:px-6 sm:text-center md:max-w-2xl md:mx-auto lg:text-left lg:flex lg:items-center">
+              <div className="px-4 sm:px-6 text-center md:max-w-2xl md:mx-auto lg:text-left lg:flex lg:items-center">
                 <div>
                   <h1 className="text-4xl tracking-tight font-extrabold text-white sm:leading-none lg:text-5xl xl:text-6xl">
                     {title}
