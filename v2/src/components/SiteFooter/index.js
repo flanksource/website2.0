@@ -38,7 +38,7 @@ export default function SiteFooter() {
 
     company: [
       { name: 'About', href: '/about' },
-      { name: 'Blog', href: '/blogs' },
+      { name: 'Blog', href: '/blog' },
       { name: 'Careers', href: '/careers' },
     ],
     legal: [
