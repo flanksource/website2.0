@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   darkMode: false, // or 'media' or 'class'
@@ -40,11 +42,17 @@ module.exports = {
         rotateTwo: "rotateTwo ease-in normal",
         rotateThree: "rotateThree ease-in normal",
         fadeIn: "fadeIn ease-in normal"
-      }
+      },
+      colors: {
+        'warm-gray': colors.warmGray,
+        teal: colors.teal,
+      },
     }
   },
   variants: {
     extend: {}
   },
-  plugins: []
+  plugins: [
+    require('@tailwindcss/forms')
+  ]
 };
