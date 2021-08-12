@@ -1,6 +1,8 @@
 import TestPage1 from "./pages/TestPage";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
+import About from "./pages/About";
+import Careers from "./pages/Careers";
 
 const prefix = process.env.NODE_ENV === "production" ? "/v2" : "";
 
@@ -14,12 +16,12 @@ export const routes = {
     name: "About",
     exact: true,
     path: `${prefix}/about`,
-    component: <TestPage1 />
+    component: <About />
   },
   services: {
     name: "Services",
     exact: true,
-    path: `${prefix}/services`,
+    path: `${prefix}/kubernetes-services`,
     component: <Services />
   },
   openSource: {
@@ -32,7 +34,7 @@ export const routes = {
     name: "Careers",
     exact: true,
     path: `${prefix}/careers`,
-    component: <TestPage1 />
+    component: <Careers />
   },
   blog: {
     name: "Blog",
