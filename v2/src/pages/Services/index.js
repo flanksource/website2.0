@@ -5,6 +5,7 @@ import LinkButton from "../../components/LinkButton";
 import FeatureSectionList from "../../components/FeatureSectionList";
 import FeatureSectionImage from "../../components/FeatureSectionImage";
 import FullWidthSection from "../../components/FullWidthSection";
+import Contact from "../../components/Contact";
 import FeatureSectionImageCard from "../../components/FeatureSectionImageCard";
 import KCSPLogoAnimated from "../../components/KCSPLogoAnimated";
 import { Link } from "react-router-dom";
@@ -16,6 +17,59 @@ import {
   CollectionIcon
 } from "@heroicons/react/outline";
 
+import aksImage from "../../assets/images/logos/aks.png";
+import antreaImage from "../../assets/images/logos/antrea.svg";
+import argoImage from "../../assets/images/logos/argo.svg";
+import awsImage from "../../assets/images/logos/aws.svg";
+import azureImage from "../../assets/images/logos/azure.png";
+import azureDevOpsImage from "../../assets/images/logos/azureDevOps.png";
+import calicoImage from "../../assets/images/logos/calico.png";
+import cassandraImage from "../../assets/images/logos/cassandra.png";
+import certManagerImage from "../../assets/images/logos/certManager.svg";
+import ciliumImage from "../../assets/images/logos/cilium.svg";
+import dexImage from "../../assets/images/logos/dex.png";
+import dynatraceImage from "../../assets/images/logos/dynatrace.png";
+import eksImage from "../../assets/images/logos/eks.svg";
+import elasticImage from "../../assets/images/logos/elastic.png";
+import etcdImage from "../../assets/images/logos/etcd.png";
+import fluxImage from "../../assets/images/logos/flux.svg";
+import gcpImage from "../../assets/images/logos/gcp.png";
+import githubImage from "../../assets/images/logos/github.png";
+import gitlabImage from "../../assets/images/logos/gitlab.svg";
+import goImage from "../../assets/images/logos/go.svg";
+import grafanaImage from "../../assets/images/logos/grafana.svg";
+import harborImage from "../../assets/images/logos/harbor.png";
+import istioImage from "../../assets/images/logos/istio.svg";
+import javaImage from "../../assets/images/logos/java.svg";
+import javascriptImage from "../../assets/images/logos/javascript.svg";
+import jenkinsImage from "../../assets/images/logos/jenkins.svg";
+import k8sImage from "../../assets/images/logos/k8s.png";
+import kafkaImage from "../../assets/images/logos/kafka.svg";
+import karinaImage from "../../assets/images/logos/karina.png";
+import kopsImage from "../../assets/images/logos/kops.svg";
+import kubeadmImage from "../../assets/images/logos/kubeadm.png";
+import nginxImage from "../../assets/images/logos/nginx.png";
+import nsxImage from "../../assets/images/logos/nsx.svg";
+import opaImage from "../../assets/images/logos/opa.svg";
+import opengitopsImage from "../../assets/images/logos/opengitops.svg";
+import openshiftImage from "../../assets/images/logos/openshift.png";
+import postgresImage from "../../assets/images/logos/postgres.svg";
+import prometheusImage from "../../assets/images/logos/prometheus.svg";
+import pythonImage from "../../assets/images/logos/python.svg";
+import rancherImage from "../../assets/images/logos/rancher.svg";
+import redisImage from "../../assets/images/logos/redis.svg";
+import sonobuoyImage from "../../assets/images/logos/sonobuoy.svg";
+import springbootImage from "../../assets/images/logos/springboot.svg";
+import tanzuImage from "../../assets/images/logos/tanzu.png";
+import tektonImage from "../../assets/images/logos/tekton.png";
+import terraformImage from "../../assets/images/logos/terraform.png";
+import thanosImage from "../../assets/images/logos/thanos.png";
+import typescriptImage from "../../assets/images/logos/typescript.svg";
+import vaultImage from "../../assets/images/logos/vault.png";
+import veleroImage from "../../assets/images/logos/velero.png";
+import vsphereImage from "../../assets/images/logos/vsphere.svg";
+
+
 import quickstartImage from "../../assets/images/illustrations/quickstart.svg";
 import internalPlatformsImage from "../../assets/images/illustrations/internal-platforms.svg";
 import platformOperationsImage from "../../assets/images/illustrations/platform-operations.svg";
@@ -23,16 +77,19 @@ import cloudDevopsImage from "../../assets/images/illustrations/cloud-devops-acc
 import costValueImage from "../../assets/images/illustrations/cost-value.svg";
 import resilienceReviewImage from "../../assets/images/illustrations/resilience-review.svg";
 
-import { ReactComponent as AutomationIcon } from "../../assets/icons/icons8-automation.svg";
-import { ReactComponent as OnlineSupportIcon } from "../../assets/icons/icons8-online-support.svg";
-import { ReactComponent as ApprovalIcon } from "../../assets/icons/icons8-approval.svg";
-import { ReactComponent as CloudConnectionIcon } from "../../assets/icons/icons8-cloud-connection.svg";
-import { ReactComponent as FloatIcon } from "../../assets/icons/icons8-float.svg";
-import { ReactComponent as SecureIcon } from "../../assets/icons/icons8-secure.svg";
+
+import { ReactComponent as OpenGitOpsIcon } from "../../assets/images/logos/opengitops.svg";
+import { ReactComponent as SupportIcon } from "../../assets/icons/support.svg";
+import { ReactComponent as CheckListIcon } from "../../assets/icons/checklist.svg";
+import { ReactComponent as OperatorIcon } from "../../assets/icons/operator-support.svg";
+import { ReactComponent as PushButtonIcon } from "../../assets/icons/push-button.svg";
+import { ReactComponent as MigrateIcon } from "../../assets/icons/migrate.svg";
+
 
 import { routes } from "../../routes";
 import HeaderSimpleCentered from "../../components/HeaderSimpleCentered";
 import backgroundImageSrc from "../../assets/images/backgrounds/lighthouse_milkyway_cropped_adjusted_resized.jpg";
+import Customers from "../../components/Customers";
 
 export default function Services() {
   return (
@@ -62,6 +119,7 @@ export default function Services() {
                     <b>flank</b>source makes it easy to build, manage, and
                     operate a secure, open-source Kubernetes-based platform.
                   </div>
+
                   <div className="mt-8 rounded-md shadow flex flex-col items-center sm:flex-row sm:justify-center lg:justify-start sm:space-x-4 space-y-4 sm:space-y-0">
                     <LinkButton href="#" theme="light">
                       Read the case study
@@ -82,32 +140,7 @@ export default function Services() {
         </div>
       </div>
 
-      <LogoCloud
-        title="Happy Teams"
-        srcList={[
-          {
-            src: "https://tailwindui.com/img/logos/tuple-logo-gray-400.svg",
-            alt: "Tuple"
-          },
-          {
-            src: "https://tailwindui.com/img/logos/statickit-logo-gray-400.svg",
-            alt: "StaticKit"
-          },
-          {
-            src: "https://tailwindui.com/img/logos/transistor-logo-gray-400.svg",
-            alt: "Transistor"
-          },
-          {
-            src: "https://tailwindui.com/img/logos/workcation-logo-gray-400.svg",
-            alt: "Workcation"
-          },
-          {
-            src: "https://tailwindui.com/img/logos/mirage-logo-gray-400.svg",
-            alt: "Mirage"
-          }
-        ]}
-        className={"py-20 bg-gray-50"}
-      />
+      <Customers />
 
       <FeatureSectionList
         title="Resilient Kubernetes. On your terms"
@@ -193,29 +226,29 @@ export default function Services() {
           {
             title:
               "GitOps-based Setup and configuration of Kubernetes platforms across the cloud, bare metal, and on-premises",
-            icon: <AutomationIcon className="w-8 h-8 mr-4" />
+            icon: <OpenGitOpsIcon className="w-8 h-8 mr-4" />
           },
           {
             title:
               "Extended production-grade support for all Kubernetes distributions and select Open Source software",
-            icon: <OnlineSupportIcon className="w-8 h-8 mr-4" />
+            icon: <SupportIcon className="w-8 h-8 mr-4" />
           },
           {
             title: "Kubernetes Operator Development & Support",
-            icon: <FloatIcon className="w-8 h-8 mr-4" />
+            icon: <OperatorIcon className="w-8 h-8 mr-4" />
           },
           {
             title:
               "Migrations from on-premise to Cloud, Cloud to Cloud and Cloud to On Premise.",
-            icon: <CloudConnectionIcon className="w-8 h-8 mr-4" />
+            icon: <MigrateIcon className="w-8 h-8 mr-4" />
           },
           {
             title: "Production Readiness & Resilience Assessments",
-            icon: <ApprovalIcon className="w-8 h-8 mr-4" />
+            icon: <CheckListIcon className="w-8 h-8 mr-4" />
           },
           {
             title: "Self-service, secure DevOps pipeline setup ",
-            icon: <SecureIcon className="w-8 h-8 mr-4" />
+            icon: <PushButtonIcon className="w-8 h-8 mr-4" />
           }
         ]}
         className="py-32 lg:py-44"
@@ -251,6 +284,7 @@ export default function Services() {
       />
 
       <FeatureSectionImageCard
+        id="quick-start"
         title="Kubernetes Quickstart"
         description={
           <>
@@ -292,6 +326,7 @@ export default function Services() {
         flipped
       />
       <FeatureSectionImageCard
+        id="internal-platform-development"
         title="Internal Platform Development"
         description={
           <>
@@ -317,6 +352,7 @@ export default function Services() {
         noOverflow
       />
       <FeatureSectionImageCard
+        id="managed-services"
         title="Managed Services"
         description={
           <>
@@ -359,6 +395,7 @@ export default function Services() {
         flipped
       />
       <FeatureSectionImageCard
+        id="migrations"
         title="Kubernetes Migrations"
         description={
           <>
@@ -382,6 +419,7 @@ export default function Services() {
         noOverflow
       />
       <FeatureSectionImageCard
+        id="cloud-and-devops"
         title="Cloud & Dev-Ops Strategy Development"
         description={
           <>
@@ -407,6 +445,7 @@ export default function Services() {
         flipped
       />
       <FeatureSectionImageCard
+        id="resilience-assement"
         title="Resilience & operational assessments"
         description={
           <>
@@ -439,71 +478,79 @@ export default function Services() {
       <LogoCloud
         title="Technologies we Love"
         srcList={[
-          {
-            src: "https://tailwindui.com/img/logos/tuple-logo-gray-400.svg",
-            alt: "Tuple"
-          },
-          {
-            src: "https://tailwindui.com/img/logos/statickit-logo-gray-400.svg",
-            alt: "StaticKit"
-          },
+          { src: k8sImage, alt: "k8s.png" },
+          { src: kubeadmImage, alt: "kubeadm.png" },
+          { src: kopsImage, alt: "kops.svg" },
+          { src: aksImage, alt: "aks.png" },
+          { src: eksImage, alt: "eks.svg" },
+          { src: tanzuImage, alt: "tanzu.png" },
+          { src: openshiftImage, alt: "openshift.png" },
 
-          {
-            src: "https://tailwindui.com/img/logos/mirage-logo-gray-400.svg",
-            alt: "Mirage"
-          },
-          {
-            src: "https://tailwindui.com/img/logos/tuple-logo-gray-400.svg",
-            alt: "Tuple"
-          },
-          {
-            src: "https://tailwindui.com/img/logos/statickit-logo-gray-400.svg",
-            alt: "StaticKit"
-          },
-          {
-            src: "https://tailwindui.com/img/logos/transistor-logo-gray-400.svg",
-            alt: "Transistor"
-          },
-          {
-            src: "https://tailwindui.com/img/logos/statickit-logo-gray-400.svg",
-            alt: "StaticKit"
-          },
-          {
-            src: "https://tailwindui.com/img/logos/transistor-logo-gray-400.svg",
-            alt: "Transistor"
-          },
-          {
-            src: "https://tailwindui.com/img/logos/workcation-logo-gray-400.svg",
-            alt: "Workcation"
-          },
-          {
-            src: "https://tailwindui.com/img/logos/workcation-logo-gray-400.svg",
-            alt: "Workcation"
-          },
-          {
-            src: "https://tailwindui.com/img/logos/transistor-logo-gray-400.svg",
-            alt: "Transistor"
-          },
-          {
-            src: "https://tailwindui.com/img/logos/workcation-logo-gray-400.svg",
-            alt: "Workcation"
-          },
-          {
-            src: "https://tailwindui.com/img/logos/mirage-logo-gray-400.svg",
-            alt: "Mirage"
-          },
-          {
-            src: "https://tailwindui.com/img/logos/tuple-logo-gray-400.svg",
-            alt: "Tuple"
-          },
+          { src: rancherImage, alt: "rancher.png" },
 
-          {
-            src: "https://tailwindui.com/img/logos/mirage-logo-gray-400.svg",
-            alt: "Mirage"
-          }
+          { src: awsImage, alt: "aws.svg" },
+          { src: gcpImage, alt: "gcp.png" },
+          { src: azureImage, alt: "azure.png" },
+
+          { src: vsphereImage, alt: "vsphere.svg" },
+          { src: nginxImage, alt: "nginx.png" },
+          { src: calicoImage, alt: "calico.png" },
+          { src: antreaImage, alt: "antrea.svg" },
+          { src: ciliumImage, alt: "cilium.svg" },
+          { src: nsxImage, alt: "nsx.svg" },
+          { src: istioImage, alt: "istio.svg" },
+
+
+          { src: certManagerImage, alt: "certManager.svg" },
+          { src: dexImage, alt: "dex.png" },
+          { src: vaultImage, alt: "vault.png" },
+          { src: opaImage, alt: "opa.svg" },
+          { src: dynatraceImage, alt: "dynatrace.png" },
+          { src: prometheusImage, alt: "prometheus.svg" },
+          { src: grafanaImage, alt: "grafana.svg" },
+          { src: thanosImage, alt: "thanos.png" },
+          { src: elasticImage, alt: "elastic.png" },
+
+          { src: opengitopsImage, alt: "opengitops.svg" },
+          { src: fluxImage, alt: "flux.svg" },
+          { src: argoImage, alt: "argo.svg" },
+          { src: gitlabImage, alt: "gitlab.svg" },
+          { src: githubImage, alt: "github.png" },
+          { src: azureDevOpsImage, alt: "azureDevOps.png" },
+
+          { src: tektonImage, alt: "tekton.png" },
+          { src: harborImage, alt: "harbor.png" },
+
+          { src: jenkinsImage, alt: "jenkins.svg" },
+
+          { src: cassandraImage, alt: "cassandra.png" },
+          { src: kafkaImage, alt: "kafka.svg" },
+          { src: postgresImage, alt: "postgres.svg" },
+
+          { src: redisImage, alt: "redis.svg" },
+          { src: karinaImage, alt: "karina.png" },
+
+
+
+
+          { src: goImage, alt: "go.svg" },
+          { src: javaImage, alt: "java.svg" },
+          { src: javascriptImage, alt: "javascript.svg" },
+
+          { src: pythonImage, alt: "python.svg" },
+
+          { src: springbootImage, alt: "springboot.svg" },
+
+          { src: terraformImage, alt: "terraform.png" },
+          { src: etcdImage, alt: "etcd.png" },
+          { src: sonobuoyImage, alt: "sonobuoy.png" },
+
+          { src: veleroImage, alt: "velero.png" },
         ]}
         className="py-20 bg-gray-50"
       />
+
+      <Contact />
     </DefaultLayout>
   );
 }
