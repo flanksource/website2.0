@@ -1,6 +1,5 @@
 import React from "react";
 import DefaultLayout from "../../layout/DefaultLayout";
-import HeaderWithMedia from "../../components/HeaderWithMedia";
 import LogoCloud from "../../components/LogoCloud";
 import LinkButton from "../../components/LinkButton";
 import FeatureSectionList from "../../components/FeatureSectionList";
@@ -39,63 +38,59 @@ import { ReactComponent as SecureIcon } from "../../assets/icons/icons8-secure.s
 import { routes } from "../../routes";
 import HeaderSimpleCentered from "../../components/HeaderSimpleCentered";
 import KCSPLogo from "../../assets/images/logos/kcsp.png";
-import backgroundImageSrc from "../../assets/images/backgrounds/lighthouse_milkyway_cropped_readjusted.jpg";
+import backgroundImageSrc from "../../assets/images/backgrounds/lighthouse_milkyway_cropped_adjusted_resized.jpg";
 
 export default function Services() {
   return (
     <DefaultLayout>
-      <HeaderWithMedia
-        title={
-          <>
-            <span className="md:block">Flexible, Personalized</span>{" "}
-            <span className="text-blue-400 md:block">Kubernetes services</span>
-          </>
-        }
-        content={
-          <div className="flex flex-row">
-            <div>
-              <div className="text-base text-gray-300 sm:text-xl lg:text-lg xl:text-xl ">
-                <b>flank</b>source makes it easy to build, manage, and operate a
-                secure, open-source Kubernetes-based platform.
-              </div>
-              <div className="mt-8 rounded-md shadow flex flex-col items-center sm:flex-row sm:justify-center lg:justify-start sm:space-x-4 space-y-4 sm:space-y-0">
-                <LinkButton href="#" theme="light">
-                  Read the case study
-                </LinkButton>
-                <LinkButton href={routes.contact.path} theme="dark">
-                  Get started
-                </LinkButton>
-              </div>
-            </div>
-            <img
-              className="m-3 w-36 object-contain max-w-2xl hidden lg:block"
-              style={{ animation: "15s infinite slightSpin" }}
-              src={KCSPLogo}
-              alt="kube"
-            />
-          </div>
-        }
-        media={
-          <div
-            className="h-full flex justify-center align-middle"
-            style={{ animation: "10s infinite floatY" }}
-          >
-            <img
-              className="w-1/3 sm:w-1/4 lg:w-1/3 object-contain max-w-2xl lg:opacity-0"
-              style={{ animation: "15s infinite slightSpin" }}
-              src={KCSPLogo}
-              alt="kube"
-            />
-          </div>
-        }
+      <div
+        className="relative bg-blue-800 overflow-hidden pt-12 pb-24 sm:pb-32"
         style={{
           backgroundImage: `url('${backgroundImageSrc}')`,
           backgroundSize: "cover",
-          backgroundBlendMode: "hard-light",
           backgroundPosition: "center",
-          animation: "7s ease-in-out infinite blueBgPulse"
+          backgroundBlendMode: "hard-light",
+          backgroundColor: "#4b5f77"
         }}
-      />
+      >
+        <div className="mt-8 sm:mt-16">
+          <div className="mx-auto max-w-6xl">
+            <div className="flex flex-col-reverse lg:flex-row lg:w-9/12 2xl:w-10/12">
+              <div className="px-4 sm:px-6 text-center md:max-w-2xl md:mx-auto lg:text-left lg:items-center">
+                <h1 className="text-4xl tracking-tight font-extrabold text-white sm:leading-none lg:text-4xl xl:text-5xl">
+                  <span className="md:block">Flexible, Personalized</span>{" "}
+                  <span className="text-blue-400 md:block">
+                    Kubernetes services
+                  </span>
+                </h1>
+                <div className="mt-3 sm:mt-5">
+                  <div className="text-base text-white sm:text-xl lg:text-lg xl:text-xl ">
+                    <b>flank</b>source makes it easy to build, manage, and
+                    operate a secure, open-source Kubernetes-based platform.
+                  </div>
+                  <div className="mt-8 rounded-md shadow flex flex-col items-center sm:flex-row sm:justify-center lg:justify-start sm:space-x-4 space-y-4 sm:space-y-0">
+                    <LinkButton href="#" theme="light">
+                      Read the case study
+                    </LinkButton>
+                    <LinkButton href={routes.contact.path} theme="dark">
+                      Get started
+                    </LinkButton>
+                  </div>
+                </div>
+              </div>
+              <div className="mb-8 lg:mb-0">
+                <div className="h-full flex justify-center align-middle">
+                  <img
+                    className="w-1/3 sm:w-1/4 lg:w-1/2 object-contain max-w-2xl"
+                    src={KCSPLogo}
+                    alt="kube"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <LogoCloud
         title="Happy Teams"
@@ -302,7 +297,7 @@ export default function Services() {
             </Link>
           </div>
         }
-        className="py-12 lg:py-16"
+        className="py-12"
         noBorder
         noOverflow
         flipped
@@ -328,7 +323,7 @@ export default function Services() {
             </Link>
           </>
         }
-        className="py-12 lg:py-16"
+        className="py-12 bg-gray-50"
         noBorder
         noOverflow
       />
@@ -369,7 +364,7 @@ export default function Services() {
             </Link>
           </div>
         }
-        className="py-12 lg:py-16"
+        className="py-12"
         noBorder
         noOverflow
         flipped
@@ -393,7 +388,7 @@ export default function Services() {
             </Link>
           </>
         }
-        className="py-12 lg:py-16"
+        className="py-12 bg-gray-50"
         noBorder
         noOverflow
       />
@@ -417,7 +412,7 @@ export default function Services() {
             </Link>
           </>
         }
-        className="py-12 lg:py-16"
+        className="py-12"
         noBorder
         noOverflow
         flipped
@@ -448,7 +443,7 @@ export default function Services() {
             </Link>
           </div>
         }
-        className="py-12 lg:py-16"
+        className="py-12 bg-gray-50"
         noBorder
         noOverflow
       />
@@ -518,7 +513,7 @@ export default function Services() {
             alt: "Mirage"
           }
         ]}
-        className="bg-gray-50 py-20"
+        className="py-20"
       />
     </DefaultLayout>
   );

@@ -6,7 +6,7 @@ export default function DefaultLayout({ children, ...props }) {
   return (
     <div className="h-screen flex flex-col">
       <SiteHeader />
-      <div className="flex-grow">{children}</div>
+      <main className="flex-grow">{children}</main>
       <SiteFooter />
     </div>
   );

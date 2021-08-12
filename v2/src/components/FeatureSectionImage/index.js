@@ -29,7 +29,7 @@ export default function FeatureSectionImage({
 }) {
   return (
     <div className={`relative ${className}`} {...props}>
-      <div className="h-56 bg-indigo-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
+      <div className="h-56 bg-indigo-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-5/12">
         <img
           className="w-full h-full object-cover"
           src={imageSrc}
@@ -37,7 +37,7 @@ export default function FeatureSectionImage({
         />
       </div>
       <div className="relative max-w-6xl mx-auto px-4 py-6 sm:py-10 sm:px-8 md:py-20">
-        <div className="max-w-2xl mx-auto md:max-w-none md:mr-0 md:ml-auto md:w-1/2 md:pl-10">
+        <div className="max-w-2xl mx-auto md:max-w-none md:mr-0 md:ml-auto md:w-7/12 md:pl-10">
           <h2 className="mt-6 md:mt-0  text-3xl font-bold text-gray-900 tracking-tight">
             {title}
           </h2>
