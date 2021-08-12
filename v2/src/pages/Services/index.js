@@ -6,6 +6,7 @@ import FeatureSectionList from "../../components/FeatureSectionList";
 import FeatureSectionImage from "../../components/FeatureSectionImage";
 import FullWidthSection from "../../components/FullWidthSection";
 import FeatureSectionImageCard from "../../components/FeatureSectionImageCard";
+import KCSPLogoAnimated from "../../components/KCSPLogoAnimated";
 import { Link } from "react-router-dom";
 
 import {
@@ -31,7 +32,6 @@ import { ReactComponent as SecureIcon } from "../../assets/icons/icons8-secure.s
 
 import { routes } from "../../routes";
 import HeaderSimpleCentered from "../../components/HeaderSimpleCentered";
-import KCSPLogo from "../../assets/images/logos/kcsp.png";
 import backgroundImageSrc from "../../assets/images/backgrounds/lighthouse_milkyway_cropped_adjusted_resized.jpg";
 
 export default function Services() {
@@ -74,11 +74,7 @@ export default function Services() {
               </div>
               <div className="mb-8 lg:mb-0">
                 <div className="h-full flex justify-center align-middle">
-                  <img
-                    className="w-1/3 sm:w-1/4 lg:w-1/2 object-contain max-w-2xl"
-                    src={KCSPLogo}
-                    alt="kube"
-                  />
+                  <KCSPLogoAnimated className="w-1/3 sm:w-1/5 lg:w-4/6 object-contain max-w-2xl" />
                 </div>
               </div>
             </div>
