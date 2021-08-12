@@ -3,20 +3,15 @@ import DefaultLayout from "../../layout/DefaultLayout";
 import LogoCloud from "../../components/LogoCloud";
 import LinkButton from "../../components/LinkButton";
 import FeatureSectionList from "../../components/FeatureSectionList";
-import FeatureSectionGrid from "../../components/FeatureSectionGrid";
 import FeatureSectionImage from "../../components/FeatureSectionImage";
 import FullWidthSection from "../../components/FullWidthSection";
 import FeatureSectionImageCard from "../../components/FeatureSectionImageCard";
 import { Link } from "react-router-dom";
 
 import {
-  CurrencyDollarIcon,
-  TrendingUpIcon,
-  LightBulbIcon,
-  ShieldCheckIcon,
-  LightningBoltIcon,
   ChatIcon,
   UsersIcon,
+  CheckIcon,
   CollectionIcon
 } from "@heroicons/react/outline";
 
@@ -28,7 +23,6 @@ import costValueImage from "../../assets/images/illustrations/cost-value.svg";
 import resilienceReviewImage from "../../assets/images/illustrations/resilience-review.svg";
 
 import { ReactComponent as AutomationIcon } from "../../assets/icons/icons8-automation.svg";
-import { ReactComponent as CursorIcon } from "../../assets/icons/icons8-cursor-in-window.svg";
 import { ReactComponent as OnlineSupportIcon } from "../../assets/icons/icons8-online-support.svg";
 import { ReactComponent as ApprovalIcon } from "../../assets/icons/icons8-approval.svg";
 import { ReactComponent as CloudConnectionIcon } from "../../assets/icons/icons8-cloud-connection.svg";
@@ -125,25 +119,25 @@ export default function Services() {
         features={[
           {
             title: "Reduce your Kubernetes total cost of ownership",
-            icon: <CurrencyDollarIcon />
+            icon: <CheckIcon className="w-6 h-6 text-green-500" />
           },
           {
             title: "Increase your resilience against production failures",
-            icon: <ShieldCheckIcon />
+            icon: <CheckIcon className="w-6 h-6 text-green-500" />
           },
           {
             title: "Accelerate your delivery",
-            icon: <TrendingUpIcon />
+            icon: <CheckIcon className="w-6 h-6 text-green-500" />
           },
           {
             title: "Improve your team’s knowledge & skills",
-            icon: <LightBulbIcon />
+            icon: <CheckIcon className="w-6 h-6 text-green-500" />
           },
 
           {
             title:
               "Access baked-in tools & best practices with known good configuration",
-            icon: <LightningBoltIcon />
+            icon: <CheckIcon className="w-6 h-6 text-green-500" />
           }
         ]}
         className="py-32 lg:py-44"
@@ -191,7 +185,7 @@ export default function Services() {
         className="bg-gray-50 pb-8"
       />
 
-      <FeatureSectionGrid
+      <FeatureSectionList
         title="Kubernetes, Simplified"
         subtitle={
           <>
@@ -201,35 +195,34 @@ export default function Services() {
         }
         features={[
           {
-            name: "GitOps-based Setup and configuration of Kubernetes platforms across the cloud, bare metal, and on-premises",
-            icon: <AutomationIcon className="w-full h-full p-3" />
+            title:
+              "GitOps-based Setup and configuration of Kubernetes platforms across the cloud, bare metal, and on-premises",
+            icon: <AutomationIcon className="w-8 h-8 mr-4" />
           },
           {
-            name: "Hover tooltips on platforms",
-            icon: <CursorIcon className="w-full h-full p-3" />
+            title:
+              "Extended production-grade support for all Kubernetes distributions and select Open Source software",
+            icon: <OnlineSupportIcon className="w-8 h-8 mr-4" />
           },
           {
-            name: "Extended production-grade support for all Kubernetes distributions and select Open Source software",
-            icon: <OnlineSupportIcon className="w-full h-full p-3" />
+            title: "Kubernetes Operator Development & Support",
+            icon: <FloatIcon className="w-8 h-8 mr-4" />
           },
           {
-            name: "Kubernetes Operator Development & Support",
-            icon: <FloatIcon className="w-full h-full p-3" />
+            title:
+              "Migrations from on-premise to Cloud, Cloud to Cloud and Cloud to On Premise.",
+            icon: <CloudConnectionIcon className="w-8 h-8 mr-4" />
           },
           {
-            name: "Migrations from on-premise to Cloud, Cloud to Cloud and Cloud to On Premise.",
-            icon: <CloudConnectionIcon className="w-full h-full p-3" />
+            title: "Production Readiness & Resilience Assessments",
+            icon: <ApprovalIcon className="w-8 h-8 mr-4" />
           },
           {
-            name: "Production Readiness & Resilience Assessments",
-            icon: <ApprovalIcon className="w-full h-full p-3" />
-          },
-          {
-            name: "Self-service, secure DevOps pipeline setup ",
-            icon: <SecureIcon className="w-full h-full p-3" />
+            title: "Self-service, secure DevOps pipeline setup ",
+            icon: <SecureIcon className="w-8 h-8 mr-4" />
           }
         ]}
-        className="pt-28 pb-20"
+        className="py-32 lg:py-44"
       />
 
       <FullWidthSection
@@ -258,7 +251,7 @@ export default function Services() {
             needs. Zero license fees or service contracts to get started.
           </>
         }
-        className="pt-8 lg:pt-20"
+        className="py-12 pb-20 lg:pb-28 lg:py-20"
       />
 
       <FeatureSectionImageCard
@@ -282,7 +275,7 @@ export default function Services() {
         }
         imageSrc={quickstartImage}
         actions={
-          <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 space-y-0 md:space-x-4">
+          <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-y-0 md:space-x-4">
             <Link
               to="/" // @TODO: Change to a correct link
               className="inline-flex self-start whitespace-nowrap px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
@@ -297,7 +290,7 @@ export default function Services() {
             </Link>
           </div>
         }
-        className="py-12"
+        className="py-16 bg-gray-50"
         noBorder
         noOverflow
         flipped
@@ -323,7 +316,7 @@ export default function Services() {
             </Link>
           </>
         }
-        className="py-12 bg-gray-50"
+        className="py-16"
         noBorder
         noOverflow
       />
@@ -364,7 +357,7 @@ export default function Services() {
             </Link>
           </div>
         }
-        className="py-12"
+        className="py-16 bg-gray-50"
         noBorder
         noOverflow
         flipped
@@ -388,7 +381,7 @@ export default function Services() {
             </Link>
           </>
         }
-        className="py-12 bg-gray-50"
+        className="py-16"
         noBorder
         noOverflow
       />
@@ -412,7 +405,7 @@ export default function Services() {
             </Link>
           </>
         }
-        className="py-12"
+        className="py-16 bg-gray-50"
         noBorder
         noOverflow
         flipped
@@ -443,7 +436,7 @@ export default function Services() {
             </Link>
           </div>
         }
-        className="py-12 bg-gray-50"
+        className="py-16"
         noBorder
         noOverflow
       />
@@ -513,7 +506,7 @@ export default function Services() {
             alt: "Mirage"
           }
         ]}
-        className="py-20"
+        className="py-20 bg-gray-50"
       />
     </DefaultLayout>
   );

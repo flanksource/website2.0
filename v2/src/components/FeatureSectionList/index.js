@@ -23,8 +23,6 @@
 //   }
 // ];
 
-import { CheckIcon } from "@heroicons/react/outline";
-
 export default function FeatureSectionList({
   features,
   caption,
@@ -66,19 +64,17 @@ export default function FeatureSectionList({
           <div className="flex flex-col space-y-6">
             {features.map((feature) => (
               <div key={feature.name} className="relative ml-0 lg:ml-16">
-                <dt>
-                  <CheckIcon
-                    className="absolute h-6 w-6 text-green-500"
-                    aria-hidden="true"
-                  />
+                <div className="flex">
+                  <div aria-hidden="true">{feature.icon}</div>
                   <p
-                    className={`ml-9 text-lg leading-6 font-medium ${
+                    className={`ml-4 text-lg leading-6 font-medium ${
                       dark ? "text-white" : "text-gray-900"
                     }`}
                   >
                     {feature.title}
                   </p>
-                </dt>
+                </div>
+
                 {feature.description && (
                   <dd className="mt-2 ml-9 text-base text-gray-500">
                     {feature.description}

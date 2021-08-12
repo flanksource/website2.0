@@ -28,9 +28,7 @@ export default function FeatureSectionImageCard({
               }`}
             >
               <img
-                className={`w-full lg:absolute ${
-                  flipped ? "lg:right-0" : "lg:left-0"
-                } ${
+                className={`w-full ${flipped ? "lg:right-0" : "lg:left-0"} ${
                   noBorder
                     ? ""
                     : "rounded-xl shadow-xl ring-1 ring-black ring-opacity-5"
@@ -40,7 +38,7 @@ export default function FeatureSectionImageCard({
               />
             </div>
           </div>
-          <div className="px-4 max-w-xl mx-auto sm:px-6 lg:py-16 lg:max-w-none lg:mx-0 lg:px-0">
+          <div className="px-4 max-w-xl mx-auto sm:px-6 lg:py-8 lg:max-w-none lg:mx-0 lg:px-0">
             <div>
               {icon && (
                 <div>
@@ -52,7 +50,7 @@ export default function FeatureSectionImageCard({
                 </div>
               )}
 
-              <div className="mt-6">
+              <div className="pt-6">
                 <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">
                   {title}
                 </h2>
