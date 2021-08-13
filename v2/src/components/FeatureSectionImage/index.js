@@ -4,7 +4,6 @@ export default function FeatureSectionImage({
   subtitle,
   className,
   iconClassName,
-  dark,
   imageSrc,
   ...props
 }) {

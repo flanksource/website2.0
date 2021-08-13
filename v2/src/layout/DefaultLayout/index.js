@@ -9,7 +9,6 @@ export default function DefaultLayout({
   title,
   sub,
   children,
-  ...props
 }) {
   const [showHeader, setShowHeader] = useState(!headerShowOffset);
 

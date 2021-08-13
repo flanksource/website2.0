@@ -1,5 +1,4 @@
 import ResourceCTA from "../../components/ResourceCTA";
-import SiteHeader from "../../components/SiteHeader";
 import DefaultLayout from "../../layout/DefaultLayout";
 
 

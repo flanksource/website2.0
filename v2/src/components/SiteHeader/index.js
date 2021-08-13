@@ -5,7 +5,6 @@ import {
   XIcon,
   UserIcon,
   ViewGridIcon,
-  LightBulbIcon,
   BriefcaseIcon,
   AnnotationIcon
 } from "@heroicons/react/outline";
