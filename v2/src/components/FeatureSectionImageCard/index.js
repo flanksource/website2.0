@@ -9,8 +9,7 @@ export default function FeatureSectionImageCard({
   flipped,
   noBorder,
   noOverflow,
-  className,
-  ...props
+  className
 }) {
   return (
     <div className={`relative overflow-hidden ${className}`} id={id}>

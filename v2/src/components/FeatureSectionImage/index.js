@@ -23,7 +23,6 @@ export default function FeatureSectionImage({
   title,
   subtitle,
   className,
-  dark,
   imageSrc,
   ...props
 }) {

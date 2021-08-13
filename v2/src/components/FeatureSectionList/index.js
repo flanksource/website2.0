@@ -1,28 +1,3 @@
-// Example features:
-//
-// [
-//   {
-//     title: "Invite team members",
-//     description:
-//       "You can manage phone, email and chat conversations all from a single mailbox."
-//   },
-//   {
-//     title: "List view",
-//     description:
-//       "You can manage phone, email and chat conversations all from a single mailbox."
-//   },
-//   {
-//     title: "Keyboard shortcuts",
-//     description:
-//       "You can manage phone, email and chat conversations all from a single mailbox."
-//   },
-//   {
-//     title: "Calendars",
-//     description:
-//       "You can manage phone, email and chat conversations all from a single mailbox."
-//   }
-// ];
-
 export default function FeatureSectionList({
   features,
   caption,

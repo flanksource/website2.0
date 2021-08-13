@@ -1,4 +1,4 @@
-const colors = require('tailwindcss/colors')
+const colors = require("tailwindcss/colors");
 
 module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
@@ -44,16 +44,13 @@ module.exports = {
         fadeIn: "fadeIn ease-in normal"
       },
       colors: {
-        'warm-gray': colors.warmGray,
-        teal: colors.teal,
-      },
+        "warm-gray": colors.warmGray,
+        teal: colors.teal
+      }
     }
   },
   variants: {
     extend: {}
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/typography'),
-  ]
+  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")]
 };
