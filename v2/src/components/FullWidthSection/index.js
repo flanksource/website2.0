@@ -25,7 +25,8 @@ export default function FullWidthSection({
             <p className="mt-4 text-lg leading-6 text-indigo-200">
               {description}
             </p>
-            {actions && <>{actions}</>}
+
+            {actions && <div className="mt-6">{actions}</div>}
           </div>
         </div>
       </div>

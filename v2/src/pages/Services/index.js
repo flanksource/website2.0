@@ -8,7 +8,6 @@ import FullWidthSection from "../../components/FullWidthSection";
 import Contact from "../../components/Contact";
 import FeatureSectionImageCard from "../../components/FeatureSectionImageCard";
 import KCSPLogoAnimated from "../../components/KCSPLogoAnimated";
-import { Link } from "react-router-dom";
 
 import {
   ChatIcon,
@@ -307,12 +306,12 @@ export default function Services() {
       infrastructure for a leading insurance and financial services
       company."
           actions={
-            <Link
+            <LinkButton
+              theme="light"
               to="/" // @TODO: Change to a correct link
-              className="mt-8 bg-white border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-blue-600 hover:bg-indigo-50"
             >
               Read the case study
-            </Link>
+            </LinkButton>
           }
           className="mb-16 py-4"
         />
@@ -351,19 +350,18 @@ export default function Services() {
           }
           imageSrc={quickstartImage}
           actions={
-            <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-y-0 md:space-x-4">
-              <Link
+            <div className="flex flex-col items-start md:flex-row space-y-4 md:space-y-0 space-y-0 md:space-x-4">
+              <LinkButton
                 to="/" // @TODO: Change to a correct link
-                className="inline-flex self-start whitespace-nowrap px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
               >
                 Get Started
-              </Link>
-              <Link
+              </LinkButton>
+              <LinkButton
                 to="/" // @TODO: Change to a correct link
-                className="inline-flex self-start whitespace-nowrap px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm border-gray-400"
+                theme="secondary"
               >
                 Meet Karina, our flagship toolkit
-              </Link>
+              </LinkButton>
             </div>
           }
           className="py-16 bg-gray-50"
@@ -385,12 +383,11 @@ export default function Services() {
           imageSrc={internalPlatformsImage}
           actions={
             <>
-              <Link
+              <LinkButton
                 to="/" // @TODO: Change to a correct link
-                className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
               >
                 Browse our template library
-              </Link>
+              </LinkButton>
             </>
           }
           className="py-16"
@@ -417,18 +414,17 @@ export default function Services() {
           imageSrc={platformOperationsImage}
           actions={
             <div className="space-x-4">
-              <Link
+              <LinkButton
                 to="/" // @TODO: Change to a correct link
-                className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
               >
                 Get Started
-              </Link>
-              <Link
+              </LinkButton>
+              <LinkButton
                 to="/" // @TODO: Change to a correct link
-                className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm border-gray-400"
+                theme="secondary"
               >
                 Explore Canary Checker
-              </Link>
+              </LinkButton>
             </div>
           }
           className="py-16 bg-gray-50"
@@ -448,12 +444,11 @@ export default function Services() {
           imageSrc={cloudDevopsImage}
           actions={
             <>
-              <Link
+              <LinkButton
                 to="/" // @TODO: Change to a correct link
-                className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
               >
                 Get Started
-              </Link>
+              </LinkButton>
             </>
           }
           className="py-16"
@@ -473,12 +468,11 @@ export default function Services() {
           imageSrc={costValueImage}
           actions={
             <>
-              <Link
+              <LinkButton
                 to="/" // @TODO: Change to a correct link
-                className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
               >
                 Get Started
-              </Link>
+              </LinkButton>
             </>
           }
           className="py-16 bg-gray-50"
@@ -498,19 +492,18 @@ export default function Services() {
           }
           imageSrc={resilienceReviewImage}
           actions={
-            <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 space-y-0 md:space-x-4">
-              <Link
+            <div className="flex flex-col items-start md:flex-row space-y-2 md:space-y-0 space-y-0 md:space-x-4">
+              <LinkButton
                 to="/" // @TODO: Change to a correct link
-                className="inline-flex self-start whitespace-nowrap px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
               >
                 Get Started
-              </Link>
-              <Link
+              </LinkButton>
+              <LinkButton
                 to="/" // @TODO: Change to a correct link
-                className="inline-flex self-start whitespace-nowrap px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm border-gray-400"
+                theme="secondary"
               >
                 Learn about the science behind resilience
-              </Link>
+              </LinkButton>
             </div>
           }
           className="py-16"
