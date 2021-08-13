@@ -64,11 +64,14 @@ import tanzuImage from "../../assets/images/logos/tanzu.png";
 import tektonImage from "../../assets/images/logos/tekton.png";
 import terraformImage from "../../assets/images/logos/terraform.png";
 import thanosImage from "../../assets/images/logos/thanos.png";
-import typescriptImage from "../../assets/images/logos/typescript.svg";
 import vaultImage from "../../assets/images/logos/vault.png";
 import veleroImage from "../../assets/images/logos/velero.png";
 import vsphereImage from "../../assets/images/logos/vsphere.svg";
 
+import ada from "../../assets/images/customers/ada.png";
+import discovery from "../../assets/images/customers/discovery.svg";
+import bcb from "../../assets/images/customers/bcb.png";
+import om from "../../assets/images/customers/old-mutual.png";
 
 import quickstartImage from "../../assets/images/illustrations/quickstart.svg";
 import internalPlatformsImage from "../../assets/images/illustrations/internal-platforms.svg";
@@ -77,7 +80,6 @@ import cloudDevopsImage from "../../assets/images/illustrations/cloud-devops-acc
 import costValueImage from "../../assets/images/illustrations/cost-value.svg";
 import resilienceReviewImage from "../../assets/images/illustrations/resilience-review.svg";
 
-
 import { ReactComponent as OpenGitOpsIcon } from "../../assets/images/logos/opengitops.svg";
 import { ReactComponent as SupportIcon } from "../../assets/icons/support.svg";
 import { ReactComponent as CheckListIcon } from "../../assets/icons/checklist.svg";
@@ -85,11 +87,9 @@ import { ReactComponent as OperatorIcon } from "../../assets/icons/operator-supp
 import { ReactComponent as PushButtonIcon } from "../../assets/icons/push-button.svg";
 import { ReactComponent as MigrateIcon } from "../../assets/icons/migrate.svg";
 
-
 import { routes } from "../../routes";
 import HeaderSimpleCentered from "../../components/HeaderSimpleCentered";
 import backgroundImageSrc from "../../assets/images/backgrounds/lighthouse_milkyway_cropped_adjusted_resized.jpg";
-import Customers from "../../components/Customers";
 
 export default function Services() {
   return (
@@ -120,7 +120,7 @@ export default function Services() {
                     operate a secure, open-source Kubernetes-based platform.
                   </div>
 
-                  <div className="mt-8 rounded-md shadow flex flex-col items-center sm:flex-row sm:justify-center lg:justify-start sm:space-x-4 space-y-4 sm:space-y-0">
+                  <div className="mt-8 flex flex-col items-center sm:flex-row sm:justify-center lg:justify-start sm:space-x-4 space-y-4 sm:space-y-0">
                     <LinkButton href="#" theme="light">
                       Read the case study
                     </LinkButton>
@@ -140,7 +140,24 @@ export default function Services() {
         </div>
       </div>
 
-      <Customers />
+      <LogoCloud
+        title="Happy Teams"
+        srcList={[
+          {
+            src: ada
+          },
+          {
+            src: discovery
+          },
+          {
+            src: bcb
+          },
+          {
+            src: om
+          }
+        ]}
+        className={"py-20 bg-gray-50 filter grayscale"}
+      />
 
       <FeatureSectionList
         title="Resilient Kubernetes. On your terms"
@@ -169,7 +186,7 @@ export default function Services() {
             icon: <CheckIcon className="w-6 h-6 text-green-500" />
           }
         ]}
-        className="py-32 lg:py-44"
+        className="py-32 lg:py-40"
       />
 
       <FeatureSectionImage
@@ -224,31 +241,55 @@ export default function Services() {
         }
         features={[
           {
-            title:
-              "GitOps-based Setup and configuration of Kubernetes platforms across the cloud, bare metal, and on-premises",
-            icon: <OpenGitOpsIcon className="w-8 h-8 mr-4" />
+            title: (
+              <div className="mt-3">
+                GitOps-based Setup and configuration of Kubernetes platforms
+                across the cloud, bare metal, and on-premises
+              </div>
+            ),
+            icon: <OpenGitOpsIcon className="w-12 h-12 mr-4" />
           },
           {
-            title:
-              "Extended production-grade support for all Kubernetes distributions and select Open Source software",
-            icon: <SupportIcon className="w-8 h-8 mr-4" />
+            title: (
+              <div className="mt-3">
+                Extended production-grade support for all Kubernetes
+                distributions and select Open Source software
+              </div>
+            ),
+            icon: <SupportIcon className="w-12 h-12 mr-4" />
           },
           {
-            title: "Kubernetes Operator Development & Support",
-            icon: <OperatorIcon className="w-8 h-8 mr-4" />
+            title: (
+              <div className="mt-3">
+                Kubernetes Operator Development & Support
+              </div>
+            ),
+            icon: <OperatorIcon className="w-12 h-12 mr-4" />
           },
           {
-            title:
-              "Migrations from on-premise to Cloud, Cloud to Cloud and Cloud to On Premise.",
-            icon: <MigrateIcon className="w-8 h-8 mr-4" />
+            title: (
+              <div className="mt-3">
+                Migrations from on-premise to Cloud, Cloud to Cloud and Cloud to
+                On Premise.
+              </div>
+            ),
+            icon: <MigrateIcon className="w-12 h-12 mr-4" />
           },
           {
-            title: "Production Readiness & Resilience Assessments",
-            icon: <CheckListIcon className="w-8 h-8 mr-4" />
+            title: (
+              <div className="mt-3">
+                Production Readiness & Resilience Assessments
+              </div>
+            ),
+            icon: <CheckListIcon className="w-12 h-12 mr-4" />
           },
           {
-            title: "Self-service, secure DevOps pipeline setup ",
-            icon: <PushButtonIcon className="w-8 h-8 mr-4" />
+            title: (
+              <div className="mt-3">
+                Self-service, secure DevOps pipeline setup{" "}
+              </div>
+            ),
+            icon: <PushButtonIcon className="w-12 h-12 mr-4" />
           }
         ]}
         className="py-32 lg:py-44"
@@ -359,13 +400,9 @@ export default function Services() {
             For teams without the capability or capacity for production
             operations, get end-to-end service based on an SRE mindset and
             principles.
-            <ul className="py-6 list-disc space-y-2 list-inside">
-              <li>
-                <b>24/7/365 availability</b>
-              </li>
-              <li>
-                <b>Two-Tier Oncall</b>
-              </li>
+            <ul className="py-4 list-disc space-y-2 list-inside">
+              <li>24/7/365 availability</li>
+              <li>Two-Tier Oncall</li>
             </ul>
             You get a dedicated email address linked to our OpsGenie on-call
             rotation, enabling rapid response. Optionally, we join your on-call
@@ -478,74 +515,64 @@ export default function Services() {
       <LogoCloud
         title="Technologies we Love"
         srcList={[
-          { src: k8sImage, alt: "k8s.png" },
-          { src: kubeadmImage, alt: "kubeadm.png" },
-          { src: kopsImage, alt: "kops.svg" },
-          { src: aksImage, alt: "aks.png" },
-          { src: eksImage, alt: "eks.svg" },
-          { src: tanzuImage, alt: "tanzu.png" },
-          { src: openshiftImage, alt: "openshift.png" },
-
-          { src: rancherImage, alt: "rancher.png" },
-
-          { src: awsImage, alt: "aws.svg" },
-          { src: gcpImage, alt: "gcp.png" },
-          { src: azureImage, alt: "azure.png" },
-
-          { src: vsphereImage, alt: "vsphere.svg" },
-          { src: nginxImage, alt: "nginx.png" },
-          { src: calicoImage, alt: "calico.png" },
-          { src: antreaImage, alt: "antrea.svg" },
-          { src: ciliumImage, alt: "cilium.svg" },
-          { src: nsxImage, alt: "nsx.svg" },
-          { src: istioImage, alt: "istio.svg" },
-
-
-          { src: certManagerImage, alt: "certManager.svg" },
-          { src: dexImage, alt: "dex.png" },
-          { src: vaultImage, alt: "vault.png" },
-          { src: opaImage, alt: "opa.svg" },
-          { src: dynatraceImage, alt: "dynatrace.png" },
-          { src: prometheusImage, alt: "prometheus.svg" },
-          { src: grafanaImage, alt: "grafana.svg" },
-          { src: thanosImage, alt: "thanos.png" },
-          { src: elasticImage, alt: "elastic.png" },
-
-          { src: opengitopsImage, alt: "opengitops.svg" },
-          { src: fluxImage, alt: "flux.svg" },
-          { src: argoImage, alt: "argo.svg" },
-          { src: gitlabImage, alt: "gitlab.svg" },
-          { src: githubImage, alt: "github.png" },
-          { src: azureDevOpsImage, alt: "azureDevOps.png" },
-
-          { src: tektonImage, alt: "tekton.png" },
-          { src: harborImage, alt: "harbor.png" },
-
-          { src: jenkinsImage, alt: "jenkins.svg" },
-
-          { src: cassandraImage, alt: "cassandra.png" },
-          { src: kafkaImage, alt: "kafka.svg" },
-          { src: postgresImage, alt: "postgres.svg" },
-
-          { src: redisImage, alt: "redis.svg" },
-          { src: karinaImage, alt: "karina.png" },
-
-
-
-
-          { src: goImage, alt: "go.svg" },
-          { src: javaImage, alt: "java.svg" },
-          { src: javascriptImage, alt: "javascript.svg" },
-
-          { src: pythonImage, alt: "python.svg" },
-
-          { src: springbootImage, alt: "springboot.svg" },
-
-          { src: terraformImage, alt: "terraform.png" },
-          { src: etcdImage, alt: "etcd.png" },
-          { src: sonobuoyImage, alt: "sonobuoy.png" },
-
-          { src: veleroImage, alt: "velero.png" },
+          { src: k8sImage, alt: "k8s.png", title: "Kubernetes" },
+          { src: kubeadmImage, alt: "kubeadm.png", title: "kubeadm" },
+          { src: kopsImage, alt: "kops.svg", title: "kops" },
+          { src: aksImage, alt: "aks.png", title: "aks" },
+          { src: eksImage, alt: "eks.svg", title: "eks" },
+          { src: tanzuImage, alt: "tanzu.png", title: "tanzu" },
+          { src: openshiftImage, alt: "openshift.png", title: "openshift" },
+          { src: rancherImage, alt: "rancher.png", title: "rancher" },
+          { src: awsImage, alt: "aws.svg", title: "aws" },
+          { src: gcpImage, alt: "gcp.png", title: "gcp" },
+          { src: azureImage, alt: "azure.png", title: "azure" },
+          { src: vsphereImage, alt: "vsphere.svg", title: "vsphere" },
+          { src: nginxImage, alt: "nginx.png", title: "nginx" },
+          { src: calicoImage, alt: "calico.png", title: "calico" },
+          { src: antreaImage, alt: "antrea.svg", title: "antrea" },
+          { src: ciliumImage, alt: "cilium.svg", title: "cilium" },
+          { src: nsxImage, alt: "nsx.svg", title: "nsx" },
+          { src: istioImage, alt: "istio.svg", title: "istio" },
+          {
+            src: certManagerImage,
+            alt: "certManager.svg",
+            title: "certManager"
+          },
+          { src: dexImage, alt: "dex.png", title: "dex" },
+          { src: vaultImage, alt: "vault.png", title: "vault" },
+          { src: opaImage, alt: "opa.svg", title: "opa" },
+          { src: dynatraceImage, alt: "dynatrace.png", title: "dynatrace" },
+          { src: prometheusImage, alt: "prometheus.svg", title: "prometheus" },
+          { src: grafanaImage, alt: "grafana.svg", title: "grafana" },
+          { src: thanosImage, alt: "thanos.png", title: "thanos" },
+          { src: elasticImage, alt: "elastic.png", title: "elastic" },
+          { src: opengitopsImage, alt: "opengitops.svg", title: "opengitops" },
+          { src: fluxImage, alt: "flux.svg", title: "flux" },
+          { src: argoImage, alt: "argo.svg", title: "argo" },
+          { src: gitlabImage, alt: "gitlab.svg", title: "gitlab" },
+          { src: githubImage, alt: "github.png", title: "github" },
+          {
+            src: azureDevOpsImage,
+            alt: "azureDevOps.png",
+            title: "azureDevOps"
+          },
+          { src: tektonImage, alt: "tekton.png", title: "tekton" },
+          { src: harborImage, alt: "harbor.png", title: "harbor" },
+          { src: jenkinsImage, alt: "jenkins.svg", title: "jenkins" },
+          { src: cassandraImage, alt: "cassandra.png", title: "cassandra" },
+          { src: kafkaImage, alt: "kafka.svg", title: "kafka" },
+          { src: postgresImage, alt: "postgres.svg", title: "postgres" },
+          { src: redisImage, alt: "redis.svg", title: "redis" },
+          { src: karinaImage, alt: "karina.png", title: "karina" },
+          { src: goImage, alt: "go.svg", title: "go" },
+          { src: javaImage, alt: "java.svg", title: "java" },
+          { src: javascriptImage, alt: "javascript.svg", title: "javascript" },
+          { src: pythonImage, alt: "python.svg", title: "python" },
+          { src: springbootImage, alt: "springboot.svg", title: "springboot" },
+          { src: terraformImage, alt: "terraform.png", title: "terraform" },
+          { src: etcdImage, alt: "etcd.png", title: "etcd" },
+          { src: sonobuoyImage, alt: "sonobuoy.png", title: "sonobuoy" },
+          { src: veleroImage, alt: "velero.png", title: "velero" }
         ]}
         className="py-20 bg-gray-50"
       />
