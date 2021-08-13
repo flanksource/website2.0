@@ -40,7 +40,7 @@ const people = [
   },
   {
     name: "Kyle Robbertze",
-    role: "Copywriter",
+    role: "Site Reliability Engineer",
     imageUrl: "/team/kyle.jpg",
     twitterUrl: "#",
     linkedinUrl: "#"
@@ -118,38 +118,9 @@ const features = [
 
 export default function About() {
   return (
-    <DefaultLayout>
-      <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            About Us
-          </h2>
-          <p className="mt-4 text-lg text-gray-500"></p>
-        </div>
-      </div>
+    <DefaultLayout className="bg-gray-50" title="About Us">
 
-      {/*
-      <div
-        className="relative bg-blue-800 overflow-hidden pt-12 pb-24 sm:pb-32"
-        style={{
-          backgroundImage: `url('${backgroundImageSrc}')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundBlendMode: "hard-light",
-          backgroundColor: "#4b5f77"
-        }}
-      >
-        <div className="mt-8 sm:mt-16">
-          <div className="mx-auto max-w-6xl">
-            <div className="flex flex-col-reverse lg:flex-row lg:w-9/12 2xl:w-10/12">
-              <div className="px-4 sm:px-6 text-center md:max-w-2xl md:mx-auto lg:text-left lg:items-center">
-                <h1 className="text-4xl tracking-tight font-extrabold text-white sm:leading-none lg:text-4xl xl:text-5xl">
-                  <span className="md:block">About Us</span>{" "}
-                </h1>
-              </div></div>
-          </div></div></div> */}
-
-      <div className="bg-gray-50 overflow-hidden">
+      <div className="bg-white  overflow-hidden mb-20 ">
         <div className="relative max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
           <svg
             className="absolute top-0 left-full transform -translate-x-1/2 -translate-y-3/4 lg:left-auto lg:right-full lg:translate-x-2/3 lg:translate-y-1/4"
@@ -209,7 +180,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="bg-white">
+      <div className="bg-gray-50">
         <div className="max-w-7xl mx-auto py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
           <div className="space-y-12">
             <div className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
@@ -242,16 +213,16 @@ export default function About() {
       </div>
       {/* <Contact /> */}
 
-      <div className="relative py-16 bg-white">
+      <div className="relative py-16">
         <div
-          className="hidden absolute top-0 inset-x-0 h-1/2 bg-gray-50 lg:block"
+          className="hidden absolute top-0 inset-x-0 h-1/2  lg:block"
           aria-hidden="true"
         />
         <div className="max-w-7xl mx-auto bg-indigo-600 lg:bg-transparent lg:px-8">
           <div className="lg:grid lg:grid-cols-12">
             <div className="relative z-10 lg:col-start-1 lg:row-start-1 lg:col-span-4 lg:py-16 lg:bg-transparent">
               <div
-                className="absolute inset-x-0 h-1/2 bg-gray-50 lg:hidden"
+                className="absolute inset-x-0 h-1/2 lg:hidden"
                 aria-hidden="true"
               />
               <div className="max-w-md mx-auto px-4 sm:max-w-3xl sm:px-6 lg:max-w-none lg:p-0">

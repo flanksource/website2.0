@@ -123,7 +123,7 @@ export default function Services() {
                     </div>
 
                     <div className="mt-8 flex flex-col items-center sm:flex-row sm:justify-center lg:justify-start sm:space-x-4 space-y-4 sm:space-y-0">
-                      <LinkButton href="#" theme="light">
+                      <LinkButton href={routes.discoveryCTA.path} theme="light">
                         Read the case study
                       </LinkButton>
                       <LinkButton href={routes.contact.path} theme="dark">
@@ -190,9 +190,9 @@ export default function Services() {
           ]}
           className="py-32 lg:py-40"
         />
-
         <FeatureSectionImage
           title="Seamless Collaboration and Delivery"
+          iconClassName="bg-blue-500 text-white"
           subtitle={
             <>
               <b>flank</b>source extends your team with CKA-certified principal
@@ -206,8 +206,7 @@ export default function Services() {
               name: "Chat",
               description: (
                 <>
-                  We’re available in your chat-rooms
-                  <div>(Slack or MS Teams)</div>
+                  We’re available in your chat-rooms<div>(Slack or MS Teams)</div>
                 </>
               ),
               icon: <ChatIcon />
@@ -216,6 +215,7 @@ export default function Services() {
               name: "Joint Standups",
               description:
                 "We join your standups to keep up-to-date about your environment",
+
 
               icon: <UsersIcon />
             },
@@ -235,8 +235,8 @@ export default function Services() {
         />
 
         <FeatureSectionList
-          variant="horizontal"
           title="Kubernetes, Simplified"
+          variant="horizontal"
           subtitle={
             <>
               Streamlined, cost-effective platform solutions – customised for

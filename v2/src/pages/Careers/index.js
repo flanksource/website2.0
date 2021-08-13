@@ -3,8 +3,8 @@ import DefaultLayout from "../../layout/DefaultLayout";
 
 export default function Careers() {
   return (
-    <DefaultLayout>
-      <div className="relative py-16 bg-white overflow-hidden">
+    <DefaultLayout className="bg-gray-50 ">
+      <div className="relative py-16 bg-gray-50 overflow-hidden">
         <Dots />
         <div className="relative px-4 sm:px-6 lg:px-8">
           <div className="text-lg max-w-prose mx-auto">
@@ -100,8 +100,8 @@ export default function Careers() {
             <a
               type="button"
               href="https://flanksource1.recruitee.com/o/kubernetes-site-reliability-engineer"
-              style={{ color: "white", "text-docoration-line": "none" }}
-              className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              style={{ color: 'white' }}
+              className="inline-flex  no-underline items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             >
               Apply Now
             </a>

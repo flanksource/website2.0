@@ -1,28 +1,10 @@
-// Example features:
-//
-// const features = [
-//   {
-//     name: "Unlimited Inboxes",
-//     description:
-//       "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
-//   },
-//   {
-//     name: "Manage Team Members",
-//     description:
-//       "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
-//   },
-//   {
-//     name: "Spam Report",
-//     description:
-//       "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
-//   }
-// ];
-
 export default function FeatureSectionImage({
   features,
   title,
   subtitle,
   className,
+  iconClassName,
+  dark,
   imageSrc,
   ...props
 }) {
@@ -47,7 +29,7 @@ export default function FeatureSectionImage({
                 return (
                   <div key={item.name} className="flex flex-row px-8 pt-8">
                     {item.icon ? (
-                      <div className="mr-4 mt-1 flex flex-shrink-0 items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                      <div className={`mr-4 mt-1 flex flex-shrink-0 items-center justify-center h-12 w-12 rounded-md ${iconClassName}`}>
                         <div className="h-6 w-6">{item.icon}</div>
                       </div>
                     ) : null}

@@ -7,6 +7,7 @@ import { BlogIndex } from "./pages/Blog";
 import { BlogOne } from "./pages/Blog/contributingFactorsToFailure";
 import { BlogTwo } from "./pages/Blog/kubernetesIsNotAContainerOrchestrator";
 import { BlogThree } from "./pages/Blog/launchingFlanksource";
+import DiscoveryCaseStudy from "./pages/CaseStudy";
 
 // const prefix = process.env.NODE_ENV === "production" ? "/v2" : "";
 const prefix = "/v2";
@@ -80,6 +81,12 @@ export const routes = {
     exact: true,
     path: `${prefix}/contact`,
     component: <TestPage1 />
+  },
+  discoveryCTA: {
+    name: "Discovery Case Study",
+    exact: true,
+    path: `${prefix}/case-study/discovery`,
+    component: <DiscoveryCaseStudy />
   }
 };
 

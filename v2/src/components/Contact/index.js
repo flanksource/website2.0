@@ -3,6 +3,78 @@ import { FaSlack } from "react-icons/fa";
 import ReactCountryFlag from "react-country-flag";
 import { routes } from "../../routes";
 
+
+export function ContactForm({
+  submit = "Submit"
+}) {
+  return (
+    <div className="max-w-lg mx-auto lg:max-w-none">
+      <form className="grid grid-cols-1 gap-y-6" method="POST" action="https://www.flanksource.com">
+        <input type="hidden" name="form-name" value="contact" />
+        <div>
+          <label htmlFor="full-name" className="sr-only">
+            Name
+          </label>
+          <input
+            type="text"
+            name="full-name"
+            id="full-name"
+            autoComplete="name"
+            className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md"
+            placeholder="Name"
+          />
+        </div>
+        <div>
+          <label htmlFor="email" className="sr-only">
+            Email
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autoComplete="email"
+            className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md"
+            placeholder="Email"
+          />
+        </div>
+        <div>
+          <label htmlFor="phone" className="sr-only">
+            Phone
+          </label>
+          <input
+            type="text"
+            name="phone"
+            id="phone"
+            autoComplete="tel"
+            className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md"
+            placeholder="Phone"
+          />
+        </div>
+        <div>
+          <label htmlFor="message" className="sr-only">
+            Message
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows={4}
+            className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border border-gray-300 rounded-md"
+            placeholder="Message"
+            defaultValue={""}
+          />
+        </div>
+        <div>
+          <button
+            type="submit"
+            className="inline-flex justify float-right py-3 px-6 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+          >
+            {submit}
+          </button>
+        </div>
+      </form>
+    </div>
+  )
+}
 export default function Contact() {
   return (
     <div className="relative bg-white">
@@ -111,69 +183,7 @@ export default function Contact() {
         </div>
         <div className="bg-white py-16 px-4 sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
           <div className="max-w-lg mx-auto lg:max-w-none">
-            <form className="grid grid-cols-1 gap-y-6" method="POST" action="/">
-              <input type="hidden" name="form-name" value="contact" />
-              <div>
-                <label htmlFor="full-name" className="sr-only">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  name="full-name"
-                  id="full-name"
-                  autoComplete="name"
-                  className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md"
-                  placeholder="Name"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="sr-only">
-                  Email
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md"
-                  placeholder="Email"
-                />
-              </div>
-              <div>
-                <label htmlFor="phone" className="sr-only">
-                  Phone
-                </label>
-                <input
-                  type="text"
-                  name="phone"
-                  id="phone"
-                  autoComplete="tel"
-                  className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md"
-                  placeholder="Phone"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="sr-only">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border border-gray-300 rounded-md"
-                  placeholder="Message"
-                  defaultValue={""}
-                />
-              </div>
-              <div>
-                <button
-                  type="submit"
-                  className="inline-flex justify float-right py-3 px-6 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                >
-                  Get Started
-                </button>
-              </div>
-            </form>
+            <ContactForm />
           </div>
         </div>
       </div>
