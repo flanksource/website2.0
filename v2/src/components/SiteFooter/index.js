@@ -131,7 +131,10 @@ export default function SiteFooter() {
             {Object.keys(footerNavigation).map((key) => {
               const column = footerNavigation[key];
               return (
-                <div className="flex flex-grow ml-8 sm:ml-16 md:ml-0 mb-14 md:mb-0">
+                <div
+                  key={column.title}
+                  className="flex flex-grow ml-8 sm:ml-16 md:ml-0 mb-14 md:mb-0"
+                >
                   <div className="md:mt-0">
                     <h3 className="text-sm font-semibold text-warm-gray-200 tracking-wider uppercase">
                       {column.title}

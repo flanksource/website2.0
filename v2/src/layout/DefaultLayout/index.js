@@ -29,10 +29,10 @@ export default function DefaultLayout({
     <div className="h-screen flex flex-col">
       <SiteHeader
         className={`${
-          headerShowOffset ? "fixed top-0 w-full z-10 duration-500" : ""
+          headerShowOffset ? "fixed top-0 w-full z-50 duration-500" : ""
         } ${headerShowOffset && showHeader ? "" : "-top-full"}`}
       />
-      <main className="flex-grow">{children}</main>
+      <div className="flex-grow">{children}</div>
       <SiteFooter />
     </div>
   );

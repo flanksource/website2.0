@@ -86,7 +86,7 @@ export default function SiteHeader({ theme, ...props }) {
 
   return (
     <header {...props}>
-      <Popover className={`relative ${themeBgClass} z-10`}>
+      <Popover className={`relative ${themeBgClass} z-50`}>
         {({ open }) => (
           <>
             <div className="max-w-6xl mx-auto px-4 sm:px-6 flex justify-between items-center py-3 md:space-x-10">
@@ -106,7 +106,13 @@ export default function SiteHeader({ theme, ...props }) {
               </div>
 
               <div className="-mr-2 -my-2 md:hidden">
-                <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+                <Popover.Button
+                  className={`${
+                    theme === "dark" || theme === "transparent-dark"
+                      ? "text-gray-100 hover:text-gray-300 "
+                      : "bg-white hover:bg-gray-100 text-gray-400 hover:text-gray-500 "
+                  }rounded-md p-2 inline-flex items-center justify-center  focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500`}
+                >
                   <span className="sr-only">Open menu</span>
                   <MenuIcon className="h-6 w-6" aria-hidden="true" />
                 </Popover.Button>
@@ -116,6 +122,7 @@ export default function SiteHeader({ theme, ...props }) {
                 {navbarItems.map((item) => {
                   return (
                     <Link
+                      key={item.href}
                       to={item.href}
                       className={`text-base font-medium ${themeNavTextClass}`}
                     >

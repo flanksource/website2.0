@@ -9,7 +9,7 @@ export default function TestPage() {
     <DefaultLayout>
       <Container>
         <div className="mt-12">
-          <div class="text-3xl font-extrabold text-gray-900">Test Page</div>
+          <div className="text-3xl font-extrabold text-gray-900">Test Page</div>
           <div>env: {env}</div>
         </div>
       </Container>
