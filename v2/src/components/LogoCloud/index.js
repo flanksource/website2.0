@@ -19,7 +19,7 @@ export default function LogoCloud({ srcList, title, className, ...props }) {
           {srcList.map((item, index) => {
             return (
               <div
-                className={`px-6 py-6 flex justify-center md:col-span-2 lg:col-span-1`}
+                className={`px-3 py-3 flex justify-center md:col-span-2 lg:col-span-1`}
               >
                 <img
                   className="h-12"
