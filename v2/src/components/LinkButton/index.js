@@ -24,7 +24,7 @@ export default function LinkButton({
       themeClass = "text-white bg-blue-700 hover:bg-blue-800";
       break;
     case "secondary":
-      themeClass = "text-blue-900 bg-gray-100 hover:bg-blue-100";
+      themeClass = "text-blue-900 bg-gray-100 hover:bg-blue-100 shadow";
       break;
     default:
       themeClass = "text-white bg-blue-700 hover:bg-blue-800"; // primary
@@ -48,10 +48,14 @@ export default function LinkButton({
   }
 
   return (
-    <div className={`rounded-md ${shadow ? "shadow" : ""} ${className}`}>
+    <div
+      className={`rounded-md ${
+        shadow ? "shadow" : ""
+      } ${themeClass} ${sizeClass} ${className} inline-block cursor-pointer`}
+    >
       <Link
         to={href}
-        className={`${themeClass} ${sizeClass} w-full flex whitespace-nowrap items-center justify-center border border-transparent rounded-md`}
+        className={`whitespace-nowrap border border-transparent rounded-md`}
       >
         {children}
       </Link>
