@@ -18,7 +18,6 @@ export default function DefaultLayout({ headerShowOffset, children }) {
     if (headerShowOffset) {
       window.addEventListener("scroll", onPageScroll);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
