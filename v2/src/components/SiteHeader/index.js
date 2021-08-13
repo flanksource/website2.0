@@ -14,13 +14,12 @@ import { Link } from "react-router-dom";
 
 import flanksourceLogo from "../../assets/images/flanksource.svg";
 
-export default function SiteHeader() {
+export default function SiteHeader({ theme, ...props }) {
   const navbarItems = [
     {
       name: "About",
       description: "About Flanksource",
       href: routes.about.path,
-      // href: "/about",
       icon: UserIcon
     },
     {
@@ -37,20 +36,56 @@ export default function SiteHeader() {
     {
       name: "Careers",
       href: routes.careers.path,
-      // href: "/careers",
       icon: BriefcaseIcon
     },
     {
       name: "Blog",
       href: routes.blog.path,
-      // href: "/blog",
       icon: AnnotationIcon
     }
   ];
 
+  let themeBgClass = "";
+  switch (theme) {
+    case "light":
+      themeBgClass = "bg-white";
+      break;
+    case "dark":
+      themeBgClass = "bg-black";
+      break;
+    case "transparent-light":
+      themeBgClass = "";
+      break;
+    case "transparent-dark":
+      themeBgClass = "";
+      break;
+    default:
+      themeBgClass = "bg-white"; // light
+      break;
+  }
+
+  let themeNavTextClass = "";
+  switch (theme) {
+    case "light":
+      themeNavTextClass = "text-gray-500 hover:text-gray-900";
+      break;
+    case "dark":
+      themeNavTextClass = "";
+      break;
+    case "transparent-light":
+      themeNavTextClass = "text-gray-500 hover:text-gray-900";
+      break;
+    case "transparent-dark":
+      themeNavTextClass = "text-gray-100 hover:text-gray-300";
+      break;
+    default:
+      themeNavTextClass = "text-gray-500 hover:text-gray-900"; // light
+      break;
+  }
+
   return (
-    <header>
-      <Popover className="relative bg-white z-10">
+    <header {...props}>
+      <Popover className={`relative ${themeBgClass} z-10`}>
         {({ open }) => (
           <>
             <div className="max-w-6xl mx-auto px-4 sm:px-6 flex justify-between items-center py-4 md:space-x-10">
@@ -77,7 +112,7 @@ export default function SiteHeader() {
                   return (
                     <Link
                       to={item.href}
-                      className="text-base font-medium text-gray-500 hover:text-gray-900"
+                      className={`text-base font-medium ${themeNavTextClass}`}
                     >
                       {item.name}
                     </Link>
@@ -87,7 +122,7 @@ export default function SiteHeader() {
               <div className="hidden lg:flex items-center justify-end">
                 <a
                   href="mailto:hi@flanksource.com"
-                  className="text-base font-medium text-gray-500 hover:text-gray-900"
+                  className={`text-base font-medium ${themeNavTextClass}`}
                 >
                   hi@flanksource.com
                 </a>

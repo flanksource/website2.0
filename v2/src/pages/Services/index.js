@@ -90,12 +90,14 @@ import { ReactComponent as MigrateIcon } from "../../assets/icons/migrate.svg";
 import { routes } from "../../routes";
 import HeaderSimpleCentered from "../../components/HeaderSimpleCentered";
 import backgroundImageSrc from "../../assets/images/backgrounds/lighthouse_milkyway_cropped_adjusted_resized.jpg";
+import SiteHeader from "../../components/SiteHeader";
 
 export default function Services() {
   return (
-    <DefaultLayout>
+    <DefaultLayout headerShowOffset={400}>
+      <SiteHeader theme="transparent-dark" className="absolute w-full" />
       <div
-        className="relative bg-blue-800 overflow-hidden pt-12 pb-24 sm:pb-32"
+        className="relative bg-blue-800 overflow-hidden pt-32 pb-24 sm:pb-32"
         style={{
           backgroundImage: `url('${backgroundImageSrc}')`,
           backgroundSize: "cover",
