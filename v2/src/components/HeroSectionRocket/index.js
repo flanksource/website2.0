@@ -8,7 +8,7 @@ export default function HeroSectionRocket({
 }) {
   return (
     <div
-      className="min-h-screen flex h-full"
+      className="min-h-screen flex items-center"
       style={{ backgroundColor: "#03151f" }}
     >
       <div className="h-full w-full pt-16 px-4 sm:px-6 py-12 lg:py-24 max-w-6xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-center z-10 ">
