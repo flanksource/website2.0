@@ -4,8 +4,7 @@ export default function CardSection({
   title,
   description,
   actions,
-  className,
-  ...props
+  className
 }) {
   return (
     <div className={className}>

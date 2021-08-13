@@ -4,8 +4,7 @@ export default function FullWidthSection({
   title,
   description,
   actions,
-  className,
-  ...props
+  className
 }) {
   return (
     <div

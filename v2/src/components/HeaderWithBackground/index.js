@@ -4,8 +4,7 @@ export default function HeaderWithBackground({
   title,
   subtitle,
   actions,
-  bgColor,
-  ...props
+  bgColor
 }) {
   return (
     <div

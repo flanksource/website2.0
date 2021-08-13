@@ -3,6 +3,7 @@ import DefaultLayout from "../../layout/DefaultLayout";
 import Container from "../../components/Container";
 
 export default function TestPage() {
+  // eslint-disable-next-line no-undef
   const env = process.env.NODE_ENV;
 
   return (

@@ -72,8 +72,8 @@ export default function Home() {
           title="SRE driven Platform Operations"
           description={
             <>
-              Don't have a team of Certified Kubernetes Administrators on-call?
-              We can help with augmented or fully managed operations.
+              {`Don't have a team of Certified Kubernetes Administrators on-call?
+              We can help with augmented or fully managed operations.`}
             </>
           }
           imageSrc={platformOperationsImage}
@@ -96,7 +96,7 @@ export default function Home() {
             <>
               Beginning your journey? We can get you production-ready in just 60
               days*.
-              <div className="mt-4 text-sm">* T&C's Apply</div>
+              <div className="mt-4 text-sm">{`* T&C's Apply`}</div>
             </>
           }
           imageSrc={quickstartImage}
@@ -118,8 +118,8 @@ export default function Home() {
           title="Strategy & Value Optimisation"
           description={
             <>
-              Don't have a team of Certified Kubernetes Administrators on-call?
-              We can help with augmented or fully managed operations.
+              {`Don't have a team of Certified Kubernetes Administrators on-call?
+              We can help with augmented or fully managed operations.`}
             </>
           }
           imageSrc={costValueImage}

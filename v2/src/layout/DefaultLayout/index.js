@@ -2,11 +2,7 @@ import React, { useEffect, useState } from "react";
 import SiteHeader from "../../components/SiteHeader";
 import SiteFooter from "../../components/SiteFooter";
 
-export default function DefaultLayout({
-  headerShowOffset,
-  children,
-  ...props
-}) {
+export default function DefaultLayout({ headerShowOffset, children }) {
   const [showHeader, setShowHeader] = useState(!headerShowOffset);
 
   const onPageScroll = (e) => {
@@ -17,12 +13,11 @@ export default function DefaultLayout({
     }
   };
 
-  // @TODO: switch to a better method eg. Interesection Observer.
+  // @TODO: switch to a better method eg. Intersection Observer.
   useEffect(() => {
     if (headerShowOffset) {
       window.addEventListener("scroll", onPageScroll);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
