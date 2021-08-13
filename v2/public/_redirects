@@ -1,1 +1,1 @@
-/kubernetes-services /v2/services 200
+/v2/* /v2/index.html 200
