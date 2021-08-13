@@ -76,7 +76,7 @@ export default function FeatureSectionList({
         >
           <div
             className={`${
-              variant === "horizontal" ? "max-w-4xl" : ""
+              variant === "horizontal" ? "max-w-2xl" : ""
             } flex flex-col space-y-6`}
           >
             {features.map((feature) => (
