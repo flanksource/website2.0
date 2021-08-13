@@ -1,4 +1,3 @@
-
 import React from "react";
 export default function Team({ people }) {
   return (
@@ -6,7 +5,11 @@ export default function Team({ people }) {
       {people.map((person) => (
         <li key={person.name}>
           <div className="space-y-6">
-            <img className="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56" src={person.imageUrl} alt="" />
+            <img
+              className="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56 object-cover"
+              src={person.imageUrl}
+              alt=""
+            />
             <div className="space-y-2">
               <div className="text-lg leading-6 font-medium space-y-1">
                 <h3>{person.name}</h3>
@@ -39,5 +42,5 @@ export default function Team({ people }) {
         </li>
       ))}
     </ul>
-  )
+  );
 }

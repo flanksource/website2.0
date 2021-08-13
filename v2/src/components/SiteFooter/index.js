@@ -1,5 +1,7 @@
 import { ReactComponent as Logo } from "../../assets/images/flanksource-white.svg";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { routes } from "../../routes";
+
 export default function SiteFooter() {
   const social = [
     {
@@ -17,33 +19,36 @@ export default function SiteFooter() {
     kubernetes: {
       title: "Kubernetes",
       links: [
-        { name: "Quickstart", href: "/kubernetes-services#quick-start" },
+        {
+          name: "Quickstart",
+          href: `${routes.services.path}#quick-start`
+        },
         {
           name: "Managed Services",
-          href: "/kubernetes-services#managed-services"
+          href: `${routes.services.path}#managed-services`
         },
         {
           name: "Operator Development",
-          href: "/kubernetes-services#operators"
+          href: `${routes.services.path}#operators`
         },
         {
           name: "Internal Platforms",
-          href: "/kubernetes-services#internal-platform-development"
+          href: `${routes.services.path}#internal-platform-development`
         },
-        { name: "Strategy", href: "/kubernetes-services#cloud-and-devops" },
+        { name: "Strategy", href: `${routes.services.path}#cloud-and-devops` },
         {
           name: "Resilience Reviews",
-          href: "/kubernetes-services#resilience-assessment"
+          href: `${routes.services.path}#resilience-assessment`
         }
       ]
     },
     devops: {
       title: "Cloud & Devops",
       links: [
-        { name: "Quickstart", href: "/kubernetes-services#quick-start" },
+        { name: "Quickstart", href: `${routes.services.path}#quick-start` },
         {
           name: "Managed Services",
-          href: "/kubernetes-services#managed-services"
+          href: `${routes.services.path}#managed-services`
         }
       ]
     },
@@ -86,7 +91,7 @@ export default function SiteFooter() {
     company: {
       title: "Company",
       links: [
-        { name: "About", href: "/about" },
+        { name: "About", href: `${routes.about.path}` },
         { name: "Blog", href: "/blog" },
         { name: "Careers", href: "/careers" }
       ]

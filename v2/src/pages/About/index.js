@@ -1,91 +1,85 @@
-import DefaultLayout from "../../layout/DefaultLayout"
-import Contact from "../../components/Contact"
-import FeatureSectionImage from "../../components/FeatureSectionImage"
-
-import backgroundImageSrc from "../../assets/images/backgrounds/lighthouse_milkyway_cropped_adjusted_resized.jpg";
-import { ReactComponent as GyshidoIcon } from "../../assets/images/illustrations/gyshido.svg";
+import DefaultLayout from "../../layout/DefaultLayout";
 
 import Team from "../../components/Team";
 
-
-
 const advisors = [
   {
-    name: 'Josef Langerman',
+    name: "Josef Langerman",
     imageUrl: "/team/josef.jpg",
-    twitterUrl: '#',
-    linkedinUrl: '#',
+    twitterUrl: "#",
+    linkedinUrl: "#"
   },
   {
-    name: 'Pierre Meyer',
+    name: "Pierre Meyer",
     imageUrl: "/team/pierre.jpg",
-    twitterUrl: '#',
-    linkedinUrl: '#',
-  },
+    twitterUrl: "#",
+    linkedinUrl: "#"
+  }
 ];
 const people = [
   {
-    name: 'Brendan Galloway',
-    role: 'Sr Site Reliability Engineer',
+    name: "Brendan Galloway",
+    role: "Sr Site Reliability Engineer",
     imageUrl: "/team/brendan.jpg",
-    twitterUrl: '#',
-    linkedinUrl: '#',
+    twitterUrl: "#",
+    linkedinUrl: "#"
   },
   {
-    name: 'John Goh Rengwu',
-    role: 'Frontend Engineer',
+    name: "John Goh Rengwu",
+    role: "Frontend Engineer",
     imageUrl: "/team/john.jpg",
-    twitterUrl: '#',
-    linkedinUrl: '#',
+    twitterUrl: "#",
+    linkedinUrl: "#"
   },
   {
-    name: 'Junaid Ebrahim',
-    role: 'Sr Site Reliability Engineer',
+    name: "Junaid Ebrahim",
+    role: "Sr Site Reliability Engineer",
     imageUrl: "/team/junaid.jpg",
-    twitterUrl: '#',
-    linkedinUrl: '#',
+    twitterUrl: "#",
+    linkedinUrl: "#"
   },
   {
-    name: 'Kyle Robbertze',
-    role: 'Copywriter',
+    name: "Kyle Robbertze",
+    role: "Copywriter",
     imageUrl: "/team/kyle.jpg",
-    twitterUrl: '#',
-    linkedinUrl: '#',
+    twitterUrl: "#",
+    linkedinUrl: "#"
   },
 
   {
-    name: 'Frumie Immerman',
-    role: 'People & Ops',
+    name: "Frumie Immerman",
+    role: "People & Ops",
     imageUrl: "/team/frumie.jpg",
-    twitterUrl: '#',
-    linkedinUrl: '#',
+    twitterUrl: "#",
+    linkedinUrl: "#"
   },
   {
-    name: 'Moshe Immerman',
-    role: 'Founder & CKO',
+    name: "Moshe Immerman",
+    role: "Founder & CKO",
     imageUrl: "/team/moshe.jpg",
-    twitterUrl: '#',
-    linkedinUrl: '#',
-  }
-  , {
-    name: 'Saul Nachman',
-    role: 'Sr Site Reliability Engineer',
+    twitterUrl: "#",
+    linkedinUrl: "#"
+  },
+  {
+    name: "Saul Nachman",
+    role: "Sr Site Reliability Engineer",
     imageUrl: "/team/saul.jpg",
-    twitterUrl: '#',
-    linkedinUrl: '#',
-  }, {
-    name: 'Tarun Khandelwal',
-    role: 'Site Reliability Engineer',
+    twitterUrl: "#",
+    linkedinUrl: "#"
+  },
+  {
+    name: "Tarun Khandelwal",
+    role: "Site Reliability Engineer",
     imageUrl: "/team/tarun.jpg",
-    twitterUrl: '#',
-    linkedinUrl: '#',
-  }
-  , {
-    name: 'Teodor Pripoae',
-    role: 'Sr Site Reliability Engineer',
+    twitterUrl: "#",
+    linkedinUrl: "#"
+  },
+  {
+    name: "Teodor Pripoae",
+    role: "Sr Site Reliability Engineer",
     imageUrl: "/team/toni.jpg",
-    twitterUrl: '#',
-    linkedinUrl: '#',
+    twitterUrl: "#",
+    linkedinUrl: "#"
   }
 ];
 
@@ -94,15 +88,18 @@ const features = [
     name: "Expertise",
     description: (
       <>
-        We’re a proactive group of experienced CKA-certified principal and senior site reliability engineers (SREs) with a combined 35 years of DevOps under our belts. We’re not afraid of complexity; in fact, we embrace it.
+        We’re a proactive group of experienced CKA-certified principal and
+        senior site reliability engineers (SREs) with a combined 35 years of
+        DevOps under our belts. We’re not afraid of complexity; in fact, we
+        embrace it.
       </>
-    ),
+    )
     // icon:
   },
   {
     name: "Collaboration",
     description:
-      "We go above and beyond to customize solutions for both small teams and large enterprises. We act as an extension of your team to get the work done.",
+      "We go above and beyond to customize solutions for both small teams and large enterprises. We act as an extension of your team to get the work done."
 
     // icon: <UsersIcon />
   },
@@ -110,23 +107,24 @@ const features = [
     name: "A GyShiDo work ethic",
     description: (
       <>
-        We’re powered by relentless focus and an aversion to agenda-less meetings. We zero in on a single task, embrace boring consistency, and see projects through to completion.
+        We’re powered by relentless focus and an aversion to agenda-less
+        meetings. We zero in on a single task, embrace boring consistency, and
+        see projects through to completion.
       </>
-    ),
+    )
     // icon: <GyshidoIcon />
   }
 ];
 
 export default function About() {
   return (
-
     <DefaultLayout>
-
       <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-extrabold text-gray-900">About Us</h2>
           <p className="mt-4 text-lg text-gray-500">
-            Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla nec.
+            Ac euismod vel sit maecenas id pellentesque eu sed consectetur.
+            Malesuada adipiscing sagittis vel nulla nec.
           </p>
         </div>
       </div>
@@ -152,7 +150,6 @@ export default function About() {
               </div></div>
           </div></div></div> */}
 
-
       <div className="bg-gray-50 overflow-hidden">
         <div className="relative max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
           <svg
@@ -172,10 +169,21 @@ export default function About() {
                 height={20}
                 patternUnits="userSpaceOnUse"
               >
-                <rect x={0} y={0} width={4} height={4} className="text-gray-200" fill="currentColor" />
+                <rect
+                  x={0}
+                  y={0}
+                  width={4}
+                  height={4}
+                  className="text-gray-200"
+                  fill="currentColor"
+                />
               </pattern>
             </defs>
-            <rect width={404} height={784} fill="url(#8b1b5f72-e944-4457-af67-0c6d15a99f38)" />
+            <rect
+              width={404}
+              height={784}
+              fill="url(#8b1b5f72-e944-4457-af67-0c6d15a99f38)"
+            />
           </svg>
 
           <div className="relative lg:grid lg:grid-cols-3 lg:gap-x-8">
@@ -188,10 +196,13 @@ export default function About() {
               {features.map((feature) => (
                 <div key={feature.name}>
                   <dt>
-
-                    <p className="mt-5 text-lg leading-6 font-medium text-gray-900">{feature.name}</p>
+                    <p className="mt-5 text-lg leading-6 font-medium text-gray-900">
+                      {feature.name}
+                    </p>
                   </dt>
-                  <dd className="mt-2 text-base text-gray-500">{feature.description}</dd>
+                  <dd className="mt-2 text-base text-gray-500">
+                    {feature.description}
+                  </dd>
                 </div>
               ))}
             </dl>
@@ -199,13 +210,13 @@ export default function About() {
         </div>
       </div>
 
-
-
       <div className="bg-white">
         <div className="max-w-7xl mx-auto py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
           <div className="space-y-12">
             <div className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
-              <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Meet our team</h2>
+              <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
+                Meet our team
+              </h2>
               <p className="text-xl text-gray-500">
                 We value diversity and the ability to get stuff done.
               </p>
@@ -215,13 +226,13 @@ export default function About() {
         </div>
       </div>
 
-
-
       <div className="bg-white">
         <div className="max-w-7xl mx-auto py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
           <div className="space-y-12">
             <div className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
-              <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Advisors</h2>
+              <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
+                Advisors
+              </h2>
               <p className="text-xl text-gray-500">
                 {/* We value diversity and the ability to get stuff done. */}
               </p>
@@ -233,11 +244,17 @@ export default function About() {
       {/* <Contact /> */}
 
       <div className="relative py-16 bg-white">
-        <div className="hidden absolute top-0 inset-x-0 h-1/2 bg-gray-50 lg:block" aria-hidden="true" />
+        <div
+          className="hidden absolute top-0 inset-x-0 h-1/2 bg-gray-50 lg:block"
+          aria-hidden="true"
+        />
         <div className="max-w-7xl mx-auto bg-indigo-600 lg:bg-transparent lg:px-8">
           <div className="lg:grid lg:grid-cols-12">
             <div className="relative z-10 lg:col-start-1 lg:row-start-1 lg:col-span-4 lg:py-16 lg:bg-transparent">
-              <div className="absolute inset-x-0 h-1/2 bg-gray-50 lg:hidden" aria-hidden="true" />
+              <div
+                className="absolute inset-x-0 h-1/2 bg-gray-50 lg:hidden"
+                aria-hidden="true"
+              />
               <div className="max-w-md mx-auto px-4 sm:max-w-3xl sm:px-6 lg:max-w-none lg:p-0">
                 <div className="aspect-w-10 aspect-h-6 sm:aspect-w-2 sm:aspect-h-1 lg:aspect-w-1">
                   <img
@@ -250,7 +267,10 @@ export default function About() {
             </div>
 
             <div className="relative bg-indigo-600 lg:col-start-3 lg:row-start-1 lg:col-span-10 lg:rounded-3xl lg:grid lg:grid-cols-10 lg:items-center">
-              <div className="hidden absolute inset-0 overflow-hidden rounded-3xl lg:block" aria-hidden="true">
+              <div
+                className="hidden absolute inset-0 overflow-hidden rounded-3xl lg:block"
+                aria-hidden="true"
+              >
                 <svg
                   className="absolute bottom-full left-full transform translate-y-1/3 -translate-x-2/3 xl:bottom-auto xl:top-0 xl:translate-y-0"
                   width={404}
@@ -268,10 +288,21 @@ export default function About() {
                       height={20}
                       patternUnits="userSpaceOnUse"
                     >
-                      <rect x={0} y={0} width={4} height={4} className="text-indigo-500" fill="currentColor" />
+                      <rect
+                        x={0}
+                        y={0}
+                        width={4}
+                        height={4}
+                        className="text-indigo-500"
+                        fill="currentColor"
+                      />
                     </pattern>
                   </defs>
-                  <rect width={404} height={384} fill="url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)" />
+                  <rect
+                    width={404}
+                    height={384}
+                    fill="url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)"
+                  />
                 </svg>
                 <svg
                   className="absolute top-full transform -translate-y-1/3 -translate-x-1/3 xl:-translate-y-1/2"
@@ -290,14 +321,28 @@ export default function About() {
                       height={20}
                       patternUnits="userSpaceOnUse"
                     >
-                      <rect x={0} y={0} width={4} height={4} className="text-indigo-500" fill="currentColor" />
+                      <rect
+                        x={0}
+                        y={0}
+                        width={4}
+                        height={4}
+                        className="text-indigo-500"
+                        fill="currentColor"
+                      />
                     </pattern>
                   </defs>
-                  <rect width={404} height={384} fill="url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)" />
+                  <rect
+                    width={404}
+                    height={384}
+                    fill="url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)"
+                  />
                 </svg>
               </div>
               <div className="relative max-w-md mx-auto py-12 px-4 space-y-6 sm:max-w-3xl sm:py-16 sm:px-6 lg:max-w-none lg:p-0 lg:col-start-4 lg:col-span-6">
-                <h2 className="text-3xl font-extrabold text-white" id="join-heading">
+                <h2
+                  className="text-3xl font-extrabold text-white"
+                  id="join-heading"
+                >
                   Want to Join the Flanksource Team? We’re Hiring!
                 </h2>
                 <p className="text-lg text-white">
@@ -316,5 +361,5 @@ export default function About() {
         </div>
       </div>
     </DefaultLayout>
-  )
+  );
 }
