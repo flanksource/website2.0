@@ -12,7 +12,7 @@ export default function HeroSectionRocket({
       style={{ backgroundColor: "#03151f" }}
     >
       <div className="h-full w-full pt-16 px-4 sm:px-6 py-12 lg:py-24 max-w-6xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-center z-10 ">
-        <div className="w-full mt-12 lg:mt-0">
+        <div className="w-full mt-12 lg:mt-0 pr-0 lg:pr-12">
           <div className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white">
             {title}
           </div>
