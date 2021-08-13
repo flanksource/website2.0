@@ -19,8 +19,8 @@ export default function SiteHeader() {
     {
       name: "About",
       description: "About Flanksource",
-      // href: 'routes.about.path,'
-      href: "/about",
+      href: routes.about.path,
+      // href: "/about",
       icon: UserIcon
     },
     {
@@ -36,15 +36,14 @@ export default function SiteHeader() {
     },
     {
       name: "Careers",
-      // href: routes.careers.path,
-      href: "/careers",
+      href: routes.careers.path,
+      // href: "/careers",
       icon: BriefcaseIcon
     },
     {
       name: "Blog",
-      // href: routes.blog.path,
-      href: "/blog",
-
+      href: routes.blog.path,
+      // href: "/blog",
       icon: AnnotationIcon
     }
   ];

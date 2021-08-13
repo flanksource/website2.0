@@ -1,5 +1,6 @@
 import { ReactComponent as Logo } from "../../assets/images/flanksource-white.svg";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import { routes } from "../../routes";
 
 export default function SiteFooter() {
@@ -139,12 +140,12 @@ export default function SiteFooter() {
                     <ul className="mt-4 space-y-4">
                       {column.links.map((item) => (
                         <li key={item.name}>
-                          <a
-                            href={item.href}
+                          <Link
+                            to={item.href}
                             className="text-base text-warm-gray-400 hover:text-warm-gray-300"
                           >
                             {item.name}
-                          </a>
+                          </Link>
                         </li>
                       ))}
                     </ul>

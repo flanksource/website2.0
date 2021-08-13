@@ -1,6 +1,7 @@
 import { MailIcon, PhoneIcon } from "@heroicons/react/outline";
 import { FaSlack } from "react-icons/fa";
 import ReactCountryFlag from "react-country-flag";
+import { routes } from "../../routes";
 
 export default function Contact() {
   return (
@@ -14,9 +15,8 @@ export default function Contact() {
             <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">
               Get in touch
             </h2>
-            <p className="mt-3 text-lg leading-6 text-gray-500"></p>
             <dl className="mt-8 text-base text-gray-500">
-              <div className="mt-6">
+              <div className="space-y-2">
                 <dt className="sr-only">Phone number</dt>
                 <dd className="flex">
                   <PhoneIcon
@@ -66,7 +66,7 @@ export default function Contact() {
                   </span>
                 </dd>
               </div>
-              <div className="mt-3">
+              <div className="mt-4">
                 <dt className="sr-only">Email</dt>
                 <dd className="flex">
                   <MailIcon
@@ -80,7 +80,7 @@ export default function Contact() {
                 </dd>
               </div>
 
-              <div className="mt-3">
+              <div className="mt-4">
                 <dt className="sr-only">Slack</dt>
                 <dd className="flex">
                   <FaSlack
@@ -100,7 +100,7 @@ export default function Contact() {
             <p className="mt-6 text-base text-gray-500">
               Looking for careers?{" "}
               <a
-                href="/careers"
+                href={routes.careers.path}
                 className="font-medium text-gray-700 underline"
               >
                 View all job openings
