@@ -17,6 +17,7 @@ export default function DefaultLayout({
     }
   };
 
+  // @TODO: switch to a better method eg. Interesection Observer.
   useEffect(() => {
     if (headerShowOffset) {
       window.addEventListener("scroll", onPageScroll);

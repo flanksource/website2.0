@@ -13,6 +13,7 @@ import { routes } from "../../routes";
 import { Link } from "react-router-dom";
 
 import flanksourceLogo from "../../assets/images/flanksource.svg";
+import flanksourceLogoWhite from "../../assets/images/flanksource-white.svg";
 
 export default function SiteHeader({ theme, ...props }) {
   const navbarItems = [
@@ -51,7 +52,7 @@ export default function SiteHeader({ theme, ...props }) {
       themeBgClass = "bg-white";
       break;
     case "dark":
-      themeBgClass = "bg-black";
+      themeBgClass = "bg-gray-700";
       break;
     case "transparent-light":
       themeBgClass = "";
@@ -70,7 +71,7 @@ export default function SiteHeader({ theme, ...props }) {
       themeNavTextClass = "text-gray-500 hover:text-gray-900";
       break;
     case "dark":
-      themeNavTextClass = "";
+      themeNavTextClass = "text-gray-100 hover:text-gray-300";
       break;
     case "transparent-light":
       themeNavTextClass = "text-gray-500 hover:text-gray-900";
@@ -88,13 +89,17 @@ export default function SiteHeader({ theme, ...props }) {
       <Popover className={`relative ${themeBgClass} z-10`}>
         {({ open }) => (
           <>
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 flex justify-between items-center py-4 md:space-x-10">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 flex justify-between items-center py-3 md:space-x-10">
               <div className="flex justify-start">
                 <Link to={routes.home.path}>
                   <span className="sr-only">Flanksource Logo</span>
                   <img
-                    className="h-10 w-auto sm:h-12"
-                    src={flanksourceLogo}
+                    className="h-10 w-auto sm:h-10"
+                    src={
+                      theme === "dark" || theme === "transparent-dark"
+                        ? flanksourceLogoWhite
+                        : flanksourceLogo
+                    }
                     alt=""
                   />
                 </Link>
