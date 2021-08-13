@@ -29,12 +29,19 @@ export default function FeatureSectionList({
   title,
   subtitle,
   className,
+  variant,
   dark,
   ...props
 }) {
   return (
     <div className={className} {...props}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 lg:grid lg:grid-cols-3 lg:gap-x-8">
+      <div
+        className={`${
+          variant === "horizontal"
+            ? "max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
+            : "max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 lg:grid lg:grid-cols-3 lg:gap-x-8"
+        }`}
+      >
         <div>
           {caption && (
             <h2
@@ -48,20 +55,30 @@ export default function FeatureSectionList({
           <p
             className={`text-3xl font-extrabold ${
               dark ? "text-white" : "text-gray-900"
-            }`}
+            } ${variant === "horizontal" ? " text-center" : ""}`}
           >
             {title}
           </p>
           <p
             className={`mt-4 text-lg ${
               dark ? "text-gray-200" : "text-gray-500"
-            }`}
+            } ${variant === "horizontal" ? " text-center" : ""}`}
           >
             {subtitle}
           </p>
         </div>
-        <div className="mt-12 lg:mt-0 lg:col-span-2">
-          <div className="flex flex-col space-y-6">
+        <div
+          className={`${
+            variant === "horizontal"
+              ? "mt-12 flex justify-center"
+              : "mt-12 lg:mt-0 "
+          } lg:col-span-2`}
+        >
+          <div
+            className={`${
+              variant === "horizontal" ? "max-w-4xl" : ""
+            } flex flex-col space-y-6`}
+          >
             {features.map((feature) => (
               <div key={feature.name} className="relative ml-0 lg:ml-16">
                 <div className="flex">

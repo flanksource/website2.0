@@ -232,6 +232,7 @@ export default function Services() {
       />
 
       <FeatureSectionList
+        variant="horizontal"
         title="Kubernetes, Simplified"
         subtitle={
           <>
@@ -292,7 +293,7 @@ export default function Services() {
             icon: <PushButtonIcon className="w-12 h-12 mr-4" />
           }
         ]}
-        className="py-32 lg:py-44"
+        className="py-24 lg:py-32"
       />
 
       <FullWidthSection
