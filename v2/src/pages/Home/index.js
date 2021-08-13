@@ -55,7 +55,7 @@ export default function Home() {
           }
           imageSrc={resilienceReviewImage}
           actions={
-            <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-y-0 md:space-x-4">
+            <div className="flex flex-col items-start md:flex-row space-y-4 md:space-y-0 space-y-0 md:space-x-4">
               <LinkButton
                 to="/" // @TODO: Change to a correct link
               >
@@ -63,7 +63,7 @@ export default function Home() {
               </LinkButton>
             </div>
           }
-          className="py-16 bg-gray-50"
+          className="py-12 bg-gray-50"
           noBorder
           noOverflow
           flipped
@@ -86,7 +86,7 @@ export default function Home() {
               </LinkButton>
             </>
           }
-          className="py-16"
+          className="py-12"
           noBorder
           noOverflow
         />
@@ -101,7 +101,7 @@ export default function Home() {
           }
           imageSrc={quickstartImage}
           actions={
-            <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-y-0 md:space-x-4">
+            <div className="flex items-start flex-col md:flex-row space-y-4 md:space-y-0 space-y-0 md:space-x-4">
               <LinkButton
                 to="/" // @TODO: Change to a correct link
               >
@@ -109,7 +109,7 @@ export default function Home() {
               </LinkButton>
             </div>
           }
-          className="py-16 bg-gray-50"
+          className="py-12 bg-gray-50"
           noBorder
           noOverflow
           flipped
@@ -132,7 +132,7 @@ export default function Home() {
               </LinkButton>
             </>
           }
-          className="py-16"
+          className="py-12"
           noBorder
           noOverflow
         />
@@ -146,7 +146,7 @@ export default function Home() {
           }
           imageSrc={trainingImage}
           actions={
-            <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-y-0 md:space-x-4">
+            <div className="flex items-start flex-col md:flex-row space-y-4 md:space-y-0 space-y-0 md:space-x-4">
               <LinkButton
                 to="/" // @TODO: Change to a correct link
               >
@@ -154,7 +154,7 @@ export default function Home() {
               </LinkButton>
             </div>
           }
-          className="py-16 bg-gray-50"
+          className="py-12 bg-gray-50"
           noBorder
           noOverflow
           flipped
@@ -178,7 +178,7 @@ export default function Home() {
               </LinkButton>
             </>
           }
-          className="py-16"
+          className="py-12"
           noBorder
           noOverflow
         />
