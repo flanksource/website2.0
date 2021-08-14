@@ -9,14 +9,11 @@ import { BlogTwo } from "./pages/Blog/kubernetesIsNotAContainerOrchestrator";
 import { BlogThree } from "./pages/Blog/launchingFlanksource";
 import DiscoveryCaseStudy from "./pages/CaseStudy";
 
-// const prefix = process.env.NODE_ENV === "production" ? "/v2" : "";
-const prefix = "/v2";
-
 export const blogRoutes = {
   blogOne: {
     name: "Contributing factors to failure",
     exact: true,
-    path: `${prefix}/blog/contributing-factors-to-failure`,
+    path: `/blog/contributing-factors-to-failure`,
     component: <BlogOne />,
     imgSrc: "/assets/img/control-loop-hero.jpg",
     desc: "Investigating a dataset for common contributing factors to outages."
@@ -24,7 +21,7 @@ export const blogRoutes = {
   blogTwo: {
     name: "Kubernetes is NOT a container orchestrator",
     exact: true,
-    path: `${prefix}/blog/kubernetes-is-not-a-container-orchestrator`,
+    path: `/blog/kubernetes-is-not-a-container-orchestrator`,
     component: <BlogTwo />,
     imgSrc: "/assets/img/control-loop-hero.jpg",
     desc: "It is a common misconception that Kubernetes is just a container orchestrator, it is so much more."
@@ -32,7 +29,7 @@ export const blogRoutes = {
   blogThree: {
     name: "Launching flanksource",
     exact: true,
-    path: `${prefix}/blog/launching-flanksource`,
+    path: `/blog/launching-flanksource`,
     component: <BlogThree />,
     imgSrc: "/assets/img/lighthouse_milkyway.jpg",
     desc: "Flanksource launched in January 2020 as a lean-first company focusing exclusively on Kubernetes."
@@ -41,51 +38,51 @@ export const blogRoutes = {
 
 export const routes = {
   home: {
-    path: `${prefix}/`,
+    path: `/`,
     exact: true,
     component: <Home />
   },
   about: {
     name: "About",
     exact: true,
-    path: `${prefix}/about`,
+    path: `/about`,
     component: <About />
   },
   services: {
     name: "Services",
     exact: true,
-    path: `${prefix}/kubernetes-services`,
+    path: `/kubernetes-services`,
     component: <Services />
   },
   openSource: {
     name: "Open Source",
     exact: true,
-    path: `${prefix}/open-source`,
+    path: `/open-source`,
     component: <TestPage1 />
   },
   careers: {
     name: "Careers",
     exact: true,
-    path: `${prefix}/careers`,
+    path: `/careers`,
     component: <Careers />
   },
   blog: {
     name: "Blog",
     exact: true,
-    path: `${prefix}/blog`,
+    path: `/blog`,
     component: <BlogIndex />
   },
   ...blogRoutes,
   contact: {
     name: "Contact",
     exact: true,
-    path: `${prefix}/contact`,
+    path: `/contact`,
     component: <TestPage1 />
   },
   discoveryCTA: {
     name: "Discovery Case Study",
     exact: true,
-    path: `${prefix}/case-study/discovery`,
+    path: `/case-study/discovery`,
     component: <DiscoveryCaseStudy />
   }
 };
