@@ -32,7 +32,7 @@ export default function DefaultLayout({
       <SiteHeader
         theme={theme}
         className={`${headerShowOffset ? "fixed top-0 w-full z-10 duration-500" : ""
-          } ${headerShowOffset && showHeader ? "" : "-top-full"} ${className}`}
+          } ${headerShowOffset && showHeader ? "bg-white" : "-top-full"} ${className}`}
       />
       <main className="flex-grow">
         {title != null &&
