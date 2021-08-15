@@ -10,7 +10,7 @@ export function ContactForm({
   return (
     <div className="max-w-lg mx-auto lg:max-w-none">
       <form className="grid grid-cols-1 gap-y-6" method="POST" netlify>
-        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="form-name" value="form 1" />
         <div>
           <label htmlFor="full-name" className="sr-only">
             Name
