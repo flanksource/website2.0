@@ -5,12 +5,16 @@ import { routes } from "../../routes";
 
 
 export function ContactForm({
+  source,
   submit = "Submit"
 }) {
+
   return (
     <div className="max-w-lg mx-auto lg:max-w-none">
-      <form className="grid grid-cols-1 gap-y-6" method="POST" netlify>
+      <form className="grid grid-cols-1 gap-y-6" method="POST" action="https://www.flanksource.com/" netlify>
         <input type="hidden" name="form-name" value="form 1" />
+        <input type="hidden" name="source" value={source} />
+        <input type="hidden" name="location" value={window.location} />
         <div>
           <label htmlFor="full-name" className="sr-only">
             Name
