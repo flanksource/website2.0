@@ -1,0 +1,90 @@
+import TestPage1 from "./pages/TestPage";
+import Home from "./pages/Home";
+import Services from "./pages/Services";
+import About from "./pages/About";
+import Careers from "./pages/Careers";
+import { BlogIndex } from "./pages/Blog";
+import { BlogOne } from "./pages/Blog/contributingFactorsToFailure";
+import { BlogTwo } from "./pages/Blog/kubernetesIsNotAContainerOrchestrator";
+import { BlogThree } from "./pages/Blog/launchingFlanksource";
+import DiscoveryCaseStudy from "./pages/CaseStudy";
+
+export const blogRoutes = {
+  blogOne: {
+    name: "Contributing factors to failure",
+    exact: true,
+    path: `/blog/contributing-factors-to-failure`,
+    component: <BlogOne />,
+    imgSrc: "/assets/img/control-loop-hero.jpg",
+    desc: "Investigating a dataset for common contributing factors to outages."
+  },
+  blogTwo: {
+    name: "Kubernetes is NOT a container orchestrator",
+    exact: true,
+    path: `/blog/kubernetes-is-not-a-container-orchestrator`,
+    component: <BlogTwo />,
+    imgSrc: "/assets/img/control-loop-hero.jpg",
+    desc: "It is a common misconception that Kubernetes is just a container orchestrator, it is so much more."
+  },
+  blogThree: {
+    name: "Launching flanksource",
+    exact: true,
+    path: `/blog/launching-flanksource`,
+    component: <BlogThree />,
+    imgSrc: "/assets/img/lighthouse_milkyway.jpg",
+    desc: "Flanksource launched in January 2020 as a lean-first company focusing exclusively on Kubernetes."
+  }
+};
+
+export const routes = {
+  home: {
+    path: `/`,
+    exact: true,
+    component: <Home />
+  },
+  about: {
+    name: "About",
+    exact: true,
+    path: `/about`,
+    component: <About />
+  },
+  services: {
+    name: "Services",
+    exact: true,
+    path: `/kubernetes-services`,
+    component: <Services />
+  },
+  openSource: {
+    name: "Open Source",
+    exact: true,
+    path: `/open-source`,
+    component: <TestPage1 />
+  },
+  careers: {
+    name: "Careers",
+    exact: true,
+    path: `/careers`,
+    component: <Careers />
+  },
+  blog: {
+    name: "Blog",
+    exact: true,
+    path: `/blog`,
+    component: <BlogIndex />
+  },
+  ...blogRoutes,
+  contact: {
+    name: "Contact",
+    exact: true,
+    path: `/contact`,
+    component: <TestPage1 />
+  },
+  discoveryCTA: {
+    name: "Discovery Case Study",
+    exact: true,
+    path: `/case-study/discovery`,
+    component: <DiscoveryCaseStudy />
+  }
+};
+
+export const routeList = Object.keys(routes);

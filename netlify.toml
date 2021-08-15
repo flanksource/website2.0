@@ -1,5 +1,8 @@
 [[redirects]]
 force = true # COMMENT: ensure that we always redirect
-from = "/kubernetes-is-not-a-container-orchestrator" 
-status = 301 
+from = "/kubernetes-is-not-a-container-orchestrator"
+status = 301
 to = "/blog/kubernetes-is-not-a-container-orchestrator"
+
+[build]
+  base = "v2"

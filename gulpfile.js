@@ -1,134 +1,168 @@
-'use strict';
+`use strict`;
 
-const gulp = require('gulp');
-const webpack = require('webpack-stream');
-const webpackUglifyJs = require('uglifyjs-webpack-plugin')
-const sass = require('gulp-sass');
-const tildeImporter = require('node-sass-tilde-importer');
-const browserSync = require('browser-sync');
-const sourcemaps = require('gulp-sourcemaps');
-const autoprefixer = require('gulp-autoprefixer');
-const uglify = require('gulp-uglify');
-const concat = require('gulp-concat');
-const rename = require('gulp-rename');
-const imagemin = require('gulp-imagemin');
-const changed = require('gulp-changed');
-const del = require('del');
-const sequence = require('run-sequence');
-const pkg = require('./package.json')
-var nunjucksRender = require('gulp-nunjucks-render');
+const gulp = require("gulp");
+const exec = require("gulp-exec");
+const webpack = require("webpack-stream");
+const sass = require("gulp-sass");
+const tildeImporter = require("node-sass-tilde-importer");
+const browserSync = require("browser-sync");
+const sourcemaps = require("gulp-sourcemaps");
+const autoprefixer = require("gulp-autoprefixer");
+const rename = require("gulp-rename");
+const imagemin = require("gulp-imagemin");
+const del = require("del");
+const nunjucksRender = require("gulp-nunjucks-render");
 
-var production = false;
+let production = false;
 
 const file = {
-  html: 'src/**/*.html',
-  scss: 'src/assets/scss/**/*.scss',
-  js: 'src/assets/js/src/**/*.js',
-}
+  html: "src/**/*.html",
+  scss: "src/assets/scss/**/*.scss",
+  js: "src/assets/js/src/**/*.js",
+  components: "src/components/**/*.js",
+  tailwind: "src/assets/tailwind/tailwind.css"
+};
 
-const page = {
-  js: 'src/assets/js/src/page.js',
-  scss: 'src/assets/scss/page.scss',
-}
+const theSaas = {
+  js: "src/assets/js/src/page.js",
+  scss: "src/assets/scss/page.scss"
+};
 
 const dir = {
-  css: 'dist/assets/css/',
-  js: 'dist/assets/js/',
-  font: 'dist/assets/fonts/',
-}
-
+  css: "dist/assets/css/",
+  js: "dist/assets/js/",
+  font: "dist/assets/fonts/",
+  components: "dist/components/"
+};
 
 function reload(done) {
   browserSync.reload();
   done();
-};
+}
 
 function serve(done) {
   browserSync({
-    server: 'dist/'
+    server: "dist/"
   });
 
-  gulp.watch(file.scss, scss);
-  gulp.watch(file.js, gulp.series(js, reload));
-  gulp.watch(file.html, gulp.series(nunjucks, reload));
+  gulp.watch(file.scss, theSaasScss); // watch changes to theSaas-related scss files
+  gulp.watch(file.js, gulp.series(theSaasJs, reload)); // watch changes to theSaas-related js files
+  gulp.watch(
+    "v2/build/**/*",
+    gulp.series(copyReactFiles, copyReactEntryPoint, reload)
+  ); // watch react build folder
+  gulp.watch(file.html, gulp.series(nunjucks, reload)); // watch changes to html files
   done();
-};
+}
 
 function nunjucks() {
   // Gets .html and .nunjucks files in pages
-  return gulp.src('src/**/*.+(html|nunjucks)')
-    // Renders template with nunjucks
-    .pipe(nunjucksRender({
-      path: ['src/templates']
-    }))
-    // output files in app folder
-    .pipe(gulp.dest('dist'))
+  return (
+    gulp
+      .src("src/**/*.+(html|nunjucks)")
+      // Renders template with nunjucks
+      .pipe(
+        nunjucksRender({
+          path: ["src/templates"]
+        })
+      )
+      // output files in app folder
+      .pipe(gulp.dest("dist"))
+  );
 }
 
+function buildReact() {
+  return gulp.src("/").pipe(exec(() => `cd v2 && npm ci && npm run build`));
+}
 
-function scss() {
+// copy contents of create-react-app build folder to ./dist/ (except for index.html)
+function copyReactFiles() {
+  return gulp
+    .src(["v2/build/**/*", "!v2/build/index.html"])
+    .pipe(gulp.dest("dist/"));
+}
 
-  var stream = gulp.src(page.scss)
+// copy the built index.html from create-react-app to src/v2/ folder
+function copyReactEntryPoint() {
+  return gulp.src("v2/build/index.html").pipe(gulp.dest("src/v2/"));
+}
+
+function theSaasScss() {
+  let stream = gulp
+    .src(theSaas.scss)
     .pipe(sourcemaps.init())
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(sass({ importer: tildeImporter, outputStyle: 'compressed' }).on('error', sass.logError))
+    .pipe(rename({ suffix: ".min" }))
+    .pipe(
+      sass({ importer: tildeImporter, outputStyle: "compressed" }).on(
+        "error",
+        sass.logError
+      )
+    )
     .pipe(autoprefixer())
-    .pipe(sourcemaps.write('.'))
+    .pipe(sourcemaps.write("."))
     .pipe(gulp.dest(dir.css))
     .pipe(browserSync.stream());
 
   // Create unminified version if it's in production mode
   if (production) {
-    stream = gulp.src(page.scss)
+    stream = gulp
+      .src(theSaas.scss)
       .pipe(sourcemaps.init())
-      .pipe(sass({ importer: tildeImporter }).on('error', sass.logError))
+      .pipe(sass({ importer: tildeImporter }).on("error", sass.logError))
       .pipe(autoprefixer())
-      .pipe(sourcemaps.write('.'))
+      .pipe(sourcemaps.write("."))
       .pipe(gulp.dest(dir.css));
   }
   return stream;
-};
+}
 
-function js() {
-  return gulp.src(page.js)
-    .pipe(webpack({
-      mode: 'none',
-      devtool: 'source-map',
-      output: {
-        filename: 'page.min.js'
-      }
-    }))
+function theSaasJs() {
+  return gulp
+    .src(theSaas.js)
+    .pipe(
+      webpack({
+        mode: "none",
+        devtool: "source-map",
+        output: {
+          filename: "page.min.js"
+        }
+      })
+    )
     .pipe(gulp.dest(dir.js));
-};
+}
 
-function jsProductionMinified() {
-  return gulp.src(page.js)
-    .pipe(webpack({
-      mode: 'production',
-      devtool: 'source-map',
-      output: {
-        filename: 'page.min.js'
-      },
-      performance: {
-        hints: false
-      }
-    }))
+function theSaasJsProductionMinified() {
+  return gulp
+    .src(theSaas.js)
+    .pipe(
+      webpack({
+        mode: "production",
+        devtool: "source-map",
+        output: {
+          filename: "page.min.js"
+        },
+        performance: {
+          hints: false
+        }
+      })
+    )
     .pipe(gulp.dest(dir.js));
-};
+}
 
-
-function jsProductionExpanded() {
-  return gulp.src(page.js)
-    .pipe(webpack({
-      mode: 'none',
-      devtool: 'source-map',
-      output: {
-        filename: 'page.js'
-      }
-    }))
+function theSaasJsProductionExpanded() {
+  return gulp
+    .src(theSaas.js)
+    .pipe(
+      webpack({
+        mode: "none",
+        devtool: "source-map",
+        output: {
+          filename: "page.js"
+        }
+      })
+    )
     .pipe(gulp.dest(dir.js));
-};
-
+}
 
 /*
 |--------------------------------------------------------------------------
@@ -138,16 +172,24 @@ function jsProductionExpanded() {
 */
 function copyFonts(done) {
   //gulp.src( 'node_modules/@fortawesome/fontawesome-free-webfonts/webfonts/*').pipe(gulp.dest(dir.font));
-  gulp.src('node_modules/font-awesome/fonts/*').pipe(gulp.dest(dir.font));
-  gulp.src('node_modules/themify-icons/themify-icons/fonts/*').pipe(gulp.dest(dir.font));
-  gulp.src('node_modules/et-line/fonts/*').pipe(gulp.dest(dir.font));
+  gulp.src("node_modules/font-awesome/fonts/*").pipe(gulp.dest(dir.font));
+  gulp
+    .src("node_modules/themify-icons/themify-icons/fonts/*")
+    .pipe(gulp.dest(dir.font));
+  gulp.src("node_modules/et-line/fonts/*").pipe(gulp.dest(dir.font));
   done();
-};
+}
 
 function distCopy() {
-  return gulp.src(['src/**/*', '!src/assets/{js/src,plugin/thesaas,scss}{,/**}', '!src/**/*.html']).pipe(gulp.dest('dist/'));
-};
-
+  return gulp
+    .src([
+      "src/**/*",
+      "!src/assets/{js/src,plugin/thesaas,scss}{,/**}",
+      "!src/v2/**/*",
+      "!src/**/*.html"
+    ])
+    .pipe(gulp.dest("dist/"));
+}
 
 /*
 |--------------------------------------------------------------------------
@@ -156,8 +198,8 @@ function distCopy() {
 |
 */
 function distClean() {
-  return del('dist/');
-};
+  return del("dist/");
+}
 
 /*
 |--------------------------------------------------------------------------
@@ -165,11 +207,13 @@ function distClean() {
 |--------------------------------------------------------------------------
 |
 */
+// eslint-disable-next-line no-unused-vars
 function img() {
-  return gulp.src('src/assets/img/**/*.{jpg,jpeg,png,gif}')
+  return gulp
+    .src("src/assets/img/**/*.{jpg,jpeg,png,gif}")
     .pipe(imagemin())
-    .pipe(gulp.dest('dist/assets/img/'));
-};
+    .pipe(gulp.dest("dist/assets/img/"));
+}
 
 /*
 |--------------------------------------------------------------------------
@@ -187,10 +231,21 @@ function setDevMode(done) {
   done();
 }
 
-
-
-exports.dev = gulp.series(copyFonts, scss, js);
-exports.dist = gulp.series(setProductionMode, distClean, copyFonts, scss, nunjucks, jsProductionMinified, jsProductionExpanded, distCopy, setDevMode);
-exports.watch = gulp.series(distCopy, nunjucks, serve)
-exports.default = exports.watch
-exports.nunjucks = nunjucks
+exports.react = gulp.series(buildReact, copyReactFiles, copyReactEntryPoint);
+exports.dev = gulp.series(copyFonts, theSaasScss, theSaasJs);
+exports.dist = gulp.series(
+  setProductionMode,
+  distClean,
+  copyFonts,
+  exports.react,
+  theSaasScss,
+  nunjucks,
+  theSaasJsProductionMinified,
+  theSaasJsProductionExpanded,
+  distCopy,
+  setDevMode
+);
+exports.watch = gulp.series(distCopy, nunjucks, serve);
+exports.buildandwatch = gulp.series(exports.dist, exports.watch);
+exports.default = exports.watch;
+exports.nunjucks = nunjucks;

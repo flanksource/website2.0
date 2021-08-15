@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve">
+<g>
+	<g>
+		<path fill="none" stroke="#344154" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M44.148,24.311
+			c0-8.901-5.713-16.307-14.242-16.307c-8.521,0-15.43,7.213-15.43,16.114"/>
+		<path fill="none" stroke="#344154" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M44.148,39.573
+			c0,0-1.448,3.469-3.301,4.889c-3.368,2.589-5.916,1.993-5.916,1.993"/>
+		<path fill="#1E86D5" stroke="#344154" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M32.951,44.462
+			h-3.029c-1.096,0-1.988,0.892-1.988,1.993l0,0c0,1.096,0.892,1.983,1.988,1.983h3.029c1.092,0,1.98-0.888,1.98-1.983l0,0
+			C34.932,45.354,34.043,44.462,32.951,44.462z"/>
+		<path fill="#1E86D5" stroke="#344154" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M13.512,37.861
+			h-0.505c-1.788,0-3.228-1.445-3.228-3.225v-5.381c0-1.784,1.44-3.229,3.221-3.229h0.512v0.017c0-0.957,0.776-1.732,1.732-1.732
+			l0,0c0.956,0,1.732,0.776,1.732,1.732v11.805c0,0.956-0.776,1.725-1.732,1.725l0,0c-0.956,0-1.732-0.769-1.732-1.725V37.861z"/>
+		<path fill="#1E86D5" stroke="#344154" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M45.877,37.861
+			h0.512c1.784,0,3.225-1.445,3.225-3.225v-5.381c0-1.784-1.44-3.229-3.225-3.229h-0.512v0.017c0-0.957-0.776-1.732-1.729-1.732l0,0
+			c-0.956,0-1.732,0.776-1.732,1.732v11.805c0,0.956,0.776,1.725,1.732,1.725l0,0c0.952,0,1.729-0.769,1.729-1.725V37.861z"/>
+	</g>
+	<g>
+		<path fill="#8EC2EA" stroke="#344154" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M35.928,23.131
+			c0.064,3.793-2.773,6.924-6.336,6.99c-3.563,0.068-6.502-2.952-6.565-6.745c-0.063-3.794,2.773-6.924,6.336-6.991
+			C32.926,16.317,35.864,19.337,35.928,23.131z"/>
+		
+			<ellipse fill="#FFE1B3" stroke="#344154" stroke-linecap="round" stroke-miterlimit="10" cx="29.532" cy="23.417" rx="0.168" ry="0.179"/>
+		<polyline fill="none" stroke="#344154" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			32.98,20.87 29.542,23.306 25.68,21.872 		"/>
+		
+			<line fill="#FFE1B3" stroke="#344154" stroke-linecap="round" stroke-miterlimit="10" x1="23.143" y1="23.538" x2="24.007" y2="23.521"/>
+		
+			<line fill="#FFE1B3" stroke="#344154" stroke-linecap="round" stroke-miterlimit="10" x1="35.057" y1="23.312" x2="35.921" y2="23.295"/>
+		
+			<line fill="#FFE1B3" stroke="#344154" stroke-linecap="round" stroke-miterlimit="10" x1="29.417" y1="16.614" x2="29.434" y2="17.535"/>
+		
+			<line fill="#FFE1B3" stroke="#344154" stroke-linecap="round" stroke-miterlimit="10" x1="29.631" y1="29.299" x2="29.646" y2="30.219"/>
+	</g>
+	<text transform="matrix(1 0 0 1 23.1431 37.4521)" fill="#344154" font-family="'AvenirNextLTPro-Regular'" font-size="5.87">24x7</text>
+</g>
+</svg>

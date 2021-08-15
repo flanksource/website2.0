@@ -6,7 +6,7 @@
 
 // Google fonts
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Dosis:200,400,500,600');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 //----------------------------------------
 // Color system
@@ -65,11 +65,11 @@ $color-subtitle:                  $color-text-light;
 //----------------------------------------
 $fonts-dir:                       '../fonts/';
 $font-family-base:                "Open Sans", sans-serif;
-$font-family-title:               Dosis, sans-serif;
+$font-family-title:               'Poppins', sans-serif;
 
 $font-size-base:                  0.9375rem;
 
-$font-weight-base:                300;
+$font-weight-base:                400;
 $line-height-base:                1.9;
 
 $h1-font-size:                    $font-size-base * 2.75;
@@ -79,11 +79,11 @@ $h4-font-size:                    $font-size-base * 1.625;
 $h5-font-size:                    $font-size-base * 1.3125;
 $h6-font-size:                    $font-size-base * 1.125;
 
-$h1-font-weight:                  400;
-$h2-font-weight:                  400;
-$h3-font-weight:                  400;
-$h4-font-weight:                  400;
-$h5-font-weight:                  400;
+$h1-font-weight:                  700;
+$h2-font-weight:                  700;
+$h3-font-weight:                  700;
+$h4-font-weight:                  700;
+$h5-font-weight:                  700;
 $h6-font-weight:                  500;
 
 $display1-size:                   5rem;
