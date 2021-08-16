@@ -18,7 +18,7 @@ export default function ResourceCTA(
           />
         </div>
       </div>
-      <div className="relative py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:max-w-7xl lg:mx-auto lg:py-32 lg:grid lg:grid-cols-2">
+      <div className="relative py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:max-w-6xl lg:mx-auto lg:py-32 lg:grid lg:grid-cols-2">
         <div className="lg:pr-8">
           <div className="max-w-md mx-auto sm:max-w-lg lg:mx-0">
             {logo}

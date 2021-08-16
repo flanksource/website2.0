@@ -1,4 +1,3 @@
-import TestPage1 from "./pages/TestPage";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import About from "./pages/About";
@@ -8,6 +7,9 @@ import { BlogOne } from "./pages/Blog/contributingFactorsToFailure";
 import { BlogTwo } from "./pages/Blog/kubernetesIsNotAContainerOrchestrator";
 import { BlogThree } from "./pages/Blog/launchingFlanksource";
 import DiscoveryCaseStudy from "./pages/CaseStudy";
+import ContactPage from "./pages/Contact";
+import NotFoundPage from "./pages/NotFoundPage";
+import UnderConstruction from "./pages/UnderConstruction";
 
 export const blogRoutes = {
   blogOne: {
@@ -54,11 +56,12 @@ export const routes = {
     path: `/kubernetes-services`,
     component: <Services />
   },
+  // is this page still needed?
   openSource: {
     name: "Open Source",
     exact: true,
     path: `/open-source`,
-    component: <TestPage1 />
+    component: <UnderConstruction /> // @TODO: update this when open source page is ready
   },
   careers: {
     name: "Careers",
@@ -77,13 +80,23 @@ export const routes = {
     name: "Contact",
     exact: true,
     path: `/contact`,
-    component: <TestPage1 />
+    component: <ContactPage />
   },
   discoveryCTA: {
     name: "Discovery Case Study",
     exact: true,
     path: `/case-study/discovery`,
     component: <DiscoveryCaseStudy />
+  },
+  UnderConstruction: {
+    name: "Page not Found",
+    path: "*",
+    component: <UnderConstruction />
+  },
+  noMatch: {
+    name: "Page not Found",
+    path: "*",
+    component: <NotFoundPage />
   }
 };
 

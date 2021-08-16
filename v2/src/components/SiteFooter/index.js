@@ -93,7 +93,8 @@ export default function SiteFooter() {
       links: [
         { name: "About", href: `${routes.about.path}` },
         { name: "Blog", href: "/blog" },
-        { name: "Careers", href: "/careers" }
+        { name: "Careers", href: "/careers" },
+        { name: "Contact", href: `${routes.contact.path}` }
       ]
     },
     legal: {

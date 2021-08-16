@@ -118,10 +118,9 @@ const features = [
 
 export default function About() {
   return (
-    <DefaultLayout className="bg-gray-50" title="About Us">
-
+    <DefaultLayout  title="About Us">
       <div className="bg-white  overflow-hidden mb-20 ">
-        <div className="relative max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
           <svg
             className="absolute top-0 left-full transform -translate-x-1/2 -translate-y-3/4 lg:left-auto lg:right-full lg:translate-x-2/3 lg:translate-y-1/4"
             width={404}
@@ -181,7 +180,7 @@ export default function About() {
       </div>
 
       <div className="bg-gray-50">
-        <div className="max-w-7xl mx-auto py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
+        <div className="max-w-6xl mx-auto py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
           <div className="space-y-12">
             <div className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
               <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
@@ -197,7 +196,7 @@ export default function About() {
       </div>
 
       <div className="bg-white">
-        <div className="max-w-7xl mx-auto py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
+        <div className="max-w-6xl mx-auto py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
           <div className="space-y-12">
             <div className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
               <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
@@ -218,7 +217,7 @@ export default function About() {
           className="hidden absolute top-0 inset-x-0 h-1/2  lg:block"
           aria-hidden="true"
         />
-        <div className="max-w-7xl mx-auto bg-indigo-600 lg:bg-transparent lg:px-8">
+        <div className="max-w-6xl mx-auto bg-indigo-600 lg:bg-transparent lg:px-8">
           <div className="lg:grid lg:grid-cols-12">
             <div className="relative z-10 lg:col-start-1 lg:row-start-1 lg:col-span-4 lg:py-16 lg:bg-transparent">
               <div

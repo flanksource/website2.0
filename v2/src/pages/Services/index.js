@@ -206,7 +206,8 @@ export default function Services() {
               name: "Chat",
               description: (
                 <>
-                  We’re available in your chat-rooms<div>(Slack or MS Teams)</div>
+                  We’re available in your chat-rooms
+                  <div>(Slack or MS Teams)</div>
                 </>
               ),
               icon: <ChatIcon />
@@ -215,7 +216,6 @@ export default function Services() {
               name: "Joint Standups",
               description:
                 "We join your standups to keep up-to-date about your environment",
-
 
               icon: <UsersIcon />
             },
@@ -306,10 +306,8 @@ export default function Services() {
       infrastructure for a leading insurance and financial services
       company."
           actions={
-            <LinkButton
-              theme="light"
-              to="/" // @TODO: Change to a correct link
-            >
+            // @TODO: fix this to the correct path
+            <LinkButton theme="light" href={routes.discoveryCTA.path}>
               Read the case study
             </LinkButton>
           }
@@ -351,13 +349,9 @@ export default function Services() {
           imageSrc={quickstartImage}
           actions={
             <div className="flex flex-col items-start md:flex-row space-y-4 md:space-y-0 space-y-0 md:space-x-4">
+              <LinkButton href={routes.contact.path}>Get Started</LinkButton>
               <LinkButton
-                to="/" // @TODO: Change to a correct link
-              >
-                Get Started
-              </LinkButton>
-              <LinkButton
-                to="/" // @TODO: Change to a correct link
+                href="https://github.com/flanksource/karina"
                 theme="secondary"
               >
                 Meet Karina, our flagship toolkit
@@ -383,9 +377,7 @@ export default function Services() {
           imageSrc={internalPlatformsImage}
           actions={
             <>
-              <LinkButton
-                to="/" // @TODO: Change to a correct link
-              >
+              <LinkButton href="https://github.com/flanksource/template-operator-library">
                 Browse our template library
               </LinkButton>
             </>
@@ -414,13 +406,9 @@ export default function Services() {
           imageSrc={platformOperationsImage}
           actions={
             <div className="space-x-4">
+              <LinkButton href={routes.contact.path}>Get Started</LinkButton>
               <LinkButton
-                to="/" // @TODO: Change to a correct link
-              >
-                Get Started
-              </LinkButton>
-              <LinkButton
-                to="/" // @TODO: Change to a correct link
+                href="https://github.com/flanksource/canary-checker"
                 theme="secondary"
               >
                 Explore Canary Checker
@@ -499,7 +487,7 @@ export default function Services() {
                 Get Started
               </LinkButton>
               <LinkButton
-                to="/" // @TODO: Change to a correct link
+                to="/404" // @TODO: Change to a correct link
                 theme="secondary"
               >
                 Learn about the science behind resilience

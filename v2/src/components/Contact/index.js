@@ -3,15 +3,15 @@ import { FaSlack } from "react-icons/fa";
 import ReactCountryFlag from "react-country-flag";
 import { routes } from "../../routes";
 
-
-export function ContactForm({
-  source,
-  submit = "Submit"
-}) {
-
+export function ContactForm({ source, submit = "Submit" }) {
   return (
     <div className="max-w-lg mx-auto lg:max-w-none">
-      <form className="grid grid-cols-1 gap-y-6" method="POST" action="https://www.flanksource.com/" netlify>
+      <form
+        className="grid grid-cols-1 gap-y-6"
+        method="POST"
+        action="https://www.flanksource.com/"
+        netlify
+      >
         <input type="hidden" name="form-name" value="form 1" />
         <input type="hidden" name="source" value={source} />
         <input type="hidden" name="location" value={window.location} />
@@ -77,7 +77,7 @@ export function ContactForm({
         </div>
       </form>
     </div>
-  )
+  );
 }
 export default function Contact() {
   return (
@@ -85,7 +85,7 @@ export default function Contact() {
       <div className="absolute inset-0">
         <div className="absolute inset-y-0 left-0 w-1/2 bg-gray-50" />
       </div>
-      <div className="relative max-w-7xl mx-auto lg:grid lg:grid-cols-5">
+      <div className="relative max-w-6xl mx-auto lg:grid lg:grid-cols-5">
         <div className="bg-gray-50 py-16 px-4 sm:px-6 lg:col-span-2 lg:px-8 lg:py-24 xl:pr-12">
           <div className="max-w-lg mx-auto">
             <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">

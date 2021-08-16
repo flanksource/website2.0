@@ -34,7 +34,7 @@ export function Blog({ name, publishString, backgroundImgSrc, children }) {
         </div>
       </div>
       <main className="flex justify-center bg-gray-50">
-        <div className="max-w-7xl mx-auto py-16">{children}</div>
+        <div className="max-w-6xl mx-auto py-16">{children}</div>
       </main>
       <Contact />
       <SiteFooter />
