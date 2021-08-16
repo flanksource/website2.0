@@ -90,7 +90,7 @@ export default function SiteHeader({ theme, ...props }) {
           <>
             <div className="max-w-6xl mx-auto px-4 sm:px-6 flex justify-between items-center py-3 md:space-x-10">
               <div className="flex justify-start">
-                <Link to={routes.home.path}>
+                <a href={routes.home.path}>
                   <span className="sr-only">Flanksource Logo</span>
                   <img
                     className="h-10 w-auto sm:h-10"
@@ -101,7 +101,7 @@ export default function SiteHeader({ theme, ...props }) {
                     }
                     alt=""
                   />
-                </Link>
+                </a>
               </div>
 
               <div className="-mr-2 -my-2 md:hidden">
@@ -120,13 +120,13 @@ export default function SiteHeader({ theme, ...props }) {
               <Popover.Group as="nav" className="hidden md:flex space-x-10">
                 {navbarItems.map((item) => {
                   return (
-                    <Link
+                    <a
                       key={item.href}
-                      to={item.href}
+                      href={item.href}
                       className={`text-base font-medium ${themeNavTextClass}`}
                     >
                       {item.name}
-                    </Link>
+                    </a>
                   );
                 })}
               </Popover.Group>

@@ -118,7 +118,7 @@ const features = [
 
 export default function About() {
   return (
-    <DefaultLayout className="bg-gray-50" title="About Us">
+    <DefaultLayout  title="About Us">
       <div className="bg-white  overflow-hidden mb-20 ">
         <div className="relative max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
           <svg

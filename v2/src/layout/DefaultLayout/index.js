@@ -28,14 +28,14 @@ export default function DefaultLayout({
   }, []);
 
   return (
-    <div className="h-screen flex flex-col">
+    <div className={`flex flex-col ${className}`}>
       <SiteHeader
         theme={theme}
-        className={`${
-          headerShowOffset ? "fixed top-0 w-full z-10 duration-500" : ""
-        } ${
-          headerShowOffset && showHeader ? "bg-white" : "-top-full"
-        } ${className}`}
+        className={`bg-white ${
+          headerShowOffset
+            ? "fixed top-0 w-full z-10 duration-500"
+            : "sticky top-0 z-10"
+        } ${headerShowOffset ? (showHeader ? "bg-white" : "-top-full") : ""} `}
       />
       <main className="flex-grow">
         {title != null && (
