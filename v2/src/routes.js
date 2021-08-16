@@ -56,11 +56,12 @@ export const routes = {
     path: `/kubernetes-services`,
     component: <Services />
   },
+  // is this page still needed?
   openSource: {
     name: "Open Source",
     exact: true,
     path: `/open-source`,
-    component: <UnderConstruction />
+    component: <UnderConstruction /> // @TODO: update this when open source page is ready
   },
   careers: {
     name: "Careers",
@@ -86,6 +87,11 @@ export const routes = {
     exact: true,
     path: `/case-study/discovery`,
     component: <DiscoveryCaseStudy />
+  },
+  UnderConstruction: {
+    name: "Page not Found",
+    path: "*",
+    component: <UnderConstruction />
   },
   noMatch: {
     name: "Page not Found",
