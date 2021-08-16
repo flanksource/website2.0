@@ -1,4 +1,3 @@
-import TestPage1 from "./pages/TestPage";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import About from "./pages/About";
@@ -9,6 +8,8 @@ import { BlogTwo } from "./pages/Blog/kubernetesIsNotAContainerOrchestrator";
 import { BlogThree } from "./pages/Blog/launchingFlanksource";
 import DiscoveryCaseStudy from "./pages/CaseStudy";
 import ContactPage from "./pages/Contact";
+import NotFoundPage from "./pages/NotFoundPage";
+import UnderConstruction from "./pages/UnderConstruction";
 
 export const blogRoutes = {
   blogOne: {
@@ -59,7 +60,7 @@ export const routes = {
     name: "Open Source",
     exact: true,
     path: `/open-source`,
-    component: <TestPage1 />
+    component: <UnderConstruction />
   },
   careers: {
     name: "Careers",
@@ -85,6 +86,11 @@ export const routes = {
     exact: true,
     path: `/case-study/discovery`,
     component: <DiscoveryCaseStudy />
+  },
+  noMatch: {
+    name: "Page not Found",
+    path: "*",
+    component: <NotFoundPage />
   }
 };
 
