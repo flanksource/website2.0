@@ -8,7 +8,7 @@ export default function DefaultLayout({
   theme,
   title,
   sub,
-  children,
+  children
 }) {
   const [showHeader, setShowHeader] = useState(!headerShowOffset);
 
@@ -31,12 +31,15 @@ export default function DefaultLayout({
     <div className="h-screen flex flex-col">
       <SiteHeader
         theme={theme}
-        className={`${headerShowOffset ? "fixed top-0 w-full z-10 duration-500" : ""
-          } ${headerShowOffset && showHeader ? "bg-white" : "-top-full"} ${className}`}
+        className={`${
+          headerShowOffset ? "fixed top-0 w-full z-10 duration-500" : ""
+        } ${
+          headerShowOffset && showHeader ? "bg-white" : "-top-full"
+        } ${className}`}
       />
       <main className="flex-grow">
-        {title != null &&
-          <div className="py-24 bg-gray-50 sm:py-32">
+        {title != null && (
+          <div className="py-20 bg-gray-50 sm:py-28">
             <div className="max-w-md mx-auto pl-4 pr-8 sm:max-w-lg sm:px-6 lg:max-w-6xl lg:px-8">
               <h1 className="text-4xl leading-10 font-extrabold tracking-tight text-gray-900 text-center sm:text-5xl sm:leading-none lg:text-6xl">
                 {title}
@@ -46,7 +49,7 @@ export default function DefaultLayout({
               </p>
             </div>
           </div>
-        }
+        )}
         {children}
       </main>
       <SiteFooter />

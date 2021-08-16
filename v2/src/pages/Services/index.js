@@ -352,7 +352,7 @@ export default function Services() {
           actions={
             <div className="flex flex-col items-start md:flex-row space-y-4 md:space-y-0 space-y-0 md:space-x-4">
               <LinkButton
-                to="/" // @TODO: Change to a correct link
+                 to={routes.contact.path}
               >
                 Get Started
               </LinkButton>

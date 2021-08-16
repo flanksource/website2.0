@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function LinkButton({
   href,
+  to,
   size,
   theme,
   shadow,
@@ -10,7 +11,6 @@ export default function LinkButton({
 }) {
   // @TODO: implement size prop
 
-  // @TODO: expand on primary, secondary classes
   let themeClass = "";
   switch (theme) {
     case "light":
@@ -53,12 +53,23 @@ export default function LinkButton({
         shadow ? "shadow" : ""
       } ${themeClass} ${sizeClass} ${className} inline-block cursor-pointer`}
     >
-      <Link
-        to={href}
-        className={`whitespace-nowrap border border-transparent rounded-md`}
-      >
-        {children}
-      </Link>
+      {to && (
+        <Link
+          to={to}
+          className={`whitespace-nowrap border border-transparent rounded-md`}
+        >
+          {children}
+        </Link>
+      )}
+
+      {href && (
+        <a
+          href={href}
+          className={`whitespace-nowrap border border-transparent rounded-md`}
+        >
+          {children}
+        </a>
+      )}
     </div>
   );
 }

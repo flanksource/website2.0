@@ -5,9 +5,7 @@ import DefaultLayout from "../../layout/DefaultLayout";
 export default function ContactPage() {
   return (
     <DefaultLayout className="bg-gray-50" title="Contact Us">
-      <div>
-        <Contact />
-      </div>
+      <Contact />
     </DefaultLayout>
   );
 }

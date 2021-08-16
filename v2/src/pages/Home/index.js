@@ -56,11 +56,7 @@ export default function Home() {
           imageSrc={resilienceReviewImage}
           actions={
             <div className="flex flex-col items-start md:flex-row space-y-4 md:space-y-0 space-y-0 md:space-x-4">
-              <LinkButton
-                to="/" // @TODO: Change to a correct link
-              >
-                Learn More
-              </LinkButton>
+              <LinkButton href={routes.services.path}>Learn More</LinkButton>
             </div>
           }
           className="py-12 bg-gray-50"
@@ -78,13 +74,7 @@ export default function Home() {
           }
           imageSrc={platformOperationsImage}
           actions={
-            <>
-              <LinkButton
-                to="/" // @TODO: Change to a correct link
-              >
-                Learn More
-              </LinkButton>
-            </>
+            <LinkButton href={routes.services.path}>Learn More</LinkButton>
           }
           className="py-12"
           noBorder
@@ -102,11 +92,7 @@ export default function Home() {
           imageSrc={quickstartImage}
           actions={
             <div className="flex items-start flex-col md:flex-row space-y-4 md:space-y-0 space-y-0 md:space-x-4">
-              <LinkButton
-                to="/" // @TODO: Change to a correct link
-              >
-                Get in Touch
-              </LinkButton>
+              <LinkButton href={routes.contact.path}>Get in Touch</LinkButton>
             </div>
           }
           className="py-12 bg-gray-50"
@@ -125,11 +111,7 @@ export default function Home() {
           imageSrc={costValueImage}
           actions={
             <>
-              <LinkButton
-                to="/" // @TODO: Change to a correct link
-              >
-                Learn More
-              </LinkButton>
+              <LinkButton href={routes.services.path}>Learn More</LinkButton>
             </>
           }
           className="py-12"
@@ -147,11 +129,7 @@ export default function Home() {
           imageSrc={trainingImage}
           actions={
             <div className="flex items-start flex-col md:flex-row space-y-4 md:space-y-0 space-y-0 md:space-x-4">
-              <LinkButton
-                to="/" // @TODO: Change to a correct link
-              >
-                Get in Touch
-              </LinkButton>
+              <LinkButton href={routes.contact.path}>Get in Touch</LinkButton>
             </div>
           }
           className="py-12 bg-gray-50"
@@ -171,11 +149,7 @@ export default function Home() {
           imageSrc={cicdImage}
           actions={
             <>
-              <LinkButton
-                to="/" // @TODO: Change to a correct link
-              >
-                Learn More
-              </LinkButton>
+              <LinkButton href={routes.services.path}>Learn More</LinkButton>
             </>
           }
           className="py-12"
