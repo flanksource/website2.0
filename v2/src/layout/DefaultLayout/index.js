@@ -37,7 +37,7 @@ export default function DefaultLayout({
       <main className="flex-grow">
         {title != null &&
           <div className="py-24 bg-gray-50 sm:py-32">
-            <div className="max-w-md mx-auto pl-4 pr-8 sm:max-w-lg sm:px-6 lg:max-w-7xl lg:px-8">
+            <div className="max-w-md mx-auto pl-4 pr-8 sm:max-w-lg sm:px-6 lg:max-w-6xl lg:px-8">
               <h1 className="text-4xl leading-10 font-extrabold tracking-tight text-gray-900 text-center sm:text-5xl sm:leading-none lg:text-6xl">
                 {title}
               </h1>

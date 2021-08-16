@@ -8,6 +8,7 @@ import { BlogOne } from "./pages/Blog/contributingFactorsToFailure";
 import { BlogTwo } from "./pages/Blog/kubernetesIsNotAContainerOrchestrator";
 import { BlogThree } from "./pages/Blog/launchingFlanksource";
 import DiscoveryCaseStudy from "./pages/CaseStudy";
+import ContactPage from "./pages/Contact";
 
 export const blogRoutes = {
   blogOne: {
@@ -77,7 +78,7 @@ export const routes = {
     name: "Contact",
     exact: true,
     path: `/contact`,
-    component: <TestPage1 />
+    component: <ContactPage />
   },
   discoveryCTA: {
     name: "Discovery Case Study",
