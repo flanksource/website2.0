@@ -194,7 +194,7 @@ export default function SiteHeader({ theme, ...props }) {
                   </div>
                   <div className="py-6 px-5 space-y-6">
                     <Link
-                      to={routes.contact.path}
+                      to={`${routes.contact.path}?utm_content=header`}
                       className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700"
                     >
                       Contact Us

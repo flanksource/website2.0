@@ -94,7 +94,7 @@ export default function SiteFooter() {
         { name: "About", href: `${routes.about.path}` },
         { name: "Blog", href: "/blog" },
         { name: "Careers", href: "/careers" },
-        { name: "Contact", href: `${routes.contact.path}` }
+        { name: "Contact", href: `${routes.contact.path}?utm_content=footer` }
       ]
     },
     legal: {
