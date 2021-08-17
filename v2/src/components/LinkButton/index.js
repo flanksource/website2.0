@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+// 'href' will use an <a> tag
+// 'to' will use <Link> from react-router
 export default function LinkButton({
   href,
   to,
@@ -9,8 +11,6 @@ export default function LinkButton({
   children,
   className
 }) {
-  // @TODO: implement size prop
-
   let themeClass = "";
   switch (theme) {
     case "light":
@@ -47,29 +47,22 @@ export default function LinkButton({
       break;
   }
 
+  const classString = `rounded-md inline-block cursor-pointer whitespace-nowrap border border-transparent ${
+    shadow ? "shadow" : ""
+  } ${themeClass} ${sizeClass} ${className}`;
+
   return (
-    <div
-      className={`rounded-md ${
-        shadow ? "shadow" : ""
-      } ${themeClass} ${sizeClass} ${className} inline-block cursor-pointer`}
-    >
+    <>
       {to && (
-        <Link
-          to={to}
-          className={`whitespace-nowrap border border-transparent rounded-md`}
-        >
+        <Link to={to} className={classString}>
           {children}
         </Link>
       )}
-
       {href && (
-        <a
-          href={href}
-          className={`whitespace-nowrap border border-transparent rounded-md`}
-        >
+        <a href={href} className={classString}>
           {children}
         </a>
       )}
-    </div>
+    </>
   );
 }

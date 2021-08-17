@@ -10,6 +10,8 @@ import DiscoveryCaseStudy from "./pages/CaseStudy";
 import ContactPage from "./pages/Contact";
 import NotFoundPage from "./pages/NotFoundPage";
 import UnderConstruction from "./pages/UnderConstruction";
+import Privacy from "./pages/Privacy";
+import TermsAndConditions from "./pages/TermsAndConditions";
 
 export const blogRoutes = {
   blogOne: {
@@ -68,6 +70,18 @@ export const routes = {
     exact: true,
     path: `/careers`,
     component: <Careers />
+  },
+  privacy: {
+    name: "Privacy",
+    exact: true,
+    path: `/privacy`,
+    component: <Privacy />
+  },
+  termsAndConditions: {
+    name: "Terms And Conditions",
+    exact: true,
+    path: `/terms`,
+    component: <TermsAndConditions />
   },
   blog: {
     name: "Blog",
