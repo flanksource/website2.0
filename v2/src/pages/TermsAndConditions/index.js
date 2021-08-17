@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import DefaultLayout from "../../layout/DefaultLayout";
+import "./index.css";
 
 export default function TermsAndConditions() {
   return (
@@ -9,8 +10,8 @@ export default function TermsAndConditions() {
         <div className="section">
           <p>
             These terms and conditions (the "Terms and Conditions") govern the
-            use of <b>www.flanksource.com</b> (the "Site"). This Site is owned and
-            operated by Flanksource Inc.. This Site is a portfolio.
+            use of <b>www.flanksource.com</b> (the "Site"). This Site is owned
+            and operated by Flanksource Inc.. This Site is a portfolio.
           </p>
           <p>
             By using this Site, you indicate that you have read and understand

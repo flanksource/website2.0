@@ -126,7 +126,10 @@ export default function Services() {
                       <LinkButton href={routes.discoveryCTA.path} theme="light">
                         Read the case study
                       </LinkButton>
-                      <LinkButton href={routes.contact.path} theme="dark">
+                      <LinkButton
+                        href={`${routes.contact.path}?utm_content=services_hero`}
+                        theme="dark"
+                      >
                         Get started
                       </LinkButton>
                     </div>
@@ -306,7 +309,6 @@ export default function Services() {
       infrastructure for a leading insurance and financial services
       company."
           actions={
-            // @TODO: fix this to the correct path
             <LinkButton theme="light" href={routes.discoveryCTA.path}>
               Read the case study
             </LinkButton>
@@ -349,7 +351,11 @@ export default function Services() {
           imageSrc={quickstartImage}
           actions={
             <div className="flex flex-col items-start md:flex-row space-y-4 md:space-y-0 space-y-0 md:space-x-4">
-              <LinkButton href={routes.contact.path}>Get Started</LinkButton>
+              <LinkButton
+                href={`${routes.contact.path}?utm_content=services_quickstart`}
+              >
+                Get Started
+              </LinkButton>
               <LinkButton
                 href="https://github.com/flanksource/karina"
                 theme="secondary"
@@ -406,7 +412,11 @@ export default function Services() {
           imageSrc={platformOperationsImage}
           actions={
             <div className="space-x-4">
-              <LinkButton href={routes.contact.path}>Get Started</LinkButton>
+              <LinkButton
+                href={`${routes.contact.path}?utm_content=services_managed`}
+              >
+                Get Started
+              </LinkButton>
               <LinkButton
                 href="https://github.com/flanksource/canary-checker"
                 theme="secondary"
@@ -433,7 +443,7 @@ export default function Services() {
           actions={
             <>
               <LinkButton
-                to="/" // @TODO: Change to a correct link
+                to={`${routes.contact.path}?utm_content=services_migrations`}
               >
                 Get Started
               </LinkButton>
@@ -457,7 +467,7 @@ export default function Services() {
           actions={
             <>
               <LinkButton
-                to="/" // @TODO: Change to a correct link
+                to={`${routes.contact.path}?utm_content=services_cloud`}
               >
                 Get Started
               </LinkButton>
@@ -482,7 +492,7 @@ export default function Services() {
           actions={
             <div className="flex flex-col items-start md:flex-row space-y-2 md:space-y-0 space-y-0 md:space-x-4">
               <LinkButton
-                to="/" // @TODO: Change to a correct link
+                to={`${routes.contact.path}?utm_content=services_resilience`}
               >
                 Get Started
               </LinkButton>

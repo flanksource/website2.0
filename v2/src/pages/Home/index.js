@@ -40,7 +40,10 @@ export default function Home() {
             </>
           }
           actions={
-            <LinkButton theme="light" href={routes.contact.path}>
+            <LinkButton
+              theme="light"
+              href={`${routes.contact.path}?utm_content=home_hero`}
+            >
               Get Started
             </LinkButton>
           }
@@ -92,7 +95,11 @@ export default function Home() {
           imageSrc={quickstartImage}
           actions={
             <div className="flex items-start flex-col md:flex-row space-y-4 md:space-y-0 space-y-0 md:space-x-4">
-              <LinkButton href={routes.contact.path}>Get in Touch</LinkButton>
+              <LinkButton
+                href={`${routes.contact.path}?utm_content=home_quickstart`}
+              >
+                Get in Touch
+              </LinkButton>
             </div>
           }
           className="py-12 bg-gray-50"
@@ -129,7 +136,11 @@ export default function Home() {
           imageSrc={trainingImage}
           actions={
             <div className="flex items-start flex-col md:flex-row space-y-4 md:space-y-0 space-y-0 md:space-x-4">
-              <LinkButton href={routes.contact.path}>Get in Touch</LinkButton>
+              <LinkButton
+                href={`${routes.contact.path}?utm_content=home_training`}
+              >
+                Get in Touch
+              </LinkButton>
             </div>
           }
           className="py-12 bg-gray-50"
