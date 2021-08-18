@@ -1,19 +1,40 @@
-import SiteFooter from "../../components/SiteFooter";
-import SiteHeader from "../../components/SiteHeader";
 import Contact from "../../components/Contact";
+import DefaultLayout from "../../layout/DefaultLayout";
+import SiteHeader from "../SiteHeader";
 
-export function Blog({ name, publishString, backgroundImgSrc, children }) {
+export function Blog({
+  name,
+  publishString,
+  backgroundImgSrc,
+  children,
+  darkenBg
+}) {
+  const softLight = {
+    backgroundBlendMode: "soft-light",
+    backgroundColor: "rgb(34,52,74)"
+  };
+
+  const hardLight = {
+    backgroundBlendMode: "hard-light",
+    backgroundColor: "#4b5f77"
+  };
+
+  const bgStyle = darkenBg ? softLight : hardLight;
+
   return (
-    <>
-      <SiteHeader />
+    <DefaultLayout
+      headerShowOffset={200}
+      prepend={
+        <SiteHeader theme="transparent-dark" className="absolute w-full" />
+      }
+    >
       <div
-        className="relative bg-blue-800 overflow-hidden pt-12 pb-24 sm:pb-32"
+        className="relative bg-blue-800 overflow-hidden pt-32 pb-36"
         style={{
           backgroundImage: `url('${backgroundImgSrc}')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundBlendMode: "hard-light",
-          backgroundColor: "#4b5f77"
+          ...bgStyle
         }}
       >
         <div className="mt-8 sm:mt-16">
@@ -37,7 +58,6 @@ export function Blog({ name, publishString, backgroundImgSrc, children }) {
         <div className="max-w-6xl mx-auto py-16">{children}</div>
       </main>
       <Contact />
-      <SiteFooter />
-    </>
+    </DefaultLayout>
   );
 }

@@ -13,13 +13,16 @@ import UnderConstruction from "./pages/UnderConstruction";
 import Privacy from "./pages/Privacy";
 import TermsAndConditions from "./pages/TermsAndConditions";
 
+import controlLoopHeroImg from "./assets/images/illustrations/control-loop-hero.jpg";
+import lighthouseImg from "./assets/images/backgrounds/lighthouse_milkyway.jpg";
+
 export const blogRoutes = {
   blogOne: {
     name: "Contributing factors to failure",
     exact: true,
     path: `/blog/contributing-factors-to-failure`,
     component: <BlogOne />,
-    imgSrc: "/assets/img/control-loop-hero.jpg",
+    imgSrc: controlLoopHeroImg,
     desc: "Investigating a dataset for common contributing factors to outages."
   },
   blogTwo: {
@@ -27,7 +30,7 @@ export const blogRoutes = {
     exact: true,
     path: `/blog/kubernetes-is-not-a-container-orchestrator`,
     component: <BlogTwo />,
-    imgSrc: "/assets/img/control-loop-hero.jpg",
+    imgSrc: controlLoopHeroImg,
     desc: "It is a common misconception that Kubernetes is just a container orchestrator, it is so much more."
   },
   blogThree: {
@@ -35,7 +38,7 @@ export const blogRoutes = {
     exact: true,
     path: `/blog/launching-flanksource`,
     component: <BlogThree />,
-    imgSrc: "/assets/img/lighthouse_milkyway.jpg",
+    imgSrc: lighthouseImg,
     desc: "Flanksource launched in January 2020 as a lean-first company focusing exclusively on Kubernetes."
   }
 };

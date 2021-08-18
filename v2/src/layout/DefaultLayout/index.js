@@ -4,6 +4,7 @@ import SiteFooter from "../../components/SiteFooter";
 
 export default function DefaultLayout({
   headerShowOffset,
+  prepend,
   className,
   theme,
   title,
@@ -37,6 +38,7 @@ export default function DefaultLayout({
             : "sticky top-0 z-10"
         } ${headerShowOffset ? (showHeader ? "bg-white" : "-top-full") : ""} `}
       />
+      {prepend}
       <main className="flex-grow">
         {title != null && (
           <div className="py-20 bg-gray-50 sm:py-28">

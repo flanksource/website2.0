@@ -2,11 +2,13 @@ import { Blog } from "../../components/Blog";
 import { blogRoutes } from "../../routes";
 import { Link } from "react-router-dom";
 
+import lighthouseImg from "../../assets/images/backgrounds/lighthouse_milkyway_cropped_adjusted_resized.jpg";
+
 export function BlogIndex() {
   const props = {
     name: "Contributing factors to failure",
     publishString: "A lean-first company focusing on Kubernetes.",
-    backgroundImgSrc: "/assets/img/lighthouse_milkyway.jpg"
+    backgroundImgSrc: lighthouseImg
   };
 
   return (
