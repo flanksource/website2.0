@@ -482,7 +482,7 @@ export default function Services() {
         flipped
       />
       <FeatureSectionImageCard
-        id="resilience-assement"
+        id="resilience-assessment"
         title="Resilience & operational assessments"
         description={
           <>

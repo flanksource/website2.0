@@ -28,8 +28,8 @@ export default function SiteFooter() {
           href: `${routes.services.path}#managed-services`
         },
         {
-          name: "Operator Development",
-          href: `${routes.services.path}#operators`
+          name: "Migrations",
+          href: `${routes.services.path}#migrations`
         },
         {
           name: "Internal Platforms",
