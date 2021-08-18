@@ -129,7 +129,7 @@ export default function SiteHeader({ theme, ...props }) {
             <Popover.Button
               className={classNames(
                 themeNavTextClass,
-                "group rounded-md inline-flex items-center text-base font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+                "group rounded-md inline-flex items-center text-base font-medium "
               )}
             >
               <span>Kubernetes Services</span>

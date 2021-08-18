@@ -1,5 +1,5 @@
 import DefaultLayout from "../../layout/DefaultLayout";
-
+import SiteHeader from "../../components/SiteHeader";
 import Team from "../../components/Team";
 
 const advisors = [
@@ -118,7 +118,11 @@ const features = [
 
 export default function About() {
   return (
-    <DefaultLayout  title="About Us">
+    <DefaultLayout
+      title="About Us"
+      headerShowOffset={400}
+      prepend={<SiteHeader theme="light" className="bg-gray-50 w-full" />}
+    >
       <div className="bg-white  overflow-hidden mb-20 ">
         <div className="relative max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
           <svg
