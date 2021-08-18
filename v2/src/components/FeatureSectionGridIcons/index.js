@@ -58,7 +58,7 @@ export default function FeatureSectionGridIcons({
                 <div className="flow-root bg-gray-50 rounded-lg px-6 pb-8">
                   <div className="-mt-6">
                     <div>
-                      <span className="inline-flex items-center justify-center p-3 bg-blue-200 rounded-md shadow-lg">
+                      <span className="inline-flex items-center justify-center p-3 bg-gray-500 rounded-md shadow-lg">
                         <img
                           src={feature.icon}
                           alt={feature.name}

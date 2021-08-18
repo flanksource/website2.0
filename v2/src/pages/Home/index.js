@@ -57,7 +57,9 @@ export default function Home() {
               description:
                 "Not sure what you need to be production-ready? We can help with a fault-domain analysis and a customized checklist.",
               actions: (
-                <LinkButton href={routes.services.path}>Learn More</LinkButton>
+                <LinkButton className="shadow-lg" href={routes.services.path}>
+                  Learn More
+                </LinkButton>
               )
             },
             {
@@ -66,7 +68,9 @@ export default function Home() {
               description:
                 "Don't have a team of Certified Kubernetes Administrators on-call? We can help with augmented or fully managed operations.",
               actions: (
-                <LinkButton href={routes.services.path}>Learn More</LinkButton>
+                <LinkButton className="shadow-lg" href={routes.services.path}>
+                  Learn More
+                </LinkButton>
               )
             },
             {
@@ -81,6 +85,7 @@ export default function Home() {
               ),
               actions: (
                 <LinkButton
+                  className="shadow-lg"
                   href={`${routes.contact.path}?utm_content=home_quickstart`}
                 >
                   Get in Touch
@@ -93,7 +98,9 @@ export default function Home() {
               description:
                 "Don't have a team of Certified Kubernetes Administrators on-call? We can help with augmented or fully managed operations.",
               actions: (
-                <LinkButton href={routes.services.path}>Learn More</LinkButton>
+                <LinkButton className="shadow-lg" href={routes.services.path}>
+                  Learn More
+                </LinkButton>
               )
             },
             {
@@ -103,6 +110,7 @@ export default function Home() {
                 "We conduct both classroom based training and more hands-on SRE focused game days practicing incident response.",
               actions: (
                 <LinkButton
+                  className="shadow-lg"
                   href={`${routes.contact.path}?utm_content=home_training`}
                 >
                   Get in Touch
@@ -115,7 +123,9 @@ export default function Home() {
               description:
                 "Are your environments more like pets than cattle? We can help with pipelines that deliver safe and tested clusters - continuously.",
               actions: (
-                <LinkButton href={routes.services.path}>Learn More</LinkButton>
+                <LinkButton className="shadow-lg" href={routes.services.path}>
+                  Learn More
+                </LinkButton>
               )
             }
           ]}
