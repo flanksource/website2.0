@@ -164,9 +164,9 @@ export default function SiteHeader({ theme, ...props }) {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 translate-y-1"
             >
-              <Popover.Panel className="absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-xl sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
+              <Popover.Panel className="absolute z-10 -ml-4 mt-3 transform px-1 w-screen max-w-xl sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
                 <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden  bg-white">
-                  <div className="flex flex-row">
+                  <div className="flex flex-row px-4 py-2">
                     {columns.map((column) => {
                       return (
                         <PopoverColumn
@@ -188,7 +188,7 @@ export default function SiteHeader({ theme, ...props }) {
 
   function PopoverColumn({ title, items }) {
     return (
-      <div className="relative flex flex-col p-6 sm:gap-8 p-6 flex-grow">
+      <div className="relative flex flex-col p-4 sm:gap-6 flex-grow">
         <div className="text-sm font-semibold text-gray-600 tracking-wider uppercase">
           {title}
         </div>
@@ -199,13 +199,11 @@ export default function SiteHeader({ theme, ...props }) {
             className="-m-3 p-2 flex items-start rounded-lg hover:bg-gray-50"
           >
             <item.icon
-              className="flex-shrink-0 h-6 w-6 text-blue-600"
+              className="flex-shrink-0 h-6 w-6 text-gray-500"
               aria-hidden="true"
             />
             <div className="ml-4">
-              <span className="text-base font-medium text-gray-900">
-                {item.name}
-              </span>
+              <span className="text-sm text-gray-900">{item.name}</span>
             </div>
           </a>
         ))}
