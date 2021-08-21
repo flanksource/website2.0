@@ -1,12 +1,13 @@
 import { Blog } from "../../components/Blog";
 import { Link } from "react-router-dom";
+import lighthouseImg from "../../assets/images/backgrounds/lighthouse_milkyway_cropped_adjusted_resized.jpg";
 
 export function BlogThree() {
   const props = {
     name: "Launching Flanksource",
     publishString:
       "Flanksource launched in January 2020 as a lean-first company focusing on Kubernetes",
-    backgroundImgSrc: "/assets/img/lighthouse_milkyway.jpg"
+    backgroundImgSrc: lighthouseImg
   };
 
   return (

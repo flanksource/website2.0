@@ -28,8 +28,8 @@ export default function SiteFooter() {
           href: `${routes.services.path}#managed-services`
         },
         {
-          name: "Operator Development",
-          href: `${routes.services.path}#operators`
+          name: "Migrations",
+          href: `${routes.services.path}#migrations`
         },
         {
           name: "Internal Platforms",
@@ -94,7 +94,7 @@ export default function SiteFooter() {
         { name: "About", href: `${routes.about.path}` },
         { name: "Blog", href: "/blog" },
         { name: "Careers", href: "/careers" },
-        { name: "Contact", href: `${routes.contact.path}` }
+        { name: "Contact", href: `${routes.contact.path}?utm_content=footer` }
       ]
     },
     legal: {

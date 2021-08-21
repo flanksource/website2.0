@@ -1,11 +1,15 @@
 import { Blog } from "../../components/Blog";
 
+import controlLoopHero from "../../assets/images/illustrations/control-loop-hero.jpg";
+import k8sGovernance from "../../assets/images/illustrations/k8s-governance.png";
+
 export function BlogTwo() {
   const props = {
     name: "Kubernetes is NOT a container orchestrator",
     publishString:
       "Published Feb 10, 2020 by Moshe Immerman, Reading time: 4min",
-    backgroundImgSrc: "/assets/img/control-loop-hero.jpg"
+    backgroundImgSrc: controlLoopHero,
+    darkenBg: true
   };
 
   return (
@@ -135,7 +139,7 @@ export function BlogTwo() {
                     </span>
                   </td>
                   <td>
-                    <img src="/assets/img/control-loop.png" />
+                    <img src={controlLoopHero} />
                   </td>
                 </tr>
               </tbody>
@@ -225,7 +229,7 @@ export function BlogTwo() {
             </p>
 
             <div className="centered">
-              <img src="/assets/img/k8s-governance.png" />
+              <img src={k8sGovernance} />
             </div>
 
             <p>

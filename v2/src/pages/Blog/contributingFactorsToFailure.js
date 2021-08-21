@@ -1,11 +1,15 @@
 import { Blog } from "../../components/Blog";
 
+import controlLoopHero from "../../assets/images/illustrations/control-loop-hero.jpg";
+import pubchart from "../../assets/images/illustrations/pubchart.png";
+
 export function BlogOne() {
   const props = {
     name: "Embracing Failure: Lessons learned from 50 post-mortems",
     publishString:
       "Published Feb 10, 2020 by Moshe Immerman, Reading time: 4min",
-    backgroundImgSrc: "/assets/img/control-loop-hero.jpg"
+    backgroundImgSrc: controlLoopHero,
+    darkenBg: true
   };
 
   return (
@@ -52,7 +56,7 @@ export function BlogOne() {
               fallacy.
             </p>
             <h2 id="contributing-factors">Contributing Factors</h2>
-            <img src="/assets/img/pubchart.png" />
+            <img src={pubchart} />
             <br />
             <p>
               <a
