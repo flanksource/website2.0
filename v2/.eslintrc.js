@@ -5,6 +5,7 @@ module.exports = {
     es2020: true
   },
   root: true,
+  ignorePatterns: ["node_modules", "build", "dist"],
   extends: ["eslint:recommended", "plugin:react/recommended", "prettier"],
   plugins: ["prettier"],
   parserOptions: {
