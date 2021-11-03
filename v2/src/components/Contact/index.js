@@ -124,7 +124,21 @@ export default function Contact() {
                         height: "1.5em"
                       }}
                     />
-                    <a href="tel:+27 72 482 1895">+27 72 482 1895</a>
+                    <a href="tel:+27 87 250 0990">+27 87 250 0990</a>
+                  </span>
+                </dd>
+                <dd className="flex">
+                  <span className="ml-9">
+                    <ReactCountryFlag
+                      className="mr-1"
+                      countryCode="IL"
+                      svg
+                      style={{
+                        width: "1.5em",
+                        height: "1.5em"
+                      }}
+                    />
+                    <a href="tel:+972 050 907 3971">+972 050 907 3971</a>
                   </span>
                 </dd>
                 <dd className="flex">
