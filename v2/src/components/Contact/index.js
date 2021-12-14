@@ -138,7 +138,7 @@ export default function Contact() {
                         height: "1.5em"
                       }}
                     />
-                    <a href="tel:+972 050 907 3971">+972 050 907 3971</a>
+                    <a href="tel:+972 050 709 3971">+972 050 709 3971</a>
                   </span>
                 </dd>
                 <dd className="flex">
