@@ -35,8 +35,8 @@ export default function Careers() {
 
   }, []);
   return (
-    <DefaultLayout className="bg-gray-50">
-      <div className="lg:m-32 m-2">
+    <DefaultLayout className="bg-gray-50 min-h-screen">
+      <div className="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <div id="recruitee-careers"></div>
       </div>
     </DefaultLayout>
